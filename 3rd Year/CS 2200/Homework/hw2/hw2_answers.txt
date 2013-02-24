@@ -1,0 +1,197 @@
+Homework 2
+CS 2200 Summer 2012
+
+Joon Ki Hong
+jhong70
+===================
+
+=========
+Problem 1
+=========
+
+Part A
+------
+
+i) Without PCINC
+
+     FETCH0  DrPC, LdA,LdMAR  
+     FETCH1  DrMem, LdIR
+     
+	 FETCH2
+	 RegSelHi, RegSelLo, DrALU, LdPC, OPTEST
+
+     
+	 ADDI0
+	 RegSelLo, DrREG, LdA
+     
+	 ADDI1
+	 DrOFF, LdB
+     
+	 ADDI2
+	 DrALU, WrREG
+	   
+	  
+	  
+ii) With PCINC 
+  
+     FETCH0  DrPC, LdMAR	  
+     FETCH1  DrMem, LdIR, IncToPC, LdPC, OPTEST
+     
+     
+	 ADDI0
+	 RegSelLo, DrREG, LdA
+     
+	 ADDI1
+	 DrOFF, LdB
+     
+	 ADDI2
+	 DrALU, WrREG
+	
+ 
+ 
+ Part B
+ ------
+ W/o PCINC - 6 cycles
+ With PCINC - 5 cycles
+ 
+ Part C
+ ------
+ 
+ With PCINC - 1.2x
+
+ Work: 
+ 
+ (6 cycles w/ PCINC / 5 cycles w/o PCINC) = 1.2x
+ 
+
+=========
+Problem 2
+=========
+
+Part A
+-------
+
+i)
+ Intel gcc - 11% difference in lw,sw - 1.12x
+ Intel spice - 13.67% difference in lw,sw - 1.1583x
+
+ AMD gcc - 8.5% difference in beq - 1.092x
+ AMD spice - 4% difference in beq - 1.0416x
+
+ii)
+ Intel
+
+iii)
+ Intel
+
+
+Part B
+-------
+
+Answer: 1/19
+
+
+(total + 20x)/(total + x) = 2
+
+
+(total + 20x) = 2*total + 2x
+18x
+total = 18x
+total
+
+mult/total = x/(total+x)
+
+= 1/(19)
+
+
+=========
+Problem 3
+=========
+
+Part A
+------
+
+task
+                   ----
+time   BG      DISK      SOUND     CLOCK
+----   --      ----      -----     -----
+
+ 0mS:                              CLOCK
+ 2mS:          DISK
+ 4mS:          DISK
+ 6mS:		   DISK
+ 8mS:		   DISK
+10mS:							   CLOCK
+12mS:					 SOUND
+14mS:                    SOUND
+16mS:                    SOUND
+18mS:  BG
+20mS:                              CLOCK
+22mS:                    SOUND
+24mS:                    SOUND
+26mS:                    SOUND
+28mS:  BG
+30mS:                              CLOCK
+32mS:  BG
+34mS:  BG
+36mS:  BG
+38mS:  BG
+40mS:                              CLOCK
+42mS:                    SOUND 
+44mS:                    SOUND
+46mS:                    SOUND
+48mS:  BG
+50mS:                              CLOCK
+
+Part B
+------
+
+In 100ms, 42ms is spent on background tasks. This is known by extrapolating the known rates past 50ms from the table above up to 100ms. 10000ms/42ms = 238.09. 100ms * 238.09 = 23809.52ms. 23809.52ms/1000 = 23.809 seconds.
+
+Part C
+------
+CLOCK - 2ms
+DISK - 10ms
+SOUND - 18ms
+
+=========
+Problem 4
+=========
+
+Part A
+------
+Synchronous event: An event that was intended in the execution of the program.
+example: The loading of a webpage is synchronously executed. So the page cannot be interacted with by the user before the page is done loading.
+
+Asynchronous event: An event that was not intended in the execution of the program and runs independently of the main program (sequential).
+example: AJAX (asynchronous javascript) dynamically loads page elements independently of the execution of code in the main page (parallel). 
+
+Part B
+------
+The hardware detects the interrupt and finds the index from the ETR from the respective interrupting device. The index is then used to find the address of the interrupt handler in the IVT. This address is then used to shift execution of the main program to the handler program.
+
+Part C
+------
+Save $k0 onto stack
+Enable interrupts
+Save interrupted process state to stack.
+Execute device-specific code.
+Restore interrupted process state from stack.
+Disable Interrupts
+Restore $k0
+Execute RETI to return.
+
+
+Part D
+------
+In a normal procedure call, the normal user stack is used to store the state of registers as defined by the calling convention. The caller saves any registers that need to be preserved before the execution of a procedure while the callee saves registers that are required to be preserved after the procedure. However, an interrupt can occur at any point in the execution of a normal procedure. Because of this, the interrupt handler won't know which part of the memory can be used as the stack to save the process state. The handler also does not know which registers are being used by the main program. This is why the interrupt handler uses a system stack to save and restore all register states as opposed to the user stack. 
+
+Part E
+------
+Because interrupts can happen at any point of the execution of a program, the interrupt handler has no way of knowing which part of the memory to use as the stack. Because of this there is an inherent risk of writing over data in memory. The system stack exists to let handlers save register states without the risk of overwriting data used by the main program in memory.
+
+
+Part F
+------
+Load PC from $k0
+Enable interrupts

@@ -1,0 +1,73 @@
+CS1331 Syllabus Spring 2010
+Course Objectives
+• Introduction to object-oriented programming through the use of the Java language.
+• Experience with algorithms and GUI programming.
+• Introduction to data structures both built-in and programmer-written in Java.
+Lecturers
+Monica Sweat CCB 131 sweat@cc.gatech.edu
+and
+Olufisayo Omojokun CCB 113 omojokun@cc.gatech.edu
+Head TA
+Aaron Clarke CCB 130 aclarke3@mail.gatech.edu
+Other TAs and Office Hours/Lab Location
+Other TAs & Hours TBA
+All CS1331 office hours & lab are held in CCB 130
+Required Course Textbook
+Lewis & Loftus, "Java Software Solutions" 6th edition. Addison Wesley. ISBN:978-0-321-53205-3.
+Software is free and available online.
+Grading Policy
+20% Programming Homework
+55% Exams
+25% Final (cumulative)
+In addition to meeting these cutoffs, you must also have a passing average on the exams and final to pass
+the course. There is no curve and no rounding with the letter grade cutoffs listed above!
+Academic Integrity & Collaboration Policy
+We expect academic honor and integrity from students. You are to be aware of and follow the academic
+honor code of Georgia Tech: www.deanofstudents.gatech.edu/osi/plugins/content/index.php
+Your work in this class is to be your own. Significant coding will be required on the exams, and the
+homework is intended to help prepare you.
+Due Dates, Late Work, and Missed Work:
+Programming homework turn-in is via T-Square. Each assignment is due before 8 pm on the due date. A
+grace period until 2 a.m. is given during which your assignment will be marked "late" on T-Square, but will
+not be docked points. After the grace period, T-Square will not accept your submission, and you will
+A >= 90.00
+B >= 80.00 and < 90.00
+C >= 70.00 and < 80.00
+D >= 60.00 and < 70.00
+F < 60.00
+receive a 0 if you have not submitted your HW solution. No exceptions. It is your responsibility to make
+sure you completely and successfully submit the proper files for your assignments turned in to T-Square.
+"Safe submission" practices will be discussed in your first assignment.
+Exam Policy:
+There are no generally available makeup exams. Makeup exams will only be considered under special
+circumstances such as serious illness, hospitalization, death in the family, judicial procedures, military
+service, or official school functions. Documentation must be provided on letterhead with the signature of a
+physician, supervisor, or other appropriate official. The decision is at the sole discretion of your instructor.
+Events such as errands, work conflicts, sleeping through your alarm, alarm malfunction, not being aware of
+the exam are definitely not valid excuses. You must contact us in advance for your situation to be
+considered.
+Email Policy
+You must conduct all official email correspondence for this course using your official GT email account.
+This is to protect your privacy. Email from outside sources such as gmail, hotmail, yahoo, and other
+personal accounts will be ignored.
+Be sure to use an informative email subject that includes CS1331 in the subject of the email! For example,
+Subject: CS1331 exam 2 question. Definitely do not email saying "I'm in your CS class..." as both
+instructors teach numerous CS courses.
+Class & Workshop Attendance
+Lecture and workshop/recitation attendance is required and assumed.
+Grade Contest
+To contest any grade, you must submit an official regrade form to the Head TA, Aaron Clarke, within one
+week of the assignment's original return date. The original return date is when the exam was first made
+available for students to pick up or the grade was posted on T-Square in the case of homework assignments.
+This regrade policy applies to ALL grades.
+Course Expectations
+1. Lecture and workshop attendance is required.
+2. Keep up with the reading.
+3. Try the code we do in class. Every bit of practice helps!
+4. Do your own homework and experiment with examples from class! Learning to program is like learning
+a sport. It takes actual practice and time to get comfortable with programming. The assignments that are
+given are opportunities to learn the material that you will be responsible for on exams.
+5. Exercise academic integrity and follow the collaboration policy outlined above.
+6. Be prepared when you go to get help from a TA or your instructor. Bring your work with you.
+7. Take initiative. Begin your assignments early and if you think you need help, come prepared. Use the
+resources that are provided for you, and be determined to succeed from the start.

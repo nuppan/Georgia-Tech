@@ -1,0 +1,72 @@
+<!-- Ant Compiler-->
+<!-- build.xml -->
+<project name="AntLab" default="all" basedir=".">
+	<description>
+	This is a build file for the Ant Lab
+	</description>
+	
+	<target name="init">
+		<property name="src.dir" value="src"/>
+		<property name="build.dir" value="build"/>
+		<property name="apidoc.dir" value="apidoc"/>
+		<property name="lib.dir" value="lib"/>
+	</target>
+	
+	<target name="prepare" depends="init">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${apidoc.dir}"/>
+	</target>
+	
+	<target name="compile" depends="prepare">
+		<javac destdir="${build.dir}">
+		<src path="${src.dir}"/>
+		<classpath>
+			<pathelement path="${lib.dir}"/>
+		</classpath>
+		</javac>
+	</target>
+	
+	<target name="javadoc" depends="compile">
+		<javadoc sourcepath="${src.dir}" access="public" destdir="${apidoc.dir}" packagenames="edu.gatech.oad.antlab">
+		<fileset dir="${src.dir}">
+			<include name="**/*.java"></include>
+		</fileset>
+		<classpath>
+			<fileset dir="${lib.dir}">
+				<include name="**/*.jar"/>
+			</fileset>
+		</classpath>
+			<bottom>
+				<![CDATA[<i>Copyright Griva Patel; 2012 Team 14 Fantastic 5 CS2340. All Rights Reserved.</i>]]>	
+			</bottom>
+		</javadoc>
+	</target>
+	
+	<target name="jar" depends="javadoc">
+		<jar destfile="AntLabRun.jar">
+		<include name="edu/gatech/oad/antlab/**/*.class"/>
+	<manifest>
+	<attribute name="Main-Class" value="${build.dir}.edu.gatech.oad.antlab.pkg1.AntLabMain"/>
+	<attribute name="Class-Path" value="${lib.dir}/resources.jar" />
+	</manifest>
+	</jar>
+	</target>
+	
+	<target name="run" depends="jar">
+		<java jar="AntLabRun.jar" fork="true">
+		<classpath>
+			<pathelement location="${build.dir}"/>
+			<pathelement path ="java.class.path"/>
+		</classpath>
+		</java>
+	</target>
+	
+	<target name="all" depends="run">
+	</target>
+	
+	<target name="clean">
+	<delete dir="build/"/>
+	<delete dir="apidoc/"/>
+	<delete file="AntLabRun.jar"/>
+	</target>
+</project>

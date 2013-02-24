@@ -1,0 +1,84 @@
+Atlanta Macon 84
+
+Atlanta Albany 180
+
+Albany Savannah 246
+
+Macon Rome 154
+
+Macon Savannah 165
+
+Valdosta Macon 151
+
+Valdosta Albany 90
+
+Augusta Atlanta 149
+
+Valdosta Augusta 274
+
+Statesboro Atlanta 211
+
+Waycross Atlanta 253
+
+Augusta Waycross 184
+
+Savannah Waycross 106
+
+Valdosta Waycross 62
+
+Macon Waycross 159
+
+Savannah Dublin 114
+
+Savannah Athens 225
+
+LaGrange Atlanta 69
+
+Columbus Valdosta 183
+
+Orlando Tallahasse 262
+
+Valdosta Gainsville 130
+
+Orlando Gainsville 117
+
+Jacksonville Gainsville 70
+
+Pensacola Jacksonville 363
+
+Orlando Pensacola 460
+
+Tallahasse Pensacola 200
+
+Tampa Pensacola 474
+
+Jacksonville Savannah 260
+
+Atlanta Birmingham 260
+
+Macon Montgomery 240
+
+Birmingham Anniston 66
+Birmingham Montgomery 88
+
+Colombus Birmingham 167
+
+Colombus Montgomery 79
+
+Anniston Huntsville 100
+
+Anniston Mobile 279
+
+Mobile Birmingham 258
+
+Birmingham Huntsville 101
+
+Birmingham Mobile 258
+
+Chattanooga Birmingham 149
+
+Chattanooga Huntsville 109
+
+Chattanooga Montgomery 234
+
+LaGrange Columbus 50

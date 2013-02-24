@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Author" content="Jarek Rossignac">
+  <meta name="Company" content="Georgia Tech">
+  <meta name="Copyright" content="2012">
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1138.47">
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" style="border-collapse: collapse">
+  <tbody>
+    <tr>
+      <td valign="middle" style="width: 501.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #cbcbcb #cbcbcb #cbcbcb #cbcbcb; padding: 0.0px 5.0px 0.0px 5.0px">
+        <p style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 24.0px Helvetica"><b>Affinity</b></p>
+        <p style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 18.0px Helvetica"><b>Lectures in Graphics</b></p>
+      </td>
+      <td valign="middle" style="width: 190.0px; border-style: solid; border-width: 1.0px 1.0px 1.0px 1.0px; border-color: #cbcbcb #cbcbcb #cbcbcb #cbcbcb; padding: 0.0px 5.0px 0.0px 5.0px">
+        <p style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 14.0px Helvetica"><b>Jarek Rossignac</b></p>
+        <p style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 14.0px Helvetica">Interactive Computing</p>
+        <p style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 14.0px Helvetica">Georgia Tech</p>
+        <p style="margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 14.0px Helvetica">Revised on Sept 9, 2012</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Helvetica"><b>Objectives and motivation</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Affine transformations (affinities, also called dilations), which include translations, rotations, uniform scaling, and shear (anisotropic stretching) are the primary tools for constructing complex models or scenes (by moving, rotating, and scaling shapes), for specifying some animations (by transforming a portion of a shape by a time-dependent affinity), or for simplifying computations or formulations (by expressing a problem in a local or more convenient coordinate system). The objective of this lecture is to understand the relation between an affinity, a local frame (coordinate system), and barycentric coordinates.<span class="Apple-converted-space">  </span>We explore these concepts and conversion formulae in two dimensions. The approaches described here are simple and extend naturally to three dimensions.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Helvetica"><b>Topics covered</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Overview</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">We start by discussing graphic transformations and show how to use then in a Processing program to create a scene, a pattern, or an animation.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">In particular, we discuss rotations and scaling with respect to a fixed point and applications to logarithmic spiral patterns and motions.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">We formulate the barycentric coordinates of a point with respect to a triangle and show how they can be computed (hence, rediscovering Cramer’s rule)</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Finally, we discuss the relation between barycentric coordinates, local coordinates, and affine transformations and mention their matrix formulation and the use of homogeneous coordinates.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Affinity</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">An <a href="http://en.wikipedia.org/wiki/Affine_transformation">affinity</a> M is a mapping of the plane onto itself. Hence, it maps an arbitrary point P to its image M(P).</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">We discuss here how to represent an affinity M, how to compute M(P), and how to compute M given a set of constraints (provided for example by the designer).</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">F is a <b>fixed point</b> of M if M(F)=F.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Two affinities, M and N, can be composed. For example: N(M(P)) is the image of P transformed first by M and then, the result is further transformed by N.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">We use the notation N*M to denote the composition, hence, instead of writing N(M(P)), we can write N*M(P), where we assume that * takes precedence over (). Some authors use the notation M*P and N*M*P. Others omit the * operator and simply write N M P. N*M is an affinity.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">A universal <b>scaling</b> is an affinity that has a fixed point Q and displaces all points away from or towards Q by multiplying their distance form Q by the same constant.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">A <b>shear</b> is an affinity that has a fixed line (that is its own image) and transforms all other points by translating them in a direction parallel to the line.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">A <a href="http://en.wikipedia.org/wiki/Similarity_(geometry)"><b>similarity</b></a> is an affinity that preserves angles.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">A <b>squeeze</b> is an affinity that preserves area. &lt;http://en.wikipedia.org/wiki/Squeeze_mapping&gt;. Restricting transformations to squeezes may be important for physically plausible simulations.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">An <a href="http://en.wikipedia.org/wiki/Euclidean_plane_isometry"><b>isometry</b></a> (rigid transformation) is an affinity that preserves distances.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Isometries include rotations, which have a fixed point (the center of rotation), reflections (mirror image), and translations (which do not have a fixed point).</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">To simplify discussion, we will use the term scaling to denote universal scaling.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Compositions of rotations, translations, scalings and reflections are similarities.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Compositions of rotations, translations, squeezes and reflections are isometries.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">We will use the following affine transformations:</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica"><span style="color: #045591">translate(V); </span>is a translation by vector V<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica"><span style="color: #045591">rotate(a); </span>rotates around the origin by angle a</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica"><span style="color: #045591">scale(m); </span>scales around the origin by a ratio m</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Each call transforms the canvas (by translating, rotating, or scaling it).</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">To produce a rotation or scaling around a given fixed point Q, one can translate the origin O to Q, perform these transformations, and then translate back:<span style="color: #045591"><span class="Apple-converted-space">  </span>translate(OQ); rotate(a);<span class="Apple-converted-space">  </span>scale(m); translate(QO);</span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">In general, affine transformations do not commute: N*M is not equal to M*N. However, rotations and scalings around the same fixed point do commute. So, the above transformation may also be written: <span style="color: #045591">translate(OQ);<span class="Apple-converted-space">  </span>scale(m); rotate(a); translate(QO);</span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Typically, such transformations are used to place objects in a scene or to move them during an animation.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">To limit the effect of a transformation to a single object or to a group of objects, we use <span style="color: #045591">pushMatrix();</span> to save the current canvas (coordinate system), we perform the transformations, we display the shapes, then we restore the saved canvas by callin<span style="color: #045591">g popMatrix();</span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">We may insert a matching pairs of <span style="color: #045591">pushMatrix();</span> and <span style="color: #045591">popMatrix(); </span>between a previous pair. The canvas saved by the consecutive <span style="color: #045591">pushMatrix();</span> are saved on a stack, and hence can be restored (in reverse order) by executing the matching<span class="Apple-converted-space">  </span><span style="color: #045591">popMatrix(); </span><span style="color: #000000">.</span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Steady patterns and steady affine motions</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Repeating the following sequence {<span style="color: #045591">translate(OQ); rotate(a);<span class="Apple-converted-space">  </span>scale(m); translate(QO); display(shape); </span>} we produce a <b>regular pattern</b> of copies of shape. Note that the shape is rotated by the same angle each time, hence, its angular velocity is constant. Note also that its size is multiplied by the same factor m each time, hence is grows exponentially. A pattern that can be produced this way follows a logarithmic spiral. Its construction and a better GUI are discussed below in the section on <i>Software for hands-on exploration</i>.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">A <b>motion</b> is <b>affine</b> if at any time t, the current shape may be obtained from the initial shape by an affinity. Affine motions preserve lines.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">An affine motion is <b>continuous</b> if that affinity is a continuous function of time.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">When a shape is moving, at any time t, a point P is at P(t) and a velocity vector, which we denote P’(t). At any time t, the instantaneous <b>velocity field</b> of the motion is the mapping that maps any point P of the plane to the corresponding velocity vector P’.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">A motion is <b>steady</b> if it is affine and if its velocity field is stationary (it does not evolve with time) and affine (the coordinates of P’ are affine functions of the coordinate of P).<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Steady motions have remarkable properties. For example, the velocity of a point remains constant in the local (i.e., moving frame). This is particularly useful when computing the boundary of a region swept by a shape that moves steadily.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">A steady pattern may be produced by evaluating a steady motion at regularly spaced time samples and applying the results to the initial shape.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The regular pattern described above is produced by time sampling a logarithmic spiral motion, which is a special case of steady motion, where the affinities are similarities.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Distance to edge</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The distance from a point P to edge (A,B) may be computed as follows.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591">if(AP.AB&gt;0 &amp;&amp; BP.BA&gt;0) return |APxAB| / d(A,B); else return min(d(A,P),d(B,P));</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The test establishes whether the closest projection Q of P onto the line through A and B falls between A and B.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">If that is the case, we return the distance between P and that line. The distance is the absolute value of the product of d(A,P) by sin(w), where w is the angle between AB and AP. Hence, it may be computed as <span style="color: #045591">|APxAB| / d(A,B)</span>.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Closest projection on edge</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The closest projection Q of a<span class="Apple-converted-space">  </span>point P onto edge (A,B) may be computed as follows:</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591">if(AP.AB&gt;0 &amp;&amp; BP.BA&gt;0) {s=AP.AB / AB.AB; return A+sAB; } else if(d(A,P)&lt;d(B,P)) return A else return B;</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The test establishes whether the closest projection P onto the line through A and B falls between A and B.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">If that is the case, we return a point along edge (A,B), hence expressing it at A+sAB. The offset ratio s, should be zero when P projections to A and 1 when P projects to B. Note that the value of the dot product AP.AB is the same for all points P that have the same closest projection onto line (A,B). INdeed, the dot product measures the “shadow” projection of vector AP onto the direction (unit vector) of AB. We divide AP.AB by ||AB|| once to compensate for the fact that AB is not a direction (unit vector). We divide it again by ||AB|| because, in the formula A+sAB, s is multiplied by ||AB||.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">You can easily verify that when P is A, or projects onto A, s=0, and when P is B or projects onto B, s=1.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Barycentric coordinates</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Consider triangle T=triangle(A,B,C) with vertices A, B, and C. Let P be a point. Note that P needs not be inside T.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Assume that we want to represent P as a weighted combination P=aA+bB+cC, with a+b+c=1.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The triplet (a,b,c) is called the barycentric coordinates of P with respect to triangle(A,B,C).</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">If one places weight a at A, b at B, and c at C, then P is the barycenter of the system (the triangle stays balanced if supported by a finger at P).</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">So, given the barycentric coordinates (a,b,c), there scalars, and the triangle vertices (A.B.C), each represented by their (x,y) Cartesian coordinates, we can compute P as aA+bB+cC. In doing so, we are converting from Barycentric to global Cartesian coordinates.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Now, let us derive the formulae for the reverse (Cartesian-to-barycentric) conversion. We are given P, A, B, and C and want to compute (a,b,c).</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Note that a=1-b-c, hence, we need only compute b and c. Let us rewrite<span class="Apple-converted-space">  </span>P=aA+bB+cC, using a=1-b-c.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Rearranging the terms, we obtain P-A = b(B-A) + c(C-A), which we can write using vector notation as AP=bAB+cAC. This is a system of two linear equations with two unknowns, b and c. Hence we can solve it using the <a href="http://en.wikipedia.org/wiki/Cramer's_rule">Cramer’s rule</a>, or any other technique for solving linear systems.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Let us derive our own solution here (and hence prove Cramer’s rule). You should be able to reinvent and explain or teach this derivation, as it is a standard tool for solving equations involving points and vectors. The nugget here is to perform the same operation of the left and right side of AP=bAB+cAC so as to eliminate the coefficient that multiplies b. A dot product of a vector by an orthogonal vector yields zero. So we could transform the equation by applying .R(AB) to both sides. A slightly more elegant approach is to use a cross product. Remember that VxV is zero. Hence, we will apply xAB to both sides. We obtain APxAB=(bAB+cAC)xAB, which by distributivity yields APxAB=bABxAB+cACxAB. Since ABxAB is zero, we have</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">c = APxAB / ACxAB. Let us verify that when P==C, c==1 and when P is on line(A,B), c==0. More precisely, c measures the relative distance between P and line(A,B). The term “relative” is used here to say that the unit in which this distance is reported is chosen so that when P==C, the distance is 1.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Note that some authors explain the barycentric coordinates using ratios of areas. Although correct, their metaphor is less useful than the notion of relative distances, especially when exploring extrapolations of barycentric coordinates to more complex polygons.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The barycentric coordinate b is computed using a similar formula (to be derived and verified by the reader) and coordinate a is 1-b-c. Hence, we have now the formulae for the Cartesian-to-barycentric conversion, their derivation, and also a simple way of proving Cramer’s rule.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Local frames (coordinate systems)</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">A (local) frame<span class="Apple-converted-space">  </span>(i.e., coordinate system) in 2D is defined by an origin, point O, and two basis vectors, I and J. We write it as {I,J,O}. Given the local coordinates (x,y) of a point P in this local frame, how can we express (i.e., compute) the location (global coordinates) of P? The answer is simple: We start at O, walk x times the displacement I, then walk y times the displacement J. In other words,<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica"><span class="Apple-tab-span" style="white-space:pre">	</span>P = O + xI + yJ</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">This simple formulation is the key to understanding and using local frames.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Let us now look at the inverse problem: Given P (expressed by its global coordinates (P.x,P.y)) and a local frame {I,J,O}, how to compute the local coordinates (x,y) of P in frame {I,J,O}.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Again, we need to solve OP=xI+yJ. Using the same trick as above, we cross-product both sides of the equation with I. We obtain</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">OPxI = x IxI + y JxI. Hence, since IxI=0, we have y=OPxI / JxI. A similar construction yields an depression for x.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Note that this derivation is identical to the derivation of the barycentric coordinates. Simply set O=A, I=AB, J=AC, x=b, and y=c. Please verify this correspondence.<span class="Apple-converted-space">  </span>In other words, barycetric coordinates and local frames are equivalent. Typically, a GUI will expose A, B, and C to the user. Then, you have the choice of using barycentric coordinates or local coordinates to implement changes of coordinate systems (i.e., changes of frames).</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Representation of frames and homogeneous coordinates</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">From the above discussion, we have two natural approaches for representing a local frame: the three points (A,B,C) or the origin and basis vectors (I,J,O). Most authors prefer the latter.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">In fact, they use a matrix notation and represent the frame as a matrix M that has 3 columns: the first one has entries (I.x, I,y, 0), the second one has entries (J.x, J.y, 0), the third column has entries (O.x, O.y, 1). These columns are homogeneous representations of points and vectors: Points are padded with a 1 as third coordinate, vectors are padded with a 0.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">When applying the corresponding transform to a point P, we form a column vector H=(P.x, P.y, 1) and perform a matrix multiplication M.H, which returns a column vector with 3 coordinates, the third one being 1. The other two are the coordinate of the transformed point.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">When applying the corresponding transform to a vector V, we form a column vector H=(V.x, V.y, 0) and perform a matrix multiplication M.H, which returns a column vector with 3 coordinates, the third one being 0. The other two are the coordinate of the transformed vector.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The merit of using homogeneous coordinates and these extended matrix representations of affinities is that general matrix operations may be used. Hence, instead of applying a sequence of transformations M, N, K to all the vertices P of a shape, to obtain the transformed vert3ex location K(N(M(P))), one can precompute the composition T=K.N.M and simply compute T(P). This is how the GPU (graphics hardware) applies transformations to the vertices that define graphical shapes.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Note that P=xI+yJ+O is in fact an extended for of dot product, (I,J,O).(x,y,1) which obeys the dot product rule (sum of the product of corresponding entries). Hence, using the homogeneous notation (P.x,,P.y,1) for point P, M(P) is the extended dot product M.P.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Applying an affine transformation to a vector disregards the translation. Hence, if M corresponds to the matrix (I,J,O), then M(V) is V.xI+V.yJ and can be written M.V, where V is implicitly assume dot be the homogeneous representation (V.x,V.y,o) of V.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Further extending the notion of the dot product to matrices, notice that (I,J,O).(U,V,P) returns a matrix with three columns: ( (I,J,O).U , (I,J,O).V , (I,J,O).,P)</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Frame changes</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Assume that we have two frames: (I,J,O) and (I’,J’,O’). Given a point P represented by local coordinate (x,y) in (I,J,O), compute its local coordinates (x’,y’) in (I’,J’,O’). This problem is a change of coordinate systems.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">It may be solved using matrix inversion, but we prefer the following simple and intuitive solution:</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica"><span class="Apple-tab-span" style="white-space:pre">	</span>P = O + x I + y J</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica"><span class="Apple-tab-span" style="white-space:pre">	</span>x’ = O’PxJ’ / I’xJ’ and y’ = O’PxI’ / J’xI’</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The first line computes the global coordinates of P. The second one computes its local coordinates in the new frame.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">To illustrate the use of this conversion, consider the case where two users are looking at a map, but each is suing her own transformation to view it.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Maybe each transformation has created by grabbing three locations on the map (each with a different finger) and then dragging the three fingers to a new location. Now, user 1 points to a place on the map. We want to communicate that place to user 2.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Relative transform</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Given 3 points Ao, Bo, Co and their current positions (At,Bt,Ct), we want the affine transformation M that maps the triplet (A0,B0,C0) to (At,Bt,Ct).<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">If each triplet is not collinear (linearly independent), we can compute this relative affine transform using a simple approach where we express (AtBt,AtCt,At) in the local frame (A0B0,AoC0,A0). Then, we make a matrix of using the homogenous expressions of these relative vectors and points. A more expensive but more generic approach is to formulate M0 and Mt and then, using M0.M.P=Mt.P, compute M=(M0)^{-1}.Mt, which combines the inverse of Mo with Mt.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Steady affine morph</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The steady motion M that interpolates M0 at time 0 and M1 at time 1 can be expressed as Mt=M0.(M0^{-1}.M1)^t.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">If Mo and M1 match areas (i.e., if the images by M0 and by M1 of some shape S have the same area) the, the image of S by Mt also has the same area. This is particularly important for divergence free simulations where builds and deforming solids must preserve area. However, in most simulations, the fluids and shapes evolve in manners that are more complex than a single steady affine motion. Hence, weighted combinations of affine motions may be used.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 18.0px Helvetica; color: #017011"><b>Special cases</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Special cases include translations, rotations, isometries, and logarithmic spirals.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">When the affinity is an isometry, I and J are orthogonal and have the same length.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Setting the unit to be that length (i.e., saying that they are unit vectors), IxJ is 1 and OPxJ is OP.I.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Hence the formula for converting between local frames are much simpler.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Furthermore, the steady affine morph between two isometric frames is either a translation of constant velocity or a rotation around a unique fixed point with constant angular velocity.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #98264f; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Helvetica"><b>Applications</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The simplest application of affine transformations if the creation of scenes, where various objects are instantiated in different positions and orientations and possibly scaled, or squeezed, or both.<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Another key application is animation, where the whole scene, a portion of it, or an individual object moves and where that motion is expressed as a time-varying affinity. More complex (non-affine) motions are often represented as weighted combinations of such affine motions. This is for example the case in skinning, where the skeleton of a character is moving so that the motion of each limb is a time-varying affinity (usually an isometry) and where vertices of a triangle mesh that approximates the skin or clothing of the character are moved by weighted combinations of these affinities.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Barycentric coordinates are used to formulate various constructions of centers of measures of a triangle. They have the advantage that all three vertices (A, B, C) play the same role.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Local frames are used commonly to define articulated body poses (the position of the upper arm is expressed with respect to the shoulder, the position of the forearm is expressed with respect to the elbow…) and their animations. Furthermore, local frames many be defined along a curve or surface to help position shapes with respect to it. For example, to produce an animation that drives a car along a curve, one may want, at a given time t,<span class="Apple-converted-space">  </span>to compute the position C(t) and derivative (tangent) C’(t) to the curve and use them to define a local frame where the car is to be drawn, so that the car’s orientation is aligned with the instantaneous tangent C’(t).</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Helvetica"><b>Further reading</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Shirley 5.1, 5.1, 6.1.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Helvetica"><b>Self tests</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Given the barycentric coordinates (a,b,c) of point P with respect to triangle (A,B,C), compute P.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Compute the barycentric coordinates of a given point P with respect to a given triangle (A,B,C).</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Justify the formulae used to answer the above questions, by providing their derivation.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">What is the nugget of that derivation?</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">What is its relation to Cramer’s rule?</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">How do you convert between two local frames?</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Define isometry and similarity.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Define a steady motion.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">How to compute the center of rotation of a steady morph that maps edge(A,B) to edge (A’,B’) assuming that they have the same length.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Helvetica"><b>Software for hand-on exploration</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Processing offers simple commands to apply a set of primitive affine transformations. For example, the code below scales and rotates the frame around a given point G</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">      </span>translate(G.x,G.y); rotate(a);<span class="Apple-converted-space">  </span>scale(m); translate(-G.x,-G.y);</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">The affinity sketch uses a similar sequence to create a steady pattern around a user controlled fixed point G. It uses 4 points { Ao,Bo,A1,B1} that the user controls to define the angle a and ratio m. The shape is a rectangle texture mapped with a photograph. The first copy is aligned so that its upper corners are at A0 and B0 (a green arrow is drawn from A0 to B0). Angle a is the angle between vectors AoBo and A1B1. The scaling factor m is the ratio of their magnitude. The sketch makes 11 copies of the photograph by executing the following code:</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span style="color: #000000"><span class="Apple-converted-space"> </span></span><span class="Apple-converted-space">  </span>pushMatrix();</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">    </span>pen(black,3);</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">    </span>float a = angle(V(A0,B0),V(A1,B1));<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">    </span>float m = d(A1,B1) / d(A0,B0);<span class="Apple-converted-space"> </span></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">    </span>for(float s=0; s&lt;=1.05; s+=.1) {</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">      </span>pt At=P(A0); pt Bt=P(B0);</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">      </span>pt Ct=P(Bt,aspect,R(V(At,Bt))); pt Dt=P(At,aspect,R(V(At,Bt)));</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">      </span>noStroke(); beginShape(); texture(myFace); At.v(0,0); Bt.v(1,0); Ct.v(1,1); Dt.v(0,1); endShape(CLOSE);</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">      </span>arrow(At,Bt);</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">      </span>translate(G.x,G.y);</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">      </span>rotate(a/10);</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">      </span>scale(pow(m,0.1));</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">      </span>translate(-G.x,-G.y);</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">      </span>}</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; color: #045591"><span class="Apple-converted-space">    </span>popMatrix();</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Note that it increases the angle linearly (by rotating each time by a/10). This way the photograph rotates at a constant angular velocity.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">However the length of the vector between the two top corners is multiplied by the same ratio each time. Hence, it grows exponentially. This is the secret for a steady pattern or motion.<span class="Apple-converted-space">  </span>BY forcing the angle a to be nearly 180 degrees and the ratio to be close to ½, you will notice that the pattern follows a <a href="http://en.wikipedia.org/wiki/Logarithmic_spiral">logarithmic spiral </a>(“spira mirabilis”), which have remarkable properties that were studied by Bernouilly. Note that the log spiral is different from the <a href="http://en.wikipedia.org/wiki/Logarithmic_spiral">Euler spiral</a> and from the <a href="http://en.wikipedia.org/wiki/Archimedean_spiral">Archmedean spirals</a>.)</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Playing with the sketch, you will notice that it is difficult to design the pattern by controlling the fixed point G.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">A better approach is to let the user control the two top corners in the final copy and to compute G automatically.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Tis is done by solving for G.x and G.y a linear system of 2 equations: M(A0)=A1, where M is<span class="Apple-converted-space">  </span>{<span style="color: #045591">translate(G.x,G.y); rotate(a);<span class="Apple-converted-space">  </span>scale(m); translate(-G.x,-G.y);</span>}</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 24.0px Helvetica"><b>Project suggestions</b></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Write a program that produces organic shapes using logarithmic spirals.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Produce a steady motion editor for logarithmic spiral motions.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Split the canvas in two. Each half represents a view of a map (loaded image). Each view is obtained by selecting 3 locations on the original map and defining their new position. Hence<span class="Apple-converted-space">  </span>points are used to define each transformation. In addition, a 13th point is used to locate a place on view 1. Your job is to show the corresponding location in view 2.</p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica; min-height: 17.0px"><br></p>
+<p style="margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Helvetica">Morph between two edges that have the same length.</p>
+</body>
+</html>

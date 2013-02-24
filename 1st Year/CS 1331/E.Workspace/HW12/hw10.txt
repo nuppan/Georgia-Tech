@@ -1,0 +1,2 @@
+The beginning. This is the middle sentence. This is the end.
+1234 1234 1234. This is another line of input.

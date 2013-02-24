@@ -1,0 +1,28 @@
+This assignment comes with two assemblers/simulators. One set is the old one
+in the gt16 folder, and another is a new one I wrote this past weekend because
+I was annoyed with the old one.
+
+If you do not plan to use the new assembler, you can stop reading after this
+warning paragraph. Keep in mind that it will be harder to support if anything
+goes wrong because the codebase is unnecessarily complicated.
+
+The new assembler creates the same bytecode as the old gt16as, but in my
+opinion it is both more robust and lightweight. At the same time, I wrote it
+over the weekend because the old one was giving me problems and it was old
+and outdated.
+
+The new simulator is a work in progress and I will release it as an update to
+the assignment shortly.
+
+To use this new assembler, you must have perl installed on your system. It's
+a fairly standard linux package so if it isn't already installed, installing
+it should be as simple as a call to your favorite package manager:
+# apt-get install perl
+OR
+# pacman -S perl
+etc.
+
+Another positive side is that it (supposedly) runs on windoze and OSX as well.
+It hasn't been tested but any feedback would be appreciated. The only
+difference is in how newlines are handled. You can download perl from
+http://www.perl.org/get.html. I would recommend Strawberry Perl.

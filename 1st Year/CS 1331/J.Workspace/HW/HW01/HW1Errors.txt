@@ -1,0 +1,10 @@
+Joon Ki Hong - B3 xjo0nn@gatech.edu
+
+1. Compile Error: (GT.Buzz.java:1: class GTbuzz is public, should be declared in a file name GTbuzz.java [public class GTbuzz{])
+2. Runtime Error: (Exception in thread "main" java.lang.NoSuchMethodError: main)
+3. Compile Error: (GTBuzz.java:4: cannot find symbol/  symbol: method println(java.lang.String)/ location: class GTBuzz/ println("I'm a rambin' wreck");
+4. Compile Error: (GTBUZZ.java:4: unclosed character literal/ GTBuzz.java:4: unclosed character literal/ GtBuzz.java:4: unclosed string literal/ GTbuzz.java:4: not a statement)
+5. No Error: Output: I'm a rambin' WRECK
+6. Compile Error: (GTBuzz.java:4: unclosed string literal/ GTBuzz.java:4: ';' expected (System.out.println("I'm a rambin' wreck);/ GTBuzz.java:7: reached end of file while parsing)
+7. Compile Error: (GTBuzz.java:4: ';' expected)
+8. Compile Error: (GTBuzz.java:5: reached end of file while parsing)

@@ -1,0 +1,289 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf230
+{\fonttbl\f0\fnil\fcharset0 Cambria;\f1\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;\red191\green191\blue191;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid2\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid101\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid102\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid201\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid202\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid301\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid302\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid401\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid402\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid5}
+{\list\listtemplateid6\listhybrid{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid501\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listlevel\levelnfc4\levelnfcn4\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{lower-alpha\}.}{\leveltext\leveltemplateid502\'02\'01.;}{\levelnumbers\'01;}\fi-360\li1440\lin1440 }{\listname ;}\listid6}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}{\listoverride\listid6\listoverridecount0\ls6}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\ri720
+
+\f0\fs24 \cf0 Joon Ki Hong\
+CS 1332 A4\
+Homework 5 Analysis\
+\
+\pard\pardeftab720\ri720
+
+\b \cf0 Experiment 1.  The effects of size and load factor. \
+\pard\pardeftab720\ri720
+
+\b0 \cf0 A general rule of thumb that most people espouse is that the table size should always be prime.  This is not always a universally held idea.  We will keep a constant key (the default hashCode that you implemented above) and a load factor of 0.75.  Insert 1000 randomly selected books (some may be duplicates).  Search for 1000 books (some may be duplicates, some may not be in the table).\
+\pard\pardeftab720\li720\fi-360\ri720
+\ls1\ilvl0
+\b \cf0 a.	Does the load factor or size seem to have any influence on the collisions?
+\f1 \
+\pard\pardeftab720\li1440\fi-360\ri720
+\ls1\ilvl1
+\f0\b0 \cf0 a.	Yes the load factor does seem to have an influence on the number of collisions. With the initial size of the table set to 100, and regrow modifier set to 0, the data presents a somewhat logarithmic increase. When the load factor was set to 0.5, the number of collisions came out to be 542. Whereas when it was set to .75 and .9, the number of collisions came out to be 917 and 1091 respectively. This seems to be the case because the higher the max load factor is set to initially, the greater the possibility for collisions before a regrow since the high max load factor allows for more elements to be added. When the initial size was decreased to 89 with the regrow modifier kept at 0, the number of collisions decreased minimally for all test cases with varying max load factors.  
+\f1\b \
+\pard\pardeftab720\li720\fi-360\ri720
+\ls1\ilvl1
+\f0 \cf0 b.	How about searches? What was the average search count? How close was your hash table to O(1) lookups?\
+\pard\pardeftab720\li1440\fi-360\ri720
+\ls1\ilvl1
+\b0 \cf0 a.	The amount of searches (comparisons) needed to look up elements also increased. For each of the hash tables with .5, .75, and .9 max load factors, the data returned 1388, 1710, and 2540 search probes respectively. Once again this can be attributed to the load factors. Because the increased load factors allow for more elements to be squeezed in before the initial regrow, there exists a larger probability for collisions. Because there are more collisions, that would mean that there are more chained buckets than if the hash table were to have a lower max load factor. Finally, because there are more chained buckets, more search comparisons are necessary to look up buckets and would degenerate the look up time down to O(n). The size of the initial hash table has a minimal but significant effect on the performance. The average search count among the three hash tables was 1879.3. This was about 87% more searches than it would take for it to have an O(1) runtime.
+\f1\b \
+\pard\pardeftab720\ri720
+\cf0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\pardeftab720\ri720
+
+\f0 \cf0 Experiment 2. The effects of the hash code.\
+\pard\pardeftab720\ri720
+
+\b0 \cf0 Use a table size of 89, a mod factor of 1 and a load factor of .75. We now want to try different keys and see if that has any effect on collisions. Insert 1000 randomly selected books from the book list (As in our other simulations).  For each test we will use a different key and hashtable.  After each run, record the collision counts, and probe count.\
+\pard\pardeftab720\li720\fi-360\ri720
+\ls2\ilvl1
+\b \cf0 a.	Was there any difference in the collision counts of the insertions? Did one hash code appear to be better or worse than the others? What about searching?\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrs\brdrw10\brdrcf2 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 Key/Hash\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 Collisions\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 Probes\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 ISBN/DEFAULT\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 733\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1765\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 CONTROL/INT\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 713\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1743\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 ISBN/USER\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 821\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1746\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 TITLE/SIMPLEADD\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 776\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1775\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 CALLNO/SDBM\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 723\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1710\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrb\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 AUTHOR/ADLER32\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 730\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1733\cell \lastrow\row
+\pard\pardeftab720\li1440\fi-360\ri720
+\ls3\ilvl1
+\b0 \cf0 a.	There seems to be some variability between each of the algorithms and different key types. However this difference seems to be somewhat insignificant since the difference in collisions and difference in probes seem to have a small range.
+\f1\b \
+\pard\pardeftab720\li1440\ri720
+\cf0 \
+\pard\pardeftab720\ri720
+
+\f0\fs32 \cf0 Extra Credit (All Extra Credit Assignments)\
+\
+\pard\pardeftab720\ri720
+
+\fs22 \cf0 Implement a Coalesed Hash Table and repeat the experiments.  Was this technique any better/worse than linear probing?\
+\pard\pardeftab720\li1440\ri720
+
+\f1\fs24 \cf0 \
+\pard\pardeftab720\ri720
+
+\f0 \cf0 Experiment 1.  (Coalesced Hash Table) The effects of the size and load factor.\
+\pard\pardeftab720\ri720
+
+\b0 \cf0 A general rule of thumb that most people espouse is that the table size should always be prime.  This is not always a universally held idea.  We will keep a constant key (the default hashCode that you implemented above) and a load factor of 0.75.  Insert 1000 randomly selected books (some may be duplicates).  Search for 1000 books (some may be duplicates, some may not be in the table).\
+\pard\pardeftab720\li1080\fi-360\ri720
+\ls4\ilvl1
+\b \cf0 a.	Does the load factor or size seem to have any influence on the collisions?
+\f1 \
+\pard\pardeftab720\li1800\fi-360\ri720
+\ls4\ilvl1
+\f0\b0 \cf0 a.	Yes the load factor seems to have a significant effect on the number of collisions. The lower the maximum load factor, the lower the number of collisions met. In the data set, when the coalesced hash table had .5, .75, and .9 maximum load factors, the resulting collisions were 437, 715, and 951. This shows an increasing trend in collisions. When the size was decreased to 89, the number of collisions for when the max load factors were .5, .75, and .9 were 490, 629, and 795 respectively. 
+\f1\b \
+\pard\pardeftab720\li1080\fi-360\ri720
+\ls4\ilvl1
+\f0 \cf0 b.	How about searches? What was the average search count? How close was your hash table to O(1) lookups?\
+\pard\pardeftab720\li1800\fi-360\ri720
+\ls4\ilvl1
+\b0 \cf0 a.	For the coalesced hash tables, the number of search probes were kept relatively constant varying from 6 to 14 comparisons. The average search count was 1527. This meant that there were 52.7% more searches than it would take to have a O(1) runtime. 
+\f1\b \
+\pard\pardeftab720\ri720
+\cf0 \
+\
+\
+\pard\pardeftab720\ri720
+
+\f0 \cf0 Experiment 2. The effects of the hash code.\
+\pard\pardeftab720\ri720
+
+\b0 \cf0 Use a table size of 89, a mod factor of 1 and a load factor of .75. We now want to try different keys and see if that has any effect on collisions. Insert 1000 randomly selected books from the book list (As in our other simulations).  For each test we will use a different key and hashtable.  After each run, record the collision counts, and probe count.\
+\pard\pardeftab720\li720\fi-360\ri720
+\ls5\ilvl1
+\b \cf0 a.	Was there any difference in the collision counts of the insertions? Did one hash code appear to be better or worse than the others? What about searching?\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrs\brdrw10\brdrcf2 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 Key/Hash\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 Collisions\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 Probes\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 ISBN/DEFAULT\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 623\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1557\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 CONTROL/INT\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 614\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1557\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 ISBN/USER\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 606\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1485\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 TITLE/SIMPLEADD\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 686\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1634\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 CALLNO/SDBM\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 551\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1307\cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrs\brdrw10\brdrcf2 \trbrdrb\brdrs\brdrw10\brdrcf2 \trbrdrr\brdrs\brdrw10\brdrcf2 
+\clvertalt \clshdrawnil \clwWidth2088\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx2880
+\clvertalt \clshdrawnil \clwWidth2520\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx5760
+\clvertalt \clshdrawnil \clwWidth2808\clftsWidth3 \clbrdrt\brdrs\brdrw10\brdrcf2 \clbrdrl\brdrs\brdrw10\brdrcf2 \clbrdrb\brdrs\brdrw10\brdrcf2 \clbrdrr\brdrs\brdrw10\brdrcf2 \clpadl100 \clpadr100 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 AUTHOR/ADLER32\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 573\cell 
+\pard\intbl\itap1\pardeftab720\ri720
+\cf0 1405\cell \lastrow\row
+\pard\pardeftab720\li1440\fi-360\ri720
+\ls6\ilvl1
+\b0 \cf0 a.	There seems to be some variability but also a slight decreasing trend. It seems that the ADLER32 and the SDBM algorithms have better performance in both collisions and search comparisons.
+\f1\b \
+\pard\pardeftab720\ri720
+
+\f0 \cf0 Further Analysis:\
+\pard\pardeftab720\ri720
+
+\b0 \cf0 Comparing the performance of the coalesced hash table against the linear hash table which when run with a max load factor of .75, initial size of 89 had 2066 collisions and 2255 search probes, it is clear that the coalesced hash table is faster. The coalesced table had 623 collisions and 1557 probes under the same conditions.
+\f1 \
+
+\f0    \
+\
+\pard\pardeftab720\ri720
+
+\b \cf0 JUnit 4 Tests have been attached and provided with the HW submission. \
+\
+Randomly delete some books during insertion and searching.  Does the removal of buckets make performance any worse?
+\f1 \
+
+\f0 a. 
+\b0 The performance of the chaining hash table when books are randomly deleted during insertion and look ups seem to have a negative impact on performance since removals require search comparisons therefore increasing the search probe counts. 
+\f1 \
+}

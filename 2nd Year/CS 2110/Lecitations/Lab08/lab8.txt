@@ -1,0 +1,73 @@
+Joon Ki Hong
+======================================================================
+CS2110                          Lab #8                     Spring 2012
+======================================================================
+
+This is not a timed lab, so feel free to collaborate with your neighbors, use
+the book, and ask the TAs for explanation if you need help. When you are done,
+please submit your assignment to T-Square to get credit! for participating.
+
+
+1) Assemble the following instructions and tell me what does it do.
+
+a) ADD R4, R5, 10
+	A) The instruction adds the value stored in R5 to 10 and stores the result in R4
+
+b) LDR R2, R3, #0
+	A) The instruction sign extends bits [5:0] to 16 bits and adds the result to R3 and stores that result to R2.
+
+2) Tell me in control signals how to do the following actions on the datapath given in this assignment.
+
+a) Store the PC into DR. that is DR = PC
+	A) GatePC, LDREG
+
+b) Increment the PC. that is PC++
+	A) LDPC, PCMUX
+
+c) Move the PC to the MAR. that is MAR = PC.
+	A) GatePC, LDMAR
+
+3) How does the lea instruction work in the datapath your answer should be in terms of control signals! i.e. LdPC
+	A) ADDR2MUX=[8:0],ADDR1MUX=PC,MARMUX=ADDER,GateMARMUX,LDREG,LDCC
+
+a) (The LEA instruction)
+LEA Reg, Offset
+
+
+[If you are done with the above 3 problems here is one more]
+4) Here I have this simple assembly program. Can you tell me what is in each of the indicated registers after I run it?
+Notes 
+.orig is NOT an instruction it tells the assembler where to put your code.  The convention is to put your program at x3000.
+You may have multiple .orig statements.  
+.end is also NOT an instruction it tells the assembler that this is the end of a block of code.
+.fill tells the assembler to put a certain value at a certain address as an example at memory address x3006 will be the value x3500.
+the ';' Denotes a comment in LC-3.  Each line of code is followed by the address in memory where it is located.
+
+HALT tells the processor to STOP EXECUTION.
+
+
+.orig x3000
+	LEA R0, SIMPLE 		;x3000
+	LD R1, SIMPLE   	;x3001
+	LDR R2, R1, 0  		;x3002
+	LDR R3, R1, 1  		;x3003
+	LDI R4, SIMPLE  	;x3004
+	HALT			;x3005
+
+	SIMPLE .fill x3500	;x3006
+	BLARRG .fill 2110	;x3007
+.end
+
+.orig x3500
+	ITSOVER .fill 9000	;x3500
+	RANDOM .fill 42		;x3501
+.end
+
+R0:
+R1:
+R2:
+R3:
+R4:
+
+Deliverables
+This file with your answers named lab8.txt

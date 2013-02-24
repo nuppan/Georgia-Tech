@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="android.manager.view"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="15" />
+	<uses-permission android:name="android.permission.INTERNET"/>
+	
+	<instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="android.manager.view" />
+    
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="To Do Manager" >
+        <activity 
+            android:screenOrientation="portrait"
+            android:name=".LoginActivity">
+            <intent-filter>
+            	<action android:name="android.intent.action.MAIN" />
+            	<category android:name="android.intent.category.LAUNCHER" />
+      		</intent-filter>
+        </activity>
+        
+        <activity 
+            android:screenOrientation="portrait"
+            android:name=".RegistrationActivity">
+        </activity>
+        <activity 
+            android:screenOrientation="portrait"
+            android:name=".TaskListActivity">
+        </activity>
+        <activity 
+            android:screenOrientation="portrait"
+            android:name=".CreateTaskActivity">
+        </activity>
+        <activity 
+            android:name=".googleMap">
+	    </activity>
+	         
+	      <uses-library android:name="com.google.android.maps" />
+	      
+	      <uses-library android:name="android.test.runner" />
+	    
+	  </application> 
+	  
+    
+</manifest>

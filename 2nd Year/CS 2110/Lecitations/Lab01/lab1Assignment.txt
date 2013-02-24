@@ -1,0 +1,45 @@
+======================================================================
+CS2110                          Lab #1                     Spring 2012
+======================================================================
+
+Objectives: - Practice basic binary concepts
+
+This is not a timed lab, so feel free to collaborate with your neighbors, use
+the book, and ask the TAs for explanation if you need help. When you are done,
+please submit your assignment to T-Square to get credit for participating.
+
+Please record any answers to the following questions in a txt document and submit it
+and the end of lab.
+
+Part I
+------
+Express binary answers with 8 bits. i.e 2 in binary is 00000010
+
+1) 10000111 in decimal is?
+	135
+2) 01110101 in decimal is?
+	117
+3) 26 in binary is?
+	00011010
+4) 155 in binary is?
+	10011011
+5) 01101110 in decimal is?
+	110
+6) 255 in binary is?
+	11111111
+Part II
+-------
+Add the following binary numbers together express your answer in binary and decimal. (Express your binary answer with 8 bits)?
+
+1) 1000011 + 101010
+Binary : 1101101
+Decimal : 109
+
+2) 10010000 + 100111
+Binary : 10110111
+Decimal : 183
+
+
+Deliverables
+------------
+This file saved as lab1.txt

@@ -1,0 +1,30 @@
+ibgnomekbdui offers an API to display a graphical user interface for
+ libgnomekbd operations.
+ .
+ This package contains the shared library.
+Original-Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
+
+Package: xserver-common
+Priority: optional
+Section: x11
+Installed-Size: 1453
+Maintainer: Ubuntu X-SWAT <ubuntu-x@lists.ubuntu.com>
+Architecture: all
+Source: xorg-server
+Version: 2:1.11.4-0ubuntu10.8
+Replaces: xserver-xorg-core (<< 2:1.5.2)
+Depends: x11-common, xkb-data, x11-xkb-utils
+Recommends: xfonts-base, xauth
+Size: 31758
+Description: common files used by various X servers
+ This package provides files necessary for all X.Org based X servers.
+Original-Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+
+Package: libmono-csharp4.0-cil
+Priority: optional
+Section: cli-mono
+Installed-Size: 1174
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: all
+Source: mono
+Version: 2.10.8.1-1ub

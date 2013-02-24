@@ -1,0 +1,22 @@
+equired but would be
+appreciated.
+
+
+A "png_get_copyright" function is available, for convenient use in "about"boxes and the like:
+
+   printf("%s",png_get_copyright(NULL));
+
+Also, the PNG logo (in PNG format, of course) is supplied in the
+files "pngbar.png" and "pngbar.jpg (88x31) and "pngnow.png" (98x31).
+
+Libpng is OSI Certified Open Source Software.  OSI Certified Open Source is acertification mark of the Open Source Initiative.
+
+Glenn Randers-Pehrson
+glennrp at users.sourceforge.net
+December 3, 2004
+
+%% This notice is provided with respect to Libungif - An uncompressed GIF library, which may be included with this software: 
+
+The GIFLIB distribution is Copyright (c) 1997  Eric S. Raymond
+
+Permission is hereby granted, free of charge, to any person obtaining a copyof this software and associated documentation files (the "Software"), to dealin the Software without restriction, including without limitation the rightsto use, copy, modify, merge, publish, d

@@ -1,0 +1,64 @@
+Joon Ki Hong
+======================================================================
+CS2110                          Lab #3                     Spring 2012
+======================================================================
+
+This is not a timed lab, so feel free to collaborate with your neighbors, use
+the book, and ask the TAs for explanation if you need help. When you are done,
+please submit your assignment to T-Square to get "credit" for participating.
+
+Note when doing these labs please only add your answers to this file.
+
+----------------
+Part 1: Bitmasks
+----------------
+
+Write a bitmask and the bitwise operation to perform to do each task!
+
+Bit numbering is as follows (we start at the least significant digit as 0)
+
+1101011101
+9876543210
+
+Example (here is your one and only freebie)
+Q) Set the last bit (bit 0) to a 1
+A) You would use the operator | and mask 0x1
+
+a) Clear all of the bits in a number except for bit 3
+	A) Use the & operator and mask 0x8
+b) Set bits 2, 4, 7, 9 to a 1
+	A) Use the | operator and mask 0x294
+c) Flip bits 0-3.
+	A) Use the ^ operator and mask 0xF
+d) Clear bits 4-7 AND then Set bits 0-2 to 1
+	A) Use the complement of 0 and use the ^ operator and mask it with 0xF0. Use that result and use the & operator to clear bits 4-7. Then use the | operator with the mask 0x7.
+e) Flip bits 10-14 AND then Clear bits 2-5 AND then Set Bits 7-9
+	A) Use the ^ operator with 0x7C00 to flip the bits 10-14. Use the complement of 0 and use the ^ operator and mask it with 0x3C to clear bits 2-5. Then use the | operator with the mask 0x38 
+
+-------------------
+Part 2: Transistors
+-------------------
+Transistors are like tiny electrical switches. Logic gates (like AND gates,
+OR gates, etc.) are composed of transistors in much the same way that the
+functional units you will build later are composed of logic gates. There are
+2 types of MOS (metal-oxide semiconductors) transistors.
+
+Your job is to now build some logic gates
+
+Note: Please follow the convention that your p-type gates are at the top of your circuit connected to power
+and n-type gates are at the bottom.
+
+As long as the FINAL output of your circuit is not blue or red your circuit is correct. 
+You may see some blue wires connecting into your transistors this is fine.
+
+A) Build a nand gate and build a or gate save your answer as lab3Part1.circ
+
+B) Look at the image mystery.png what basic logic gate is this?  Can you give me a truth table for it?
+	
+	XOR logic gate
+	Truth Table
+	0 0 --> 0
+	0 1 --> 1
+	1 0 --> 1
+	1 1 --> 0
+

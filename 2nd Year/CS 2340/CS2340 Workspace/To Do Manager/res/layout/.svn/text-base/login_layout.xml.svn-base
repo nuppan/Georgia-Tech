@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This is how to make a comment.
+LinearLayout(this can be changed into different 
+layouts by changing the name) is at the top and creates
+a layer for everything written in it. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_subLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- This will display text -->
+    <TextView
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content"
+        android:paddingTop="100dip"
+        android:paddingBottom="65dip"
+        android:textSize="30dip"
+        android:layout_gravity="center"
+        android:text="@string/login_title" />
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="65dip"
+        android:text="@string/login_userName"
+        />
+    <!-- This will allow text to be entered -->
+    <EditText 
+        android:id="@+id/login_userNameText"
+   		android:layout_width="200dip"
+   		android:layout_height="wrap_content"
+   		android:inputType="text"
+   		android:layout_gravity="center"/>
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="65dip"
+        android:text="@string/login_passWord"
+        />
+    <EditText 
+        android:id="@+id/login_passWordText"
+        android:password="true"
+   		android:layout_width="200dip"
+   		android:layout_height="wrap_content"
+   		android:inputType="text"
+   		android:layout_gravity="center"/>
+    <!-- This can help with creating space to adjust 
+    elements -->
+    <View 
+        android:layout_width="fill_parent"
+        android:layout_height="30dip"/>
+    <!-- Creates a button for pushing -->
+    <Button
+        android:id="@+id/login_loginButton"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:textSize="12dip"
+        android:layout_gravity="center"
+        android:text="@string/login_login" />
+    <Button
+        android:id="@+id/login_registerButton"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:textSize="12dip"
+        android:layout_gravity="center"
+        android:text="@string/login_register" />
+
+
+</LinearLayout>

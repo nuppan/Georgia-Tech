@@ -1,0 +1,89 @@
+<html>
+<title> CS2200 Fall 2012 Homework 5</title>
+
+<body bgcolor="white">
+
+<h1>
+<table>
+<tr>
+<td><h1>CS2200 Intro to Systems and Networks<br>Homework 5 -
+Networking<br>Fall 2012</h1></td>
+</tr>
+</table>
+</h1>
+
+<h2>Part I: The Internet Protocol Stack</h2>
+
+<strong>A.</strong><em>[14 points]</em> Describe the purpose
+of each layer in the internet protocol stack.
+
+<h2>Part II: Basic Networking Concepts</h2>
+
+<strong>A.</strong> <em>[10 points]</em> Assume that packets have a
+    header that is 16 bytes long and a payload of 32 bytes. If you wish
+    to send a message that is 1024 bytes long, how many packets will
+    be required? How many bytes in total will need to be sent?
+
+  <br>
+  <br>
+
+<strong>B.</strong> <em>[10 points]</em> Given these parameters:
+    <table>
+        <tr>
+            <td>wire bandwidth
+            <td>15Mbps  (15 x 10^7 bits per second), full-duplex
+        <tr>
+            <td>time-of-flight
+            <td>25ms    (25 x 10^-3 seconds)
+        <tr>
+            <td>sender overhead
+            <td>200us   (200 x 10^-6 seconds)
+        <tr>
+            <td>receiver overhead
+            <td>200us   (200 x 10^-6 seconds)
+    </table>
+    <br>
+    We are sending a 10000-bit message.  What is the observed throughput?  
+	Hint: User the equations on Page 690 of Chapter 13 and follow the worked out examples that use these equations.)
+
+<h2>Part III:  Short Answer Questions</h2>
+
+<b>(Part A, 10 Points)</b> 
+The transport layer usually handles cases where
+packets arrive out of order.  What additional mechanism would our protocol
+require in order to handle out-of-order packets?  (Your answer should be
+approximately two words long).
+<br><br>
+
+<b>(Part B, 5 Points)</b> ntohl() and htonl() are two UNIX C functions.
+Briefly describe what they do and why they are needed when sending numbers
+over a mixed network.<BR><BR>
+
+<b>(Part C, 5 Points)</b> For each of the following, specify whether
+it is big-endian or little-endian:
+<ul>
+  <li>Linux (x86)
+  <li>SPARC
+  <li>Windows (x86)
+  <li>Java Virtual Machine
+  <li>Network Order
+</ul>
+
+<h2>Part IV: Networking Hardware</h2>
+
+<b>A.</b><em>[12 points]</em> Describe the function of each
+of the following devices and the layer at which they operate:
+NIC, Hub, Repeater, Bridge, Switch, Router
+
+<h2>Part V: The MAC layer</h2>
+
+<b>A.</b><em>[12 points]</em> Explain how the Ethernet protocol works<br />
+<br />
+<b>B.</b><em>[12 points]</em> Explain the difference between CSMA/CD and CSMA/CA.  Why is the
+latter used in some circumstances?<br />
+<br />
+<b>C.</b><em>[10 points]</em>) Define RTS and CTS and explain their use in the MAC layer.
+
+
+</body>
+</html>

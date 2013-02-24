@@ -1,0 +1,28 @@
+##I worked on this assignment alone and only using the resources on the CS 1301 class website
+##Joon Ki Hong, 902767001, jhong70@gatech.edu, CS1301 A03
+
+from myro import *
+myWin = GraphWin("Joon's FACE",300,300)
+head = Oval(Point(80,50),Point(220,250))
+head.draw(myWin)
+facecolor = color_rgb(238,154,73)
+head.setFill(facecolor)
+eye1 = Circle(Point(120,130),5)
+eye1.draw(myWin)
+brown = color_rgb(139,76,57)
+eye1.setFill(brown)
+eye2 = Circle(Point(180,130),5)
+eye2.draw(myWin)
+eye2.setFill(brown)
+brow2 = Line(Point(160,120),Point(200,120))
+brow2.draw(myWin)
+brow1 = Line(Point(135,135),Point(105,100))
+brow1.draw(myWin)
+nosevert = Line(Point(150,150),Point(145,170))
+nosevert.draw(myWin)
+nosehor = Line(Point(145,170),Point(150,175))
+nosehor.draw(myWin)
+mouth1 = Line(Point(120,200),Point(130,210))
+mouth1.draw(myWin)
+mouth2 = Line(Point(130,210),Point(170,205))
+mouth2.draw(myWin)

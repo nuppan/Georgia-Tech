@@ -1,0 +1,99 @@
+CS 2200 Summer 2012
+Homework 5
+Joon Ki Hong
+
+1. 
+	a. The application layer is responsible for supporting network based applications by using
+	various protocols including HTTP, SMTP, FTP and more. The role of these protocols is to
+	provide a common language for application level entities.
+	b. The transport layer is responsible for handling the semantics required to ferry the
+	message across the network. It can utilize various protocols which include TCP, and 
+	UDP. It also deals with breaking an application layer message into packets and using 
+	the strict rules of its respective protocol to ferry the message across the net.
+	c. The network layer is responsible for routing the packet from source to destination.
+	Using various routing algorithms, tables, and the destination address for a given 
+	packet, the network layer can determine what the next hop should be for a packet. It 
+	may also deal with fragmentation and reassembly of a message as well as routing, forwarding,
+	and providing a service model for the transport layer.
+	d. The link layer is responsible handling the way a message is sent across the shared
+	network through the physical medium. Such protocols in use are ethernet, token ring, 
+	and 802.11. A message may traverse through varieties of network layer protocols in which
+	the network layer for that particle node/router should be able to handle.
+	e. The physical layer is responsible for physically moving the bits/data from one node
+	to the next. It concerns the mechanical and electrical details of the medium used for
+	transmission. 
+	
+
+=========
+2A.
+	a. 32 packets
+	b. 1536 bytes
+
+2B. a. S = processing delay at sender = 200x10^-6 seconds
+	   Tw = message size/wire bandwidth = 10000 bits / 15x10^7 bits/sec
+	   Tf = time of flight = 25x10^-3 seconds
+	   R = processing delay at receiver = 200x10^-6 seconds
+	   time for transmission = S+Tw+Tf+R = 0.02547 seconds
+	   Throughput = message size / time for transmission  = 10000 bits / 0.02547 seconds
+	    = 392670.1571 bits/sec -> rounded 392671 bits/sec
+
+=========
+3A. sequence numbers
+
+3B. The networking standard for the representation of data on the network was chosen to be
+big-endian. What nthol() does is convert the network byte order (big endian) to the host 
+byte order (little or big endian). htonl() converts the host byte order to the network byte
+order. nthol is used when receiving data and htonl is used when sending data. These methods
+are essential because various machines that are connected to the network may have different
+ways of representing data (little or big endian). 
+
+3C.
+Linux: Little
+SPARC: Big
+Windows: Little 
+Java: Big
+Network: Big
+
+=========
+4.
+Repeater: A repeater is a generic name for an electrical device that boosts the energy level of bits on an incoming connection and sends it out on an outgoing connection.  corresponds to layer 1 (physical).
+Hub: Ethernet in a box, used to construct complex networks. corresponds to layer 1 (physical).
+hubs are essentially multi-port repeaters.
+NIC: Network Interface Card; interfaces a computer to the LAN; corresponds to layer 2 (data link) of the OSI model.
+Bridge: Connects independent collision domains, isolating them from one another; typically 2-4 ports; uses MAC addresses to direct the message on an incoming port to an outgoing port; corresponds to layer 2 (data link)
+Switch: Switch Similar functionality to a bridge but supports several ports. Provides expanded capabilities for dynamically configuring and grouping computers connected to the switch fabric into VLANs; corresponds to layer 2 (data link)
+Router: A router is similar to a host on a LAN with the difference that it understands IP addresses. Hosts
+that wish to communicate through the internet send packets using the router's MAC address with the payload
+being the actual header for the message to send. The router corresponds to the (network) layer.
+
+=========
+5A.
+Ethernet protocol controls how computers on a network communicate. They are rules that 
+regulate certain network characteristics. The characteristics are how the computers access
+the network, how individual computers can be configured in the network (topology), what 
+kind of cables can be used, and how fast data can be transferred. The protocol deals with
+arbitrating among units competing to use the medium simultaneously to deal with the twin
+problems of large distances and arbitrary number of units.
+
+5B.
+CSMA/CD (carrier sense multiple access/collision detection) CD (collision detection) 
+defines what happens when two devices sense a clear channel, then attempt to transmit at 
+the same time. A collision occurs, and both devices stop transmission, wait for a random 
+amount of time, then retransmit.
+
+CSMA/CA (carrier sense multiple access/collision avoidance) In CA (collision avoidance), 
+collisions are avoided because each node signals its intent to transmit before actually 
+doing so. The latter is used This in situations where the stations cannot determine if 
+there was a collision on the medium (such as wireless networks).
+
+5C.
+RTS and CTS are control packets used in the CSMA/CA protocol to achieve collision 
+avoidance. RTS stands for Request To Send (RTS), and CTS stands for Clear To Send (CTS). 
+The way the protocol works is the following: One way of avoiding collisions is for the 
+source to explicitly get permission to send by sending a short Request To Send (RTS) 
+control packet on the medium to the desired destination. The destination (assuming that 
+this RTS control packet successfully reaches the destination without any interference) 
+responds with a Clear To Send (CTS) control packet. Upon receiving CTS, the source then 
+sends the frame to the destination. All the nodes in the LAN hear the RTS and/or the CTS 
+control packets. Hence, they themselves will not try to send an RTS packet until the data 
+transmission is complete thus ensuring that there will be no collisions.

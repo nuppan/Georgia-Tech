@@ -1,0 +1,89 @@
+======================================================================
+CS2110                          Lab #7                     Spring 2012
+======================================================================
+
+This is not a timed lab, so feel free to collaborate with your neighbors, use
+the book, and ask the TAs for explanation if you need help. When you are done,
+please submit your assignment to T-Square to get "credit" for participating.
+
+Note when doing these labs please only add your answers to this file.
+
+
+Problem 1 (Easy)
+---------
+Answer the following.
+
+So I have three LEDS red, green, and blue. And I want the circuit to behave as follows.
+
+1) None of the LEDS are turned on
+2) The red LED is the only led that is on
+3) The green LED is the only led that is on
+4) The blue LED is the only led that is on
+5) All of the LEDs are turned on
+
+So the leds should go
+None On -> Red On -> Green On -> Blue On -> Red On, Green On, Blue On -> Back to None On.
+
+Note that there are no inputs to this state machine, the transitions automatically happen after one clock cycle.
+And there is only 3 output wires for this state machine Red, Green, and Blue.
+Please note that there are always two implied inputs to the state machine CLK and RESET. Do not include these signals in your state diagram.
+
+1) How many states will you need for this state machine?
+
+4) Now draw a state machine diagram for this circuit I suggest working with someone near you and getting a TA to check it over once you are done.
+You can do this on paper or in paint or something. (You don't have to turn this in for this lab assignment)
+
+5) Now take the state machine diagram you created and make it into a logisim circuit name it lab7Part1.circ
+
+
+Problem 2 (Medium)
+---------
+So I then showed my circuit to Bill and he was not too happy with it since the LEDS flash all of the time!
+Bill has told me that I should add an on/off button to my circuit to turn the flashing LEDs on and off.
+
+Requirements
+1) The machine starts off with the lights turned off
+2) When I PRESS AND RELEASE the On/Off button the lights should behave as like in previous problem
+3) When I PRESS AND RELEASE the button WHEN THE LIGHTS ARE ALL ON state the lights should turn off
+4) Afterward if I PRESS AND RELEASE the button again it should turn the lights on again.
+
+1) How many states will you need for this state machine (Should be more than problem 1)?
+2) How many inputs will this circuit have?
+3) How many outputs will you now have to this state machine?
+Note: Make sure that when I press the button that the machine doesn't turn on/off very rapidly! (Hint: dummy states)
+
+4) Now draw a state machine diagram for this circuit I suggest working with someone near you and getting a TA to check it over once you are done.
+(You don't have to turn this in for this lab assignment)
+
+5) Implement this state machine as a circuit. Save it as lab7Part2.circ
+(Note you should not use the Kmap style of building a state machine circuit as you have to do in the homework.
+You should build this using the onehot, that is, one bit per state way of doing this as bill discussed in class).
+
+However if you want a challenge this problem will be a 5 variable kmap.
+
+Problem 3 (Hard)
+---------
+This system has three inputs as buttons A, B, and C and an output which is a single LED.  
+
+Requirements
+1) The circuit starts off with the LED turned off.
+2) When button A is pressed then the LED should turn on and stay on even after A is released.
+3) When button B is pressed the LED should BLINK repeatedly (THAT is one clock cycle it is on the next it is off) even after B is released.
+4) When button C is pressed the LED should turn off and stay off even after C is released.
+
+1) Draw a state machine diagram for this circuit.  This one may be a bit tricky!
+
+2) How many states will you need for this state machine?
+3) How many inputs?
+4) How many outputs?
+
+5) Implement this state machine as a circuit. Save it as lab7Part3.circ
+(Note like the above problem you should not use the Kmap style of building a state machine circuit as you have to do in the homework.
+You should build this using the onehot, that is, one bit per state way of doing this as bill discussed in class).
+
+Deliverables
+------------
+This file named lab7.txt
+lab7Part1.circ
+lab7Part2.circ
+lab7Part3.circ

@@ -1,0 +1,93 @@
+Joon Ki Hong
+======================================================================
+CS2110                          Lab #4                     Spring 2012
+======================================================================
+
+This is not a timed lab, so feel free to collaborate with your neighbors, use
+the book, and ask the TAs for explanation if you need help. When you are done,
+please submit your assignment to T-Square to get "credit" for participating.
+
+Note when doing these labs please only add your answers to this file.
+
+-------------------
+Part 1: Transistors
+-------------------
+
+Your job is to now build some logic gates
+
+Note: Please follow the convention that your p-type gates are at the top of your circuit connected to power
+and n-type gates are at the bottom.
+
+As long as the FINAL output of your circuit is not blue or red your circuit is correct. 
+You may see some blue wires connecting into your transistors this is fine.
+
+A) Build a 3 input nand gate save your answer as lab4Part1.circ
+
+
+Hints:  First draw a truth table then make sure that POWER is connected to the output when the output is 1
+and GROUP is connected to the output when the output is 0.
+
+
+======================================
+Part 2: Decoders/Encoders/Multiplexors
+======================================
+(Save your answer to this part as lab4Part2.circ)
+
+a) Two-input decoder.
+   * How many outputs does this decoder have?
+	A) 4
+   * What is the relationship between the number of inputs and the number of outputs of a decoder?
+	A) n inputs = 2^n outputs
+   * Make a truth table for the decoder.
+	A | B |
+	1 | 1 | 1000
+	1 | 0 | 0010
+	0 | 0 | 0001
+	0 | 1 | 0100
+   * Implement the decoder as a circuit in logisim.
+
+b) Four-input encoder.  
+
+An encoder is the opposite of a decoder.  If you take the outputs to a decoder and feed them into an encoder you should get whatever input you sent into the decoder.  That is ENCODER(DECODER(x)) == x.
+   * How many inputs does this encoder have?
+	A) 4
+   * What is the relationship between the number of inputs and the number of outputs?
+	A) n inputs = log(base 2)n outputs
+   * What can break an encoder?
+	A) For a 4 input decoder, there are more than 4 possible bit strings of length 4. Because of this there
+	is more than one way to output the same bit string of length 2. This may cause problems if someone 
+	assigns more than (in this case) 4 bit string combinations to mean something and uses the encoder.
+   * Does a decoder have this problem?
+	A) No because all combinations are accounted for.
+   * Make a truth table for the encoder. (Note some combinations in the truth table you DO NOT CARE about so don't include them in the table).
+	A | B | C | D | 
+	1 | 0 | 0 | 0 | 11
+	0 | 1 | 0 | 0 | 01
+	0 | 0 | 1 | 0 | 10
+	0 | 0 | 0 | 1 | 00
+   * Implement the encoder as a circuit in logisim.
+
+c) Make a mux with three select lines.
+   * How many inputs does this mux have?
+	A) Excluding the select lines, 8. Including them, 11.
+   * How many outputs does this mux have?
+	A) 1
+   * What is the relationship between the number of inputs and select lines for a mux?
+	A) There are 2^n inputs and n select lines for a mux.
+   * Make a truth table for the mux.
+	S1| S2| S3| 
+	0 | 0 | 0 | A
+	0 | 0 | 1 | B
+	0 | 1 | 1 | C
+	1 | 1 | 1 | D
+	1 | 1 | 0 | E
+	1 | 0 | 0 | F
+	1 | 0 | 1 | G
+	0 | 1 | 0 | H
+   * Implement the mux as a circuit in logisim.
+
+
+Deliverables
+This file with your answers in it named lab4.txt
+lab4Part1.circ
+lab4Part2.circ

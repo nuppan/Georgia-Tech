@@ -1,0 +1,38 @@
+Data Types
+	Const
+	Uniform
+	Attribute
+	---------
+	Varying
+
+
+
+Fragment builtins
+
+Input
+	gl_Color
+	
+Output
+
+	gl_FragColor
+	*gl_Depth
+	*gl_FragData[]
+	
+Vertex builtins
+
+Input
+	gl_Vertex        (Attri)
+	gl_MVP           (Uniform)
+	gl_Color         (Attri)
+	gl_Normal        (Attri)
+	gl_MultTexCoord0 (Attri)
+	
+Output
+	gl_FrontColor (varying)
+	gl_Position   (varying)
+	
+	
+	
+xyzw
+rgba
+stpq

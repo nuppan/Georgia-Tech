@@ -1,0 +1,95 @@
+Books and More Books
+
+The Library of Congress (LC) contains extensive collections of books published all over the world.  Scholars need to find books and 
+use them. The library needs to ensure they are returned to the shelves.  This involves a lot of data manipulation and searching.
+
+Recall from class that hashtables can in theory provide us O(1) search access IF we have a good table size and a good hash function. 
+This homework will let you experiment with both.
+
+We have provided a prewritten Java file for you named BookList.java and a data file named books1.txt.  
+The data file is in Library of Congress text format.  The BookList class will allow you to read in and store books in an ArrayList.  
+The books are unordered.  BookList does not contain a bullet-proof parser.  It is designed to read the books file in the correct format.
+Please do not edit the file books1.txt.
+
+You must do the following tasks:
+
+Step 1.  
+Go to Book.java and fill in the following additional instance methods:
+int hashControl() - returns the control number as an integer
+int hashISBN() - make up your own algorithm to hash this - use your imagination
+int hashTitle() - return the sum of the ascii values of the characters in the title
+int hashAuthor() - Use the Adler-32 algorithm. First calculate A = (1 + charAt(0) + charAt(1)...) % 65535
+                 then calculate B = length()*charAt(0) + (length()-1)*charAt(1) + ...) % 65535
+                 then return A + (B << 16);
+int hashCall() - use the sdbm algorithm below
+      hash = 0;
+      for (int i = 0; i < callno.length() ; i++) {
+           hash = callno.charAt(i) + (hash << 6) + (hash << 16) - hash;
+      }
+      return hash;
+
+Step 2.
+Run the Simulator class provided.  This uses the provided instrumented hash table to look at the effects of various parameters
+on a hash table that uses linear probing.  This experiment uses the ISBN and the Java default hash algorithm for strings.
+
+Step 3.
+Using the IHashtable interface provided, implement a Hashtable class that uses chaining.  The constructor for the 
+hashtable should take 2 parameters: the number of Buckets in the initial table (the capacity) and the maximum load factor to use to determine 
+when to regrow the table.  Be sure to instrument your hashtable to collect information on collisions and regrow count (how 
+many times the table was grown).  Be sure to set the regrow factor correctly for the experiments.  
+
+Step 4.
+Modify the Simulator class to add a method similar to doOneExperiment that runs tests on your chained hash table.
+
+Experiment 1.  The effects of size.  
+A general rule of thumb that most people espouse is that the table size should always be prime.  This is not always a universally 
+held idea.  We will keep a constant key (the default hashCode that you implemented above) and a load 
+factor of 0.75.  Insert 1000 randomly selected books (some may be duplicates).  Search for 1000 books (some may be duplicates, 
+some may not be in the table).
+
+Use the following size, regrow modifier and load factors:
+
+100  0   .75
+100  0   .90
+100  0   .50
+89  1   .75
+89  1   .90
+89  1   .50
+
+Analysis: Does the load factor or size seem to have any influence on the collisions? If not why not, if so why do you think it is so?  
+How about searchs?  What was the average search count?  How close was your hash table to O(1) lookups?
+
+Experiment 2.  The effects of the hash code.
+Use a table size of 89, a mod factor of 1 and a load factor of .75.
+We now want to try different keys and see if that has any effect on collisions. Insert 1000 randomly selected books from the book list 
+(As in our other simulations).  For each test we will use a different key and hashtable.  After each run, record the collision counts, 
+and probe count.
+
+a.  key = isbn           hash = DEFAULT
+b.  key = control        hash = INTEGER
+c.  key = isbn           hash = USER
+d.  key = title          hash = SIMPLEADD
+e.  key = callno         hash = SDBM
+f.  key = author         hash = ADLER32
+
+Analysis: Was there any difference in the collision counts of the insertions?  Did one hash code appear to be better or worse 
+than the others. How about for searching?
+
+
+EXTRA CREDIT (30 Points)
+Implement a Coalesed Hash Table and repeat the experiments.  Was this technique any better/worse than linear probing?
+
+EXTRA CREDIT (10 Points)
+Randomly delete some books during insertion and searching.  Does the removal of buckets make performance any worse?
+
+EXTRA CREDIT (10 Points)
+Write your own JUnit tests to ensure that your hashtable is working correctly.
+
+TURN IN:
+All code files including the ones we provide.
+A .txt file containing your analysis (anwers to the questions above).
+Be sure and note in the .txt file any of the extra credit that you attempted.
+
+As always, ensure your code is properly formatted and javadoc'd.  Be sure that any noncompiling code is commented out.
+
+                 

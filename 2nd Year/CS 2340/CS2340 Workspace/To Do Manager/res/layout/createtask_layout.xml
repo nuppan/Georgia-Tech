@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:isScrollContainer="true">"
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="30dip"
+        android:paddingTop="20dip"
+        android:text="@string/createtask_title"
+        android:textSize="25dip" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="65dip"
+        android:text="@string/createtask_desc" />
+    <EditText
+        android:id="@+id/createtask_taskDescText"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="65dip"
+        android:paddingTop="5dip"
+        android:text="@string/createtask_details" />
+    <EditText
+        android:id="@+id/createtask_taskDetails"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:inputType="text" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="65dip"
+        android:paddingTop="5dip"
+        android:text="@string/createtask_category" />
+    <EditText
+        android:id="@+id/createtask_category"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="65dip"
+        android:paddingTop="5dip"
+        android:text="@string/createtask_location" />
+    <EditText
+        android:id="@+id/createtask_locationText"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:inputType="text" />
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="65dip"
+        android:paddingTop="5dip"
+        android:text="@string/createtask_date" />    
+    <DatePicker
+        android:id="@+id/createtask_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="65dip"
+        android:paddingTop="5dip"
+        android:text="@string/createtask_time" />
+    <TimePicker
+        android:layout_height="0dip"
+        android:layout_gravity="center"
+        android:id="@+id/createtask_time"
+        android:layout_width="match_parent"
+        android:layout_weight="100" />
+
+    <Button
+        android:id="@+id/createtask_createTaskButton"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/createtask_createTask"
+        android:textSize="12dip" />
+
+    <Button
+        android:id="@+id/createtask_cancelTaskButton"
+        android:layout_width="200dip"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/createtask_cancelTask"
+        android:textSize="12dip" />
+
+</LinearLayout>
+</ScrollView>

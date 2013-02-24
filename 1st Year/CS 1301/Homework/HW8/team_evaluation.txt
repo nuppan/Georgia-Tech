@@ -1,0 +1,15 @@
+Our team (Joon Ki Hong, Jonathan Betancourt, and Victoria Arnold) created a movie which had a theme
+of first person shooters. We broke down our project into three section for each member of the team.
+Joon Ki was responsible for the editing code, by organizing our previous HW7 code onto the
+editingCode.py file and additing any additional effects such as the gunfilter, gunfilterflash, SeeingRed, Flash,
+and redFade functions. He also was responsible for editing the audio and video effects by making sure 
+everything was in working order. 
+Jonathan Betancourt was responsible for the performance code. Examples of such code are ForShow, LeftFilm, LeftShow, BackFilm, ForwFilm, BackShow, RightFilm,
+RightShow, StationFilm, and StationShow functions. He was also responsible for setting up meeting times
+based on everyone's schedules and keeping everyone up to date. Victora Arnold was responsible for
+the plot development, plot concepts, ideas for special effects(acting code), and directing/planning out the
+execution of the film along with Jonathan. 
+The breakdown for percentages is provided below:
+Joon Ki Hong: 33%
+Jonathan Betancourt: 34%
+Victoria Arnold: 33%

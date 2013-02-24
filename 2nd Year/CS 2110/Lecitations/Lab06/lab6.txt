@@ -1,0 +1,76 @@
+Joon Ki Hong
+======================================================================
+CS2110                          Lab #6                     Spring 2012
+======================================================================
+
+Objective: To Learn about Memory
+
+This is not a timed lab, so feel free to collaborate with your neighbors, use
+the book, and ask the TAs for explanation if you need help. When you are done,
+please submit your assignment to T-Square to get "credit" for participating.
+
+=====================
+Part 1) KMaps II
+=====================
+
+Given this truth table with don't cares (represented by X) give me the BEST minimization of it as a sum of products.
+
+A B C D | O
+---------
+0 0 0 0 | 0
+0 0 0 1 | X
+0 0 1 0 | 1
+0 0 1 1 | 0
+0 1 0 0 | 0
+0 1 0 1 | X
+0 1 1 0 | 1
+0 1 1 1 | 1
+1 0 0 0 | X
+1 0 0 1 | 1
+1 0 1 0 | 0
+1 0 1 1 | 1
+1 1 0 0 | 0
+1 1 0 1 | 0
+1 1 1 0 | 1
+1 1 1 1 | X
+
+	A) X = BC + A'B'CD' + AB'D
+
+=====================
+Part 2) Memory
+=====================
+1)
+a) What is addressibility?
+	A) Having a certain number of bits of addressability means that you can have that many bits in each memory location.
+
+b) What is address space?
+	A) Address space is the amount of memory allocated for all possible addresses
+
+2) A memory has 4 address wires and each memory address is able to store 8 bits meaning the word size is 8.
+
+What is the addressability of this memory?
+	A) 8 bits
+
+What is the address space of this memory?
+	A) 16
+
+How much data (in bytes) is this memory able to store?
+	16 bytes
+3) Make a memory in logisim with the following parameters
+
+addressability is 2
+address space is 8
+
+4) using this memory make a memory that has these parameters
+
+addressability is 4
+address space is 8
+
+save your answers in a .circ file named lab6Part2.circ
+
+------------
+Deliverables
+------------
+
+This file named lab6.txt
+lab6Part2.circ

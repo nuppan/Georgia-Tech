@@ -1,0 +1,8 @@
+Word frequencies:
+alice’s: 1
+cat: 2
+hated: 1
+alice: 1
+but: 1
+alice,: 1
+Longest sentence: "Alice’s cat hated alice but alice, who was just happy to have a cat at all, didn’t mind.."

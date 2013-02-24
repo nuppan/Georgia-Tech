@@ -1,0 +1,486 @@
+<html>
+
+<head>
+<title>CS 2200 Fall 2012 Homework 4</title>
+</head>
+
+<body>
+
+  <h1>CS 2200 Intro to Systems and Networks<br />
+  Homework 4<br />
+  Fall 2012</h1>
+<hr />
+<p>This assignment covers caching and threads. The last problem is a programming
+assignment that serves as a warm-up to Project 4. </p>
+
+<p><strong>Problems</strong> </p>
+
+<ul>
+ <li>Memory Access</li>
+ <li><a href="#problem1">Cache Simulation</a></li>
+ <li><a href="#problem2">Cache Organization</a></li>
+ <li><a href="#problem3">Cache Timing</a></li>
+ <li><a href="#problem4">Producer-Consumer(Threads)</a></li>
+ <li><a href="#problem5">Linux Scheduler</a></li>
+</ul>
+
+<p><strong>Files:</strong></p>
+
+<ul>
+ <li><a href="hw4.html">hw4.html</a></li>
+ <li><a href="hw4.c">hw4.c</a></li>
+ <li><a href="Makefile">Makefile</a></li>
+ <li><a href="shortlist">shortlist</a></li>
+ <li><a href="longlist">longlist</a></li>
+</ul>
+
+<p><strong>Help for using pthreads:</strong></p>
+ <ul>
+  <li><code>man -k pthread</code> on <em>turku</em> lists all the
+      pthread man page entries. Of interest to you, will be <code>
+      man pthread_mutex_init</code> and <code>man pthread_cond_init</code>.</li>
+  <li><a href="http://www.llnl.gov/computing/tutorials/pthreads/">
+      http://www.llnl.gov/computing/tutorials/pthreads/</a></li>
+  <li><a href="http://www.humanfactor.com/pthreads/pthread-tutorials.html">
+      http://www.humanfactor.com/pthreads/pthread-tutorials.html</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Pthreads">
+      http://en.wikipedia.org/wiki/Pthreads</a></li>
+ </ul>
+
+<h2>Problem 0: Memory Access</h2>
+<p><strong>A.</strong>
+<em>[11 points]</em> For this question, we will be using an architecture with
+the following attributes: </p>
+
+<ul>
+ <li>18-bit virtual address</li>
+ <li>16-bit physical address</li>
+ <li>8-entry, fully-associative TLB</li>
+ <li>150 us (10^-6 s) TLB access time</li>
+ <li>5 ms (10^-3 s) memory access time</li>
+</ul>
+
+<p>The TLB, a partial page table, a few virtual addresses are shown below.
+Use this information to answer questions i through iv. </p>
+
+<pre>
+TLB:
+
+/------------------------------------------\
+
+| Valid | Dirty | Page         | Frame     |
+
+|-------|-------|--------------|-----------|
+
+|   0   |   0   | 00 0000 0000 | 0001 0000 |
+
+|   0   |   0   | 00 0000 0101 | 0000 1110 |
+
+|   0   |   1   | 00 0001 0110 | 0000 0000 |
+
+|   0   |   1   | 00 0001 1011 | 0000 0000 |
+
+|   1   |   0   | 11 1010 0100 | 1000 0100 |
+
+|   1   |   0   | 11 0100 0101 | 0100 0101 |
+
+|   1   |   1   | 10 0010 1010 | 1100 0110 |
+
+|   1   |   0   | 10 0000 1111 | 1000 1001 |
+
+\------------------------------------------/
+
+
+
+Page Table (partial):
+
+/------------------------------------------\
+
+| ADDRESS      | VALID | CONTENTS          |
+
+|--------------|-------|-------------------|
+
+| 00 0000 0000 |   0   | 0001 0000         |
+
+| 00 0000 0001 |   1   | 0011 0011         |
+
+| 00 0000 0010 |   1   | 0000 0000         |
+
+| 00 0000 0011 |   0   | 0010 0100         |
+
+| 00 0000 0100 |   1   | 0001 1000         |
+
+| 00 0000 0101 |   0   | 0000 1110         |
+
+| 00 0000 0110 |   1   | 1100 0011         |
+
+| 00 0000 0111 |   1   | 0101 0110         |
+
+|    ....         ...       ...            |
+
+| 11 1111 1110 |   0   | 1010 0101         |
+
+| 11 1111 1111 |   0   | 1111 1111         |
+
+\------------------------------------------/
+
+
+
+Virtual Addresses:
+
+/----------------------------\
+
+| A | 00 0000 0001 1001 1001 |
+
+| B | 00 0000 0101 0110 0110 |
+
+| C | 11 1111 1111 1111 1111 |
+
+| D | 00 0000 0111 0000 1111 |
+
+| E | 00 0000 0110 1100 0101 |
+
+\----------------------------/
+</pre>
+
+<ol type=i>
+ <li>Which virtual address(es) cause page fault(s)?</li>
+ <li>How many memory accesses in
+     total were required to obtain the contents of virtual address B?</li>
+ <li>What is the total time required to access the contents at virtual
+     address D (i.e. effective access time)?</li>
+ <li>For virtual address A, what physical address is generated?</li>
+</ol>
+
+<p><strong>B.</strong>
+<em>[12 points]</em> Consider the following page-reference string: 3, 1, 4, 5, 3,
+4, 1, 5, 3, 2, 4, 5, 2, 4, 1, 3, 2, 5 </p>
+
+<p>How
+many page faults would occur for the following replacement algorithms, assuming
+4 frames? Remember that all frames are initially empty, so your first unique
+pages will all cost one fault each. Only calculate page faults for the initial sequence shown. You should assume that this pattern repeats
+endlessly (Hint: May be important for the optimal replacement algorithm.) </p>
+
+<ul>
+ <li>LRU replacement</li>
+ <li>FIFO replacement</li>
+ <li>Optimal replacement</li>
+</ul>
+
+<hr />
+
+<h2>Problem 1: Cache Simulation [25 points]</h2>
+<a name="problem1"></a>
+
+<p>Consider the sequence of data references found in hw4_answers.txt made to a cache
+by some program. Each reference is a read of a 4-byte integer value and is
+described by the byte address of that integer. </p>
+
+<p><strong>A.</strong> <em>[10 points]</em> Assuming a 1KB, 16B block,
+direct-mapped cache, initially empty, fill in whether each reference is a hit
+or a miss. Also, fill in the long-term hit rate as a percentage. </p>
+
+<p><strong>B.</strong> <em>[5 points]</em> Suppose the cache is changed to be
+2-way set associative (LRU replacement) but otherwise has same set of
+parameters. Fill in the hits and misses. What is the long-term hit rate
+for the 2-way set-associative cache? </p>
+
+<p><strong>C.</strong> <em>[10 points]</em> Set-associative caches generally
+have better hit rates than direct-mapped caches for a given size. However, it
+is possible to find counter examples. Construct a repeating sequence of references
+such that the 1KB direct cache described in part A achieves a <i>better</i> hit
+rate than the 2-way set-associative cache described in part B. </p>
+
+<h2><a name=problem2>Problem 2: Cache Organization [10 points]</a></h2>
+
+<p><strong>A.</strong> <em>[10 points]</em> What is the total number of bits
+(overhead <strong>and</strong> data) required for this particular cache
+configuration: 1 MB total data, 16-way set associative, 512 Byte blocks. Assume
+a &quot;write-back&quot; write strategy and a &quot;FIFO&quot; replacement
+strategy. Assume a 32-bit, byte-addressed architecture. </p>
+
+<h2><a name=problem3>Problem 3: Cache Timing [25 points]</a></h2>
+
+<p><strong>EMAT = Time for a hit + (Miss rate x Miss penalty)</strong></p>
+
+<p><strong>A.</strong> <em>[10 points]</em> Find the EMAT for a machine with a
+1-ns clock, a miss penalty of 40 clock cycles, a miss rate of 0.05 misses per
+instruction, and a cache access time (including hit detection) of 1 clock
+cycle. Assume that the read and write miss penalties are the same and ignore
+other write stalls. </p>
+
+<p><strong>B.</strong> <em>[5 points]</em> Suppose we can improve the miss rate
+to 0.03 misses per reference by doubling the cache size. This causes the cache
+access time to increase to 2 clock cycles. Using the EMAT as a metric,
+determine if this is a good trade-off. Please show your work. </p>
+
+<p><strong>C.</strong> <em>[5 points]</em> Generally speaking, the CPU cycle time is matched to the cache access time in a pipelined processor.  Let us consider two machines that have identical instruction sets and pipeline structure.   They differ only in the clock speeds of the processor and the cache structure.<p>
+
+Machine A:<br>
+   CPU clock cycle time = 1 ns<br>
+   Cache access time = 1 CPU cycle<br>
+   Cache miss rate = 5%<br>
+   Cache miss penalty = 60 CPU cycles<br><br>
+
+Machine B:<br>
+   CPU Clock cycle time = 2 ns<br>
+   Cache access time = 1 CPU cycle<br>
+   Cache miss rate = 3%<br>
+   Cache miss penalty = 30 CPU cycles<br><br>
+
+Both machines have a CPI of 3 without accounting for memory stalls.  Both incur 1.45 memory references on an average per instruction.<br>
+
+(a) Which processor has a better EMAT?<br>
+
+(b) Is the EMAT sufficient to declare one machine to be better than the other?  Why not?<br>
+
+(c) Which machine is actually better [Hint: Refer to Section 9.9.1 of the textbook] </p>
+
+<p><strong>D.</strong> <em>[5 points]</em>
+Consider the following memory hierarchy:
+ - A 64 entry fully associative TLB
+   split into 2 halves; one-half for user processes
+   and the other half for the kernel.
+   The TLB has an access time of 1 cycle. The hit
+   rate for the TLB is 95%. A miss results in a main memory access
+   to complete the address translation.<br/>
+ - An L1 cache with a 1 cycle access time, and 99% hit rate.<br/>
+ - An L2 cache with a 5 cycle access time, and a 90% hit rate.<br/>
+ - An L3 cache with a 20 cycle access time, and a 80% hit rate.<br/>
+ - A physical memory with a 100 cycle access time.</br>
+
+Compute the effective memory access time (EMAT) for this memory
+hierarchy.
+Note that the page table entry may itself be in the cache.
+
+
+<h2><a name=problem4>Problem 4: Producer-Consumer [40 points]</a></h2>
+
+<p>This problem has you solve the classic &quot;bounded buffer&quot; problem
+with one producer and multiple consumer threads. </p>
+
+<p>The program takes the number of consumers as an argument
+(defaulting to 1) and a sequence of numbers from stdin. We give you a couple of
+test sequences: <a href="shortlist">shortlist</a> and <a href="longlist">longlist</a>.
+For more explanation of how this works, see the comment at the top of <a href="hw4.c">hw4.c</a>
+</p>
+
+<p>The producer thread reads the sequence of numbers and feeds that to the
+consumers. Consumers pick up a number, do some &quot;work&quot; with the
+number, then go back for another number. <br>
+<br>
+The program as provided includes output from the producer and consumers. For
+reference, a working version of the code with a bounded buffer of size 10
+running on <a href="shortlist">shortlist</a> with four consumers produces this
+output (the comments on the right are added): (NOTE: Your output may not match
+what is shown identically due to the randomness of thread scheduling. However,
+your output should show all entries being produced in the correct order and
+consumed in the correct order). </p>
+
+<pre>
+turku% ./hw4 4 &lt; shortlist
+
+main: nconsumers = 4
+
+  consumer 0: starting
+
+  consumer 1: starting
+
+  consumer 2: starting
+
+  consumer 3: starting
+
+  producer: starting
+
+producer: 1
+
+producer: 2
+
+producer: 3
+
+producer: 4
+
+producer: 5
+
+producer: 6
+
+producer: 7
+
+producer: 8
+
+producer: 9
+
+producer: 10
+
+producer: 9
+
+producer: 8
+
+producer: 7
+
+producer: 6
+
+  consumer 0: 1
+
+producer: 5
+
+  consumer 1: 2
+
+producer: 4
+
+  consumer 2: 3
+
+producer: 3
+
+  consumer 3: 4
+
+producer: 2
+
+  consumer 0: 5
+
+producer: 1
+
+  consumer 1: 6
+
+producer: read EOF, sending 4 '-1' numbers
+
+  consumer 2: 7
+
+  consumer 3: 8
+
+  consumer 0: 9
+
+  consumer 1: 10
+
+producer: exiting
+
+  consumer 2: 9
+
+  consumer 3: 8
+
+  consumer 0: 7
+
+  consumer 1: 6
+
+  consumer 2: 5
+
+  consumer 3: 4
+
+  consumer 3: exiting
+
+  consumer 0: 3
+
+  consumer 0: exiting
+
+  consumer 2: 1
+
+  consumer 2: exiting
+
+  consumer 1: 2
+
+  consumer 1: exiting
+</pre>
+
+<p><strong>A.</strong> <em>[40 points]</em> Finish the bounded-buffer code in
+hw4.c, adding synchronization so that the multiple threads can access the
+buffer simultaneously. </p>
+
+<ul>
+ <li>There are really two problems
+     here: managing the bounded buffer and synchronizing it. We suggest to
+     write and test your bounded buffer implementation first before
+     implementing synchronization.</li>
+ <li>Your implementation must not
+     spin-wait. There are several possible strategies. An excellent strategy
+     with pthreads is to use a mutex and condition variables, i.e. using <code>
+     pthread_cond_wait()</code> to wait when
+     the buffer is empty or full. </li>
+</ul>
+
+<p><strong>B.</strong> <em>[0 points]</em> Testing suggestions: </p>
+
+<ul>
+ <li>You should be able to reproduce the output above. </li>
+ <li>Try measuring the execution time with <code>/bin/time</code>.
+     When running with <a href="longlist">longlist</a>, doubling the number of
+     consumers should roughly halve the execution time. What is the minimum
+     possible execution time? </li>
+</ul>
+
+
+<h2><span style='mso-fareast-font-family:"Times New Roman"'><span class=msoIns><ins
+cite="mailto:mamidon" datetime="2012-10-12T23:04"><a name=problem5>Problem 5: Linux Scheduler</a><o:p></o:p></ins></span></span></h2>
+
+<h2><span style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman";
+font-weight:normal;mso-bidi-font-weight:bold'><span class=msoIns><ins
+cite="mailto:mamidon" datetime="2012-10-12T23:04">A. </ins></span><span
+class=msoIns><ins cite="mailto:mamidon" datetime="2012-10-12T23:53">[5 points] </ins></span><span
+class=msoIns><ins cite="mailto:mamidon" datetime="2012-10-12T23:04">Linux CPU
+scheduler is called an <span class=GramE><i style='mso-bidi-font-style:normal'>O(</i></span><i
+style='mso-bidi-font-style:normal'>1) </i>scheduler.<span
+style='mso-spacerun:yes'>&nbsp;&nbsp; </span>Explain why.<o:p></o:p></ins></span></span></h2>
+
+<h2><span style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman";
+font-weight:normal;mso-bidi-font-weight:bold'><span class=msoIns><ins
+cite="mailto:mamidon" datetime="2012-10-12T23:04">B. In the Linux scheduler,
+there is an &#8220;Active&#8221; array and an &#8220;Expired&#8221; array.<span
+style='mso-spacerun:yes'>&nbsp; </span>The two together represent the generic
+notion of a &#8220;ready queue&#8221; of the scheduler.<o:p></o:p></ins></span></span></h2>
+
+<h2><span style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman";
+font-weight:normal;mso-bidi-font-weight:bold'><span class=msoIns><ins
+cite="mailto:mamidon" datetime="2012-10-12T23:04">(<span class=SpellE>i</span>)
+</ins></span><span class=msoIns><ins cite="mailto:mamidon"
+datetime="2012-10-12T23:53">[5 points] </ins></span><span class=msoIns><ins
+cite="mailto:mamidon" datetime="2012-10-12T23:04">What information needs to be
+in each element of the array to make it an <span class=GramE><i
+style='mso-bidi-font-style:normal'>O(</i></span><i style='mso-bidi-font-style:
+normal'>1) </i>scheduler?<o:p></o:p></ins></span></span></h2>
+
+<h2><span style='font-size:12.0pt;mso-fareast-font-family:"Times New Roman";
+font-weight:normal;mso-bidi-font-weight:bold'><span class=msoIns><ins
+cite="mailto:mamidon" datetime="2012-10-12T23:04">(<span class=GramE>ii</span>)
+</ins></span><span class=msoIns><ins cite="mailto:mamidon"
+datetime="2012-10-12T23:54">[2 points apiece] </ins></span><span class=msoIns><ins
+cite="mailto:mamidon" datetime="2012-10-12T23:04">With respect to the two
+arrays, explain what happens upon each of the following events<o:p></o:p></ins></span></span></h2>
+
+<h2 style='text-indent:.5in'><span style='font-size:12.0pt;mso-fareast-font-family:
+"Times New Roman";font-weight:normal;mso-bidi-font-weight:bold'><span
+class=msoIns><ins cite="mailto:mamidon" datetime="2012-10-12T23:04">(a) time-quantum
+expiration for the current task<o:p></o:p></ins></span></span></h2>
+
+<h2 style='text-indent:.5in'><span style='font-size:12.0pt;mso-fareast-font-family:
+"Times New Roman";font-weight:normal;mso-bidi-font-weight:bold'><span
+class=msoIns><ins cite="mailto:mamidon" datetime="2012-10-12T23:04">(b) <span
+class=GramE>current</span> task making an I/O call<o:p></o:p></ins></span></span></h2>
+
+<h2 style='text-indent:.5in'><span style='font-size:12.0pt;mso-fareast-font-family:
+"Times New Roman";font-weight:normal;mso-bidi-font-weight:bold'><span
+class=msoIns><ins cite="mailto:mamidon" datetime="2012-10-12T23:04">(c) <span
+class=GramE>a</span> task rejoining the ready queue upon I/O completion<o:p></o:p></ins></span></span></h2>
+
+<h2 style='text-indent:.5in'><span style='font-size:12.0pt;mso-fareast-font-family:
+"Times New Roman";font-weight:normal;mso-bidi-font-weight:bold'><span
+class=msoIns><ins cite="mailto:mamidon" datetime="2012-10-12T23:04">(d) <span
+class=GramE>there</span> are no more tasks to be run in the Active array<o:p></o:p></ins></span></span></h2>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto !msorm;mso-margin-bottom-alt:
+auto !msorm;margin-left:.5in !msorm;text-indent:-.25in !msorm;mso-list:l2 level1 lfo8 !msorm;
+tab-stops:list .5in !msorm;mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+mso-prop-change:mamidon 20121012T2304'><span style='mso-fareast-font-family:
+"Times New Roman"'><o:p>&nbsp;</o:p></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'><span
+style='mso-fareast-font-family:"Times New Roman"'>
+
+<hr size=2 width="100%" align=center>
+
+</span></div>
+
+
+
+<p><em>End of CS 2200 Fall 2012 Homework 4</em> </p>
+</body>
+</html>

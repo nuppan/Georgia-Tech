@@ -1,0 +1,60 @@
+Part 1. Audacity
+
+1st effect: High pass filter (500hz cutoff & 6db rolloff)
+	- This filter essentially is cutting out any frequencies below and at the 500hz
+	mark by rolling off those frequencies by 6db per octave. The rolloff is really
+	how steep you want to reduce those frequencies. What you get by applying this
+	filter is something that's similar to the original file but with a noticeable 
+	reduction of lower frequencies. If the rolloff was greater, the reduction would
+	be greater.
+	
+2nd effect: The speed increased by 20%
+	- This effect increases the speed of the file by 20%. The reason why the pitch
+	is also increased is because there is effectively less time to play the same
+	number of samples. This means that the frequency increases and thus the pitch 
+	is increased.
+	
+3rd effect: Decreased tempo by 20%
+	- This effect essentially decreases the rate at which the file is played
+	(decreasing the bpm). When the effect is combined with the high pass filter
+	and speed increase at 20%, the pitch remains the same. One possible explanation
+	would be that the file is essentially the file with the first two effects applied
+	but played slower.
+	
+4th effect: Echo
+	- This effect adds an echo-like effect by playing the same source offset by a
+	specified delay. The delay I added in my processed source was 0.25 seconds. 
+	
+5th effect: Tremolo
+	- I added the tremolo effect with the default Audacity settings. The effect
+	added some alternation of amplitude which made it sound like the source was
+	increasing in volume then decreasing the increasing. 
+	
+
+Part 2 - Square Wave Generation
+
+	-The fundamental wave of a square wave is the 1st harmonic sine wave. This wave
+	looks similar to a square wave but isn't an accurate match. If we look at the
+	third harmonic and sum the third to the first harmonic we get something similar 
+	to a square wave. By adding every odd harmonic we achieve greater accuracy. 
+	The general equation is as follows y = sin(x) + sin(3*x)/3 + sin(5*x)/5
+	sin(7*x)/7. In my implementation the fundamental frequency would be 1/2*PI. My square
+	wave has 9 harmonics with a fundamental wave at 100hz. Each harmonic has an odd
+	harmonic frequency (100, 300, 500, 700, 900, 1100, 1300, 1500, 1700).
+	
+Part 3 - JavOICe
+
+ - My fundamental frequency was set at 500hz. This meant that the second harmonic, third,
+ and so on were multiples of 500. What I did was I filled in these multiples so that we
+ hear a continuous tone of these harmonics. Near the 0.5s mark, I eliminated the fundamental
+ and the second harmonic to see if the fundamental somewhat persisted. Observing this 
+ behavior, it did seem to persist even when the fundamental was eliminated in the second
+ half.
+ 
+ 
+Part 4 - Stomper
+- I chose the Sy-sub.stu sample file. It uses two oscillators and one filter. The first
+oscillator seems to be a square wave at a constant 65hz. The second oscillator seems to be
+a saw wave at a constant 130hz. The filter applies a sweep from 10000hz to 0hz. So the
+wave has an initial cutoff of 10000hz and has a nice fade to 0hz.
+

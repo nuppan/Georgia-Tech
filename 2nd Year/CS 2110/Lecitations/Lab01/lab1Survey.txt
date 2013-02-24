@@ -1,0 +1,15 @@
+A small survey more for me:
+
+1) What is your major? 
+	CS Major
+
+2) Are you a CS major? if so mention your two threads.  Its ok if you don't know them yet.
+	Platforms/Devices
+2) What year are you?
+	2nd Year		
+3) What do you expect to learn from this class? Anything you are interested in?
+	Lower level abstraction		
+4) Rate your programming experience 0:bad 10:great?  In addition if you have any projects you are doing outside of your classes mention it here.  You can use this space to impress me if you wish.
+	8 - Undergraduate Research for eStadium to create interactive media for Georgia Tech students during football games.
+5) Give me a fun fact about yourself.
+	I am not a ninja but also asian.

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+       		<TextView
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:text="@string/tasklist_filterDialogText" />
+        	<EditText
+            	android:id="@+id/tasklist_filterEditText"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:inputType="text"/>
+        	<CheckBox 
+        	    android:id="@+id/tasklist_filterDlogCheckComp"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:text="@string/tasklist_chkBoxDialogText">
+        	</CheckBox>
+        	<CheckBox 
+        	    android:id="@+id/tasklist_filterDlogDate"
+        	    android:layout_width="wrap_content"
+        	    android:layout_height="wrap_content"
+        	    android:text="@string/tasklist_chkbxDialogDate">
+        	</CheckBox>
+        	<DatePicker
+       	 		android:id="@+id/tasklist_dialogFilterDate"
+        		android:layout_width="match_parent"
+        		android:layout_height="wrap_content"
+        		android:calendarViewShown="false"/>
+        </LinearLayout>
+    </ScrollView>
+    
+	<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+    	<Button 
+       		android:id="@+id/tasklist_filterDialogButton"
+        	android:layout_width="100dip"
+        	android:layout_height="wrap_content"
+        	android:text="@string/tasklist_filterTask"/>
+    	<Button 
+        	android:id="@+id/tasklist_cancelDialogButton"
+        	android:layout_width="100dip"
+        	android:layout_height="wrap_content"
+        	android:text="@string/tasklist_cancelDialogText"
+        	android:layout_gravity="center"/>
+    </LinearLayout>
+    
+</LinearLayout>

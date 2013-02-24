@@ -1,0 +1,77 @@
+
+Joon Ki Hong
+======================================================================
+CS2110                          Lab #5                       Fall 2011
+======================================================================
+
+This is not a timed lab, so feel free to collaborate with your neighbors, use
+the book, and ask the TAs for explanation if you need help. When you are done,
+please submit your assignment to T-Square to get credit! for participating.
+
+1) Write a minimized boolean expression (as a sum of products) for the following truth table.
+
+A B C | X
+----------
+0 0 0 | 1
+0 0 1 | 1
+0 1 0 | 0
+0 1 1 | 0
+1 0 0 | 1
+1 0 1 | 0
+1 1 0 | 0
+1 1 1 | 1
+
+	A) X = (B'C') + (A'B') + (ABC)
+
+2) Write a minimized boolean expression for the following truth table
+
+A B C D  | X
+------------
+0 0 0 0  | 1 
+0 0 0 1  | 0
+0 0 1 0  | 1
+0 0 1 1  | 0
+0 1 0 0  | 1
+0 1 0 1  | 1
+0 1 1 0  | 0
+0 1 1 1  | 1
+1 0 0 0  | 1
+1 0 0 1  | 0
+1 0 1 0  | 1
+1 0 1 1  | 1
+1 1 0 0  | 1
+1 1 0 1  | 0
+1 1 1 0  | 1
+1 1 1 1  | 1
+
+	A) X = (C'D') + (B'D') + (AC) + (A'BD)
+
+3) Give me a minimized boolean expression for this function.
+
+F(a, b, c) = {1, 2, 5, 7}
+
+	A) X = (ac) + (b'c) + (a'bc')
+
+(This notation means that abc is a 3 bit number and for each number that is in the list of numbers the output will be a 1.
+i.e. a=0, b=1, c=0 will produce a 1 as an output).
+
+4) Give me a minimized boolean expression for this function.
+
+F(a, b, c, d) = {1, 2, 4, 6, 7, 9, 15}
+	A) X = bcd + b'c'd + a'bd' + a'cd'
+
+5) Is this a minimized boolean expression?  If not then give a more minimized boolean expression.
+A'B'C' + A'C' + AB + B
+	
+	A) A'C + B
+
+
+6) Is this a minimized boolean expression?  If not then give a more minimized boolean expression.
+
+ABCD' + A'C' + A'B' + B'C' + A'B'C'D'
+
+	A) A'C' + ABCD' + A'B' + B'C'
+
+Deliverables
+------------
+This file with your answers named lab5.txt

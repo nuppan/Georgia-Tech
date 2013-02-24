@@ -1,0 +1,6 @@
+1) Give the topmost 4 bit input pin a value of 1011, give the other 4 bit input pin a 		value of 0001, and give the 2 bit input pin a value of 10	a) What hexadecimal number is displayed on the register?
+		b1	b) What value is showing on the output pin?
+		112) What happens when you press down the button that was created in step 6?
+	The hexadecimal value in the register becomes 00 as well as the output pin.3) What situations will cause a red wire in logisim?
+	When a circuit has two inputs that are joined without a splitter and directed 		towards an input. This essentially is forcing two values into the input at once 	causing a conflict.4) What situations will cause a orange wire in logisim?
+	An orange wire will typically appear when there's a conflict with incompatible 		widths between an one side of the wire (output) and the other (input). 

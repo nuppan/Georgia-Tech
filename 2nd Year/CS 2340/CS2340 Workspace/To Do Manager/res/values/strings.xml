@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">To Do Manager</string>
+    <string name="login_title">To Do Manager</string>
+    <string name="login_register">Sign Up!</string>
+    <string name="login_userName">Username:</string>
+    <string name="login_passWord">Password:</string>
+    <string name="login_forgotPass">Forgot Password?</string>
+    <string name="login_login">Login</string>
+    <string name="recovery_email">Email Address</string>
+    <string name="registration_title">Create an Account:</string>
+    <string name="registration_userName">Create a username</string>
+    <string name="registration_passWord">Create a password</string>
+    <string name="registration_return">Return</string>
+    <string name="registration_createAccount">Create Account</string>
+    <string name="registration_confirmPassWord">Confirm Password:</string>
+    <string name="createtask_title">Create a to-do task</string>
+    <string name="createtask_desc">Short description:</string>
+    <string name="createtask_details">Details:</string>
+    <string name="createtask_location">Location:</string>
+    <string name="createtask_time">Time:</string>
+    <string name="createtask_createTask">Create Task</string>
+    <string name="createtask_cancelTask">Cancel</string>
+    <string name="tasklist_createTask">Add Task</string>
+    <string name="tasklist_title">To Do List</string>
+    <string name="createtask_date">Due date:</string>
+    <string name="createtask_category">Category:</string>
+    <string name="tasklist_filterTask">Filter</string>
+    <string name="tasklist_mapTask">Map View</string>
+    <string name="tasklist_filterDialogText">Category:</string>
+    <string name="tasklist_cancelDialogText">Cancel</string>
+    <string name="tasklist_chkBoxDialogText">Show uncompleted only</string>
+    <string name="tasklist_chkbxDialogTime">Filter by Date</string><string-array name="contmenu_list">
+        <item >Edit</item>
+        <item >Delete</item>
+        <item >Mark as complete</item>
+    </string-array>
+    <string name="tasklist_chkbxDialogDate">Filter by date</string>
+    
+
+</resources>

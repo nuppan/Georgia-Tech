@@ -1,0 +1,12 @@
+Tasks Finished by 11/30/12
+	- All of Part A except changing the direction in the K direction and the flat/Gourand shading
+
+Tasks Finished by 12/4/12
+	-All of part A except flat/Gourand shading and changing the direction vector for the solid in the Z axis
+	-Implemented part B with morphing between 2 solids (solids 1 and 2) using the Minkowski morph.
+	-Colored all faces / quads 
+		-Green faces are those of solid 1
+		-Red faces are those of solid 2
+		-Blue quads
+	-Did not implement Bezier control morph. Instead we morphed between the 4 solids by morphing between
+	the next two solids once the first set is complete (i.e t>=1).

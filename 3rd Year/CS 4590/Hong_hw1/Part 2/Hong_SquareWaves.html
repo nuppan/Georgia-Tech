@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Square Wave Assignment - Joon Ki Hong</title>
+		<script type="text/javascript">
+			var context;
+			if (typeof AudioContext == "function") {
+            	context = new AudioContext();
+        	} else if (typeof webkitAudioContext == "function") {
+            	context = new webkitAudioContext();
+        	} else {
+            	throw new Error('AudioContext not supported. :(');
+        	}
+			var sine1,sine2,sine3,sine4,sine5,sine6,sine7,sine8,sine9;
+			
+			function playSine1(){
+				if(sine1==null){
+					sine1 = context.createOscillator();
+					sine2 = context.createOscillator();
+					sine3 = context.createOscillator();
+					sine4 = context.createOscillator();
+					sine5 = context.createOscillator();
+					sine6 = context.createOscillator();
+					sine7 = context.createOscillator();
+					sine8 = context.createOscillator();
+					sine9 = context.createOscillator();
+					
+					
+					gain1 = context.createGainNode();
+					gain2 = context.createGainNode();
+					gain3 = context.createGainNode();
+					gain4 = context.createGainNode();
+					gain5 = context.createGainNode();
+					gain6 = context.createGainNode();
+					gain7 = context.createGainNode();
+					gain8 = context.createGainNode();
+					gain9 = context.createGainNode();
+					
+					
+    				sine1.frequency.value = 100;
+    				sine2.frequency.value = 300;
+    				sine3.frequency.value = 500;
+    				sine4.frequency.value = 700;
+    				sine5.frequency.value = 900;
+    				sine6.frequency.value = 1100;
+    				sine7.frequency.value = 1300;
+    				sine8.frequency.value = 1500;
+    				sine9.frequency.value = 1700;
+    				
+    				gain1.gain.value = 1;
+    				gain2.gain.value = 1.0/3;
+    				gain3.gain.value = 1.0/5;
+    				gain4.gain.value = 1.0/7;
+    				gain5.gain.value = 1.0/9;
+    				gain6.gain.value = 1.0/11;
+    				gain7.gain.value = 1.0/13;
+    				gain8.gain.value = 1.0/15;
+    				gain9.gain.value = 1.0/17;
+    				
+    				
+    				sine1.connect(gain1);
+					sine2.connect(gain2);
+					sine3.connect(gain3);
+					sine4.connect(gain4);
+					sine5.connect(gain5);
+					sine6.connect(gain6);
+					sine7.connect(gain7);
+					sine8.connect(gain8);
+					sine9.connect(gain9);
+					
+    				
+    				gain1.connect(context.destination);
+    				gain2.connect(context.destination);
+    				gain3.connect(context.destination);
+    				gain4.connect(context.destination);
+    				gain5.connect(context.destination);
+    				gain6.connect(context.destination);
+    				gain7.connect(context.destination);
+    				gain8.connect(context.destination);
+    				gain9.connect(context.destination);
+    				
+					
+					sine1.start(context.curentTime);
+					sine2.start(context.curentTime);
+					sine3.start(context.curentTime);
+					sine4.start(context.curentTime);
+					sine5.start(context.curentTime);
+					sine6.start(context.curentTime);
+					sine7.start(context.curentTime);
+					sine8.start(context.curentTime);
+					sine9.start(context.curentTime);
+					
+				}
+			}
+			function stopSine1(){
+				sine1.noteOff(context.currentTime);
+				sine2.noteOff(context.currentTime);
+				sine3.noteOff(context.currentTime);
+				sine4.noteOff(context.currentTime);
+				sine5.noteOff(context.currentTime);
+				sine6.noteOff(context.currentTime);
+				sine7.noteOff(context.currentTime);
+				sine8.noteOff(context.currentTime);
+				sine9.noteOff(context.currentTime);
+				
+				sine1 = null;
+				sine2 = null;
+				sine3 = null;
+				sine4 = null;
+				sine5 = null;
+				sine6 = null;
+				sine7 = null;
+				sine8 = null;
+				sine9 = null;
+				
+				
+			}
+	
+		</script>
+	</head>
+
+	<body>
+     <button onClick="playSine1();">Play 1st Harmonic Sine</button>
+     <button onClick="stopSine1();">Stop 1st Harmonic Sine</button>
+     
+    
+	</body>
+    
+</html>

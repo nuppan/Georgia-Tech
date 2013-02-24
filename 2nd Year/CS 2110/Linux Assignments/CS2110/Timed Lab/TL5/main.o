@@ -1,0 +1,35 @@
+bproxy0
+Status: deinstall ok config-files
+Priority: optional
+Section: libs
+Installed-Size: 212
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: i386
+Source: libproxy
+Version: 0.3.1-2ubuntu6
+Config-Version: 0.3.1-2ubuntu6
+Depends: libc6 (>= 2.3.6-6~)
+Suggests: libwebkitgtk-1.0-0 | libmozjs2d
+Description: automatic proxy configuration management library (shared)
+ libproxy is a lightweight library which makes it easy to develop
+ applications proxy-aware with a simple and stable API.
+ .
+ This package contains the shared library.
+Homepage: http://code.google.com/p/libproxy/
+Original-Maintainer: Emilio Pozuelo Monfort <pochu@debian.org>
+
+Package: libproxy1
+Status: install ok installed
+Multi-Arch: same
+Priority: optional
+Section: libs
+Installed-Size: 164
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Architecture: i386
+Source: libproxy
+Version: 0.4.7-0ubuntu4.1
+Depends: libc6 (>= 2.3.6-6~), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.4.0)
+Pre-Depends: multiarch-support
+Description: automatic proxy configuration management library (shared)
+ libproxy is a lightweight library which makes it easy to develop
+ applicat

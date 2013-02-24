@@ -1,0 +1,83 @@
+﻿
+
+
+body {
+	background-color: #CCCCCC;
+	text-align: left;
+	font-family: Arial;
+	
+
+}
+
+
+
+h1.main {
+	font-size: 30pt;
+	
+}
+
+
+h2.main {
+	color: #074e7c;
+	
+}
+
+#mprofpic {
+	margin-left: 10px;
+	margin-top: 10px;
+	float:right;
+	border-style: double;
+	border-color: black;
+	margin-right: 20px;
+	
+}
+
+img.backgroundimg {
+
+	margin-left: 10px;
+	margin-top: 10px;
+	float:right;
+	margin-right: 20px;
+}
+
+#mpagebox {
+	border-style: solid;
+	margin-right: 650px;
+	background-color: #FFFFFF;
+	overflow: auto;
+	width: 800px;
+	height: 550px;
+	
+}
+
+#mpdescription {
+	text-indent: 50px;
+	background-color: white;
+	border-style: double;
+	border-color: #000000;
+	margin-right: 140px;
+	
+}
+
+table.info,td{
+	border-style: solid;
+	border-width: 2px;
+	border-color: #000000;
+}
+
+a.main {
+	color: black;
+}
+a.About {
+	color: #FFCC00;
+	font-family: "Brush Script Std", "AR BERKLEY", "AR BLANCA";
+	font-size: 20pt;
+}
+
+#cpagebox {
+	border-style: solid;
+	background-color: #FFFFFF;
+	overflow: auto;
+	width: 800px;
+	height: 350px;
+}

@@ -1,0 +1,481 @@
+package android.manager.database;
+import java.sql.Date;
+import java.util.ArrayList;
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+ /**
+  * The Database class provides a repository for all user data. Thus far, it has two tables, one handling user
+  * login credentials, and the other handling user task data. The class also contains a private Database helper that implements SQLiteOpenHelper. This class
+  * acts as the middle man between the interface and the tables. It provides a lot of useful features.
+  * @author Joon Ki Hong, Jonathan Betancourt, Griva Patel, Curtis Luckey, Amit Paduvalli
+  *
+  */
+public class Database
+{	
+	
+	//USER TABLE ATTRIBUTES(*Column names)
+	/**
+	 * the unique id for each registered user
+	 */
+    public static final String KEY_ROWID = "_id";
+    /**
+     * the unique user defined name for each user
+     */
+    public static final String KEY_USERNAME= "username";
+    /**
+     * the user defined password for each user
+     */
+    public static final String KEY_PASSWORD = "password";
+    /**
+     * The session key is used to let the TaskListActivity know which user is logged in
+     */
+    public static final String KEY_SESSION = "session"; // This key helps in keeping track of the current user; 1 = current, 0 = not current
+    //END USER TABLE ATTRIBUTES
+    
+    
+    //TASK ATTRIBUTES
+    /**
+     * the id of the user who owns this task
+     */
+    public static final String KEY_ROWID_2 = "_idtask";
+    /**
+     * The username of the owner of this task
+     */
+    public static final String KEY_USERNAME_2= "username_2";
+    /**
+     * A short description of the task
+     */
+    public static final String KEY_DESC = "description";
+    /**
+     * The long description of the task
+     */
+    public static final String KEY_DETAILS = "details";
+    /**
+     * The category of a particular task
+     */
+    public static final String KEY_CATEGORY = "category";
+    /**
+     * The location related to this task
+     */
+    public static final String KEY_LOCATION = "location";
+    /**
+     * The date marker for when this task is set to expire
+     */
+    public static final String KEY_DATE = "date";
+    /**
+     * The time marker for when this task is set to expire
+     */
+    public static final String KEY_TIME = "time";
+    /**
+     * The completed attribute which is dependent on the duedate attribute above
+     */
+    public static final String KEY_COMPLETED = "completed";
+    //END TASK ATTRIBUTES
+
+    
+    //TABLE NAMES(of our two tables)
+    /**
+     * The name of the user table
+     */
+    private static final String USER_TABLE = "users";
+    /**
+     * The name of the task table
+     */
+    private static final String TASK_TABLE = "tasks";
+    
+    //USED FOR LOGS 
+    /**
+     * An arbitrary name for our database to be used for internal logs
+     */
+    private static final String TAG = "DBAdapter";
+    
+    //DATABASE NAME AND VERSION - Not to be edited
+    /**
+     * The name of this database
+     */
+    private static final String DATABASE_NAME = "managerDB";
+    /**
+     * The version of this database (Subject to change as database is upgraded).
+     */
+    private static final int DATABASE_VERSION = 4;
+ 
+    //TABLE CREATION STRINGS
+    //Creation string for users table
+    /**
+     * The raw SQL query used to create the user table
+     */
+    private static final String USER_TABLE_CREATE =
+        "create table users (_id integer primary key autoincrement, "
+        + "username text not null, "
+        + "password text not null, "
+        + "session text not null);";
+    
+    //Creation string for tasks table
+    /**
+     * The raw SQL query used to create the task table
+     */
+    private static final String TASK_TABLE_CREATE =
+            "create table tasks (_idtask integer primary key autoincrement, "
+            + "username_2 text not null, "
+            + "description text not null, "
+            + "details text not null, "
+            + "category text not null, "
+            + "location text not null, "
+            + "date text not null, "
+            + "time text not null, "
+            + "completed text not null);";
+    
+    
+    //REQUIRED OBJECTS/CONTEXT
+    /**
+     * The current context during runtime
+     */
+    private Context context = null; 
+    //Database Adapter
+    /**
+     * A private instance of the DatabaseHelper used to create,upgrade, and retrieve the database.
+     */
+    private DatabaseHelper DBHelper;
+    //Database
+    /**
+     * The SQLite database instance
+     */
+    private SQLiteDatabase db;
+ 
+    /**
+     * The constructor takes in the current Context and creates a new private DatabaseHelper instance passing in the context
+     * @param ctx - The current Context
+     */
+    public Database(Context ctx)
+    {
+        this.context = ctx;
+        DBHelper = new DatabaseHelper(context);
+    }
+       
+    //Database helper class that initializes the database and tables for the first time or upgrade
+    private static class DatabaseHelper extends SQLiteOpenHelper
+    {
+        DatabaseHelper(Context context)
+        {
+        	//Create singular database
+            super(context, DATABASE_NAME, null, DATABASE_VERSION); 
+        }
+ 
+        @Override
+        public void onCreate(SQLiteDatabase db)
+        {
+        	//Create the User Table
+            db.execSQL(USER_TABLE_CREATE);
+            
+            //Create task table
+            db.execSQL(TASK_TABLE_CREATE);
+        }
+ 
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
+        {
+            Log.w(TAG, "Upgrading database from version " + oldVersion
+                    + " to "
+                    + newVersion + ", which will destroy all old data");
+            db.execSQL("DROP TABLE IF EXISTS users");
+            db.execSQL("DROP TABLE IF EXISTS tasks");
+            onCreate(db);
+        }
+    }    
+   
+   /**
+    * The open method retrieves a writable database and throws an SQL exception
+    * if one is not retrievable.
+    * @throws SQLException
+    */
+    public void open() throws SQLException
+    {
+    	//Opens the database
+        db = DBHelper.getWritableDatabase();
+    }
+ 
+    /**
+     * The close method closes out any writable databases that were previously opened.
+     */
+    public void close()
+    {
+    	//Closes the database
+        DBHelper.close();
+    }
+    
+    //USER TABLE METHODS
+    /** This method checks to see if there is a user in the table with the give unsername
+     * @param username The name that's searched for in the user table
+     * @return True if found, False otherwise
+     */
+    public boolean hasUser(String username){
+    	Cursor mCursor = db.rawQuery("SELECT * FROM " + USER_TABLE + " WHERE username=?", new String[]{username});
+        if (mCursor != null) {          
+            if(mCursor.getCount() > 0)
+            {
+                return true;
+            }
+        }
+     return false;
+    }
+    
+    /**
+     * This method adds a new User to the database and sets his session as inactive(0).
+     * @param username The Username desired
+     * @param password The Password desired
+     * @return The row id of the row added
+     */
+    public long addUser(String username, String password)
+    {
+         ContentValues initialValues = new ContentValues();
+         initialValues.put(KEY_USERNAME, username);
+         initialValues.put(KEY_PASSWORD, password);
+         initialValues.put(KEY_SESSION, "0");
+         return db.insert(USER_TABLE, null, initialValues);         
+    }
+    
+    /**The following is an updated version of the original login method, 
+     * accounting for active/inactive sessions. 
+     * @param username The username entered
+     * @param password The password entered
+     * @return True on successful login, and false otherwise
+     * @throws SQLException
+     */
+    public boolean login(String username, String password) throws SQLException
+    {
+        this.resetSession();// Everytime a new login is called, the session keys are reset
+    	Cursor mCursor = db.rawQuery("SELECT * FROM " + USER_TABLE + " WHERE username=? AND password=?", new String[]{username,password});
+        if (mCursor != null) {          
+            if(mCursor.getCount() > 0)
+            {	
+            	ContentValues updatedValues = new ContentValues();
+                updatedValues.put(KEY_SESSION, "1");
+                int tmp = db.update(USER_TABLE, updatedValues, "username=?", new String[]{username});// On successful login session key is made 1
+                return (tmp==1);
+                
+            	               
+            }
+        }
+     return false;
+    }  
+    
+    /**The main purpose of this method is to return the username key corresponding to the active user
+     * to make sure task data is associated with the relevant user.
+     * Can be made public to allow testing in other activities.
+     * @return A string representing the username of the current user
+     */     
+    public String activeUser()
+    {
+    	Cursor actCursor = db.rawQuery("SELECT * FROM " + USER_TABLE + " WHERE session=?", new String[]{"1"});
+        if (actCursor != null) {          
+            if(actCursor.moveToFirst() && actCursor.getCount()==1)// The second part is just an extra measure to ensure that more than two users aren't simultaneously active
+            {	
+            	return actCursor.getString(1);               
+            }
+        }
+     return "";
+    }    
+    
+    /** This method resets all users to be inactive(or have a session key of 0)
+     * Currently being used as a makeshift logout feature
+     */
+    public void resetSession()
+    {	
+    	ContentValues resetValues = new ContentValues();
+    	resetValues.put(KEY_SESSION, "0");
+    	db.update(USER_TABLE, resetValues, null, null);
+    }
+    
+    
+    //END USER TABLE METHODS
+    
+    //TASK TABLE METHODS
+    
+    /**This method allows adding a new task into the task table, while associating it with the current user
+     * 
+     * @param shortdescription A string entered that concisely describes the task
+     * @param details A string representing more details about the task
+     * @param location A string representing the location of the task
+     * @param duedate A string representing the due date of the task
+     * @return The row id of the newly inserted row in the Task table
+     */
+    public long addTask(String shortdescription, String details, String category, String location, String date,String time)
+    {
+         ContentValues initialValues = new ContentValues();
+         initialValues.put(KEY_USERNAME_2, this.activeUser());
+         initialValues.put(KEY_DESC, shortdescription);
+         initialValues.put(KEY_DETAILS, details);
+         initialValues.put(KEY_CATEGORY, category);
+         initialValues.put(KEY_LOCATION, location);
+         initialValues.put(KEY_DATE, date);
+         initialValues.put(KEY_TIME, time);
+         initialValues.put(KEY_COMPLETED,"false");
+         return db.insert(TASK_TABLE, null, initialValues);
+    }
+    
+    /** This method is of immense importance in the TaskListActivity which needs to display a list of all the user's tasks.
+     * @return An array of Strings containing the short descriptions of all of the current user's tasks
+     */         
+    public String[] desclist()
+    {
+    	ArrayList<String> descList = new ArrayList<String>();
+    	Cursor dCursor = db.rawQuery("SELECT * FROM " + TASK_TABLE + " WHERE username_2=?", new String[]{this.activeUser()});
+    	if (dCursor.moveToFirst()){
+    		do {
+    			descList.add(dCursor.getString(2));
+    		} while (dCursor.moveToNext());
+    	}
+    	String[] result = (String[])descList.toArray(new String[descList.size()]);
+    	return result;
+    }
+    
+    /**
+     * This method takes in a string and filters the user's tasks based on category
+     * @param filter filter to compare the tasks to
+     * @param checkUncomplete boolean case that specifies whether to filter for uncompleted items as well
+     * @param date the date to filter by
+     * @return An ArrayList holding String arrays. index 0 holds the descriptions and index 1 holds the unique id's.
+     */
+    public ArrayList<String[]> filter(String filter, boolean checkUncomplete, boolean checkDate, String date)
+    {
+    	ArrayList<String> filtList = new ArrayList<String>();
+    	ArrayList<String> idList = new ArrayList<String>();
+    	Cursor dCursor = db.rawQuery("SELECT * FROM " + TASK_TABLE + " WHERE username_2=?", new String[]{this.activeUser()});
+    	if (dCursor.moveToFirst()){
+    		
+    		
+    		
+    		//Filter by Category
+    		if(filter.trim().length()!=0){
+    			do {
+    				if (dCursor.getString(4).compareToIgnoreCase(filter)==0 && checkUncomplete==false){
+    					//Filter by Date
+    					if (checkDate==true){
+    						Date dateCompare = Date.valueOf(date);
+    						Date taskDate = Date.valueOf(dCursor.getString(6));
+    						//Compare dates
+    						if (taskDate.after(dateCompare)){
+    							filtList.add(dCursor.getString(2));
+    	    					idList.add(dCursor.getString(0));
+    						}
+    					}else{
+    						filtList.add(dCursor.getString(2));
+    						idList.add(dCursor.getString(0));
+    					}
+    				}
+    				else if(dCursor.getString(4).compareToIgnoreCase(filter)==0 && checkUncomplete==true && dCursor.getString(8).compareToIgnoreCase("false")==0){
+    					if (dCursor.getString(8).compareToIgnoreCase("false")==0){
+    						if (checkDate==true){
+        						Date dateCompare = Date.valueOf(date);
+        						Date taskDate = Date.valueOf(dCursor.getString(6));
+        						if (taskDate.after(dateCompare)){
+        							filtList.add(dCursor.getString(2));
+        	    					idList.add(dCursor.getString(0));
+        						}
+        					}else{
+        						filtList.add(dCursor.getString(2));
+        						idList.add(dCursor.getString(0));
+        					}
+    					}
+    				}
+    			} while (dCursor.moveToNext());
+    		}else{
+    			//Don't filter by category
+    			do {
+    				if (checkUncomplete==false){
+    					if (checkDate==true){
+    						Date dateCompare = Date.valueOf(date);
+    						Date taskDate = Date.valueOf(dCursor.getString(6));
+    						if (taskDate.after(dateCompare)){
+    							filtList.add(dCursor.getString(2));
+    	    					idList.add(dCursor.getString(0));
+    						}
+    					}else{
+    						filtList.add(dCursor.getString(2));
+    						idList.add(dCursor.getString(0));
+    					}
+    				}
+    				else if(checkUncomplete==true){
+    					if (dCursor.getString(8).compareToIgnoreCase("false")==0){
+    						if (checkDate==true){
+        						Date dateCompare = Date.valueOf(date);
+        						Date taskDate = Date.valueOf(dCursor.getString(6));
+        						if (taskDate.after(dateCompare)){
+        							filtList.add(dCursor.getString(2));
+        	    					idList.add(dCursor.getString(0));
+        						}
+        					}else{
+        						filtList.add(dCursor.getString(2));
+        						idList.add(dCursor.getString(0));
+        					}
+    					}
+    				}
+    			} while (dCursor.moveToNext());
+    		}
+    	}
+    	String[] finalFiltList = (String[])filtList.toArray(new String[filtList.size()]);
+    	String[] finalidList = (String[])idList.toArray(new String[idList.size()]);
+    	ArrayList<String[]> result = new ArrayList<String[]>();
+    	result.add(finalFiltList);
+    	result.add(finalidList);
+    	return result;
+    }
+    
+    /**
+     * This method sets the complete column of the task with the passed in id to true
+     * @param id the id of the task
+     */
+    public void setComplete(String id){
+    	ContentValues cv = new ContentValues();
+    	cv.put(KEY_COMPLETED, "true");
+    	
+    	String where = "_idtask=?";
+    	String[] value = {id};
+    	db.update(TASK_TABLE, cv, where, value);
+    }
+    
+    /**
+     * This method deletes the specified task from the task table
+     * @param id The id of the task to be deleted
+     */
+    public void delete(String id){
+    	String where = "_idtask=?";
+    	String[] value = {id};
+    	db.delete(TASK_TABLE,where, value);
+    }
+    
+    //Some extra methods used mostly for testing right now
+    
+    public void deleteUser(String username){
+    	String[] value={username};
+    	if(this.hasUser(username)){
+    		db.delete(USER_TABLE,"username=?",value);
+    		db.delete(TASK_TABLE,"username_2=?",value);
+    	}
+    }
+    
+    /** A public method to test the proper functionality of the user table
+     * Can be taken out if required
+     * @return An integer representing the number of active users(The code is working fine if 1 is returned)
+     */   
+	public int temporaryUserCounter(){
+    	Cursor counter = db.rawQuery("SELECT * FROM " + USER_TABLE + " WHERE session=?", new String[]{"1"});
+    	return counter.getCount();
+    }
+    
+	public int taskCounter(String username){
+		if(hasUser(username)){		
+			Cursor counter = db.rawQuery("SELECT * FROM " + TASK_TABLE + " WHERE username_2=?", new String[]{username});
+			return counter.getCount();
+		}
+		else
+			return -1;
+    }
+}
+ 

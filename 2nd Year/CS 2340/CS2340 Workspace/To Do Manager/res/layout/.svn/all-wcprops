@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/111/trunk/To%20Do%20Manager/res/layout
+END
+tasklistfilter_layout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/109/trunk/To%20Do%20Manager/res/layout/tasklistfilter_layout.xml
+END
+createtask_layout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/97/trunk/To%20Do%20Manager/res/layout/createtask_layout.xml
+END
+login_layout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/83/trunk/To%20Do%20Manager/res/layout/login_layout.xml
+END
+registration_layout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/69/trunk/To%20Do%20Manager/res/layout/registration_layout.xml
+END
+google_layout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/111/trunk/To%20Do%20Manager/res/layout/google_layout.xml
+END
+tasklist_layout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/108/trunk/To%20Do%20Manager/res/layout/tasklist_layout.xml
+END
+recovery_layout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/62/trunk/To%20Do%20Manager/res/layout/recovery_layout.xml
+END

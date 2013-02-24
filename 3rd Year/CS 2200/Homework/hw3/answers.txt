@@ -1,0 +1,235 @@
+CS 2200 Fall 2012
+Homework 3
+===================
+Joon Ki Hong
+jhong70
+
+---------
+Problem 1
+---------
+
+~~~~~~
+Part A
+~~~~~~
+There is always a 2 cycle delay because if the branch is taken in either approaches, the
+prediction for the branch is determined in the EX stage of the FSM and the FSM has to 
+fetch for the new instruction according to the PC + Offset. The new PC is determined at 
+the end of the EX cycle so everything currently in the ID/RR and the IF stages need to be 
+flushed/filled with NOPs since they are not the instructions we want to execute.
+
+~~~~~~
+Part B
+~~~~~~
+Branch is not taken:
+(IF cycle) Next instruction is obtained from I-MEM and inserted into FBUF(First Pipeline 
+Register) as well as the incremented PC from the ALU and the opcode. 
+(ID/RR cycle) The values for Rz and Ry are determined using the DPRF and inserted into the
+DBUF. The sign extended PC-OFFSET is also determined and saved into the DBUF. Additionally
+the incremented PC from FBUF also copied over into the DBUF as well as the opcode. At this
+point the instruction being processed in IF is stalled and NOPs will be filled in the
+next cycle.
+(EX cycle)The previously calculated values for Rz and Ry are added using the ALU. The 
+zero detection unit will not output a 1 in this case and the value of PC+offset from the
+second ALU in this stage will not be used in the next cycle. At this point, execution of 
+the stalled instruction in IF will continue in the next cycle.
+
+Execution proceeds as normal
+
+
+Branch is taken:
+(IF cycle) Next instruction is obtained from I-MEM and inserted into FBUF(First Pipeline 
+Register) as well as the incremented PC from the ALU and the opcode. 
+(ID/RR cycle) The values for Rz and Ry are determined using the DPRF and inserted into the
+DBUF. The sign extended PC-OFFSET is also determined and saved into the DBUF. Additionally
+the incremented PC from FBUF also copied over into the DBUF as well as the opcode. At this
+point the instruction being processed in IF is stalled and NOPs will be filled in the
+next cycle.
+(EX cycle)The previously calculated values for Rz and Ry are added using the ALU. The 
+zero detection unit will output a 1 and act as the selection bit for the MUX in IF, which
+in turn will select the PC+offset address to be used in the next cycle. 
+(MEM cycle) The new instruction from the PC+Offset is fetched in IF and the remnant
+instruction that was stalled previously and is now in the ID/RR stage is flushed with 
+a NOP.
+
+Execution proceeds as normal
+
+
+---------
+Problem 2
+---------
+
+~~~~~~
+Part A
+~~~~~~
+ 
+                          Stage
+Cycle     IF      ID      EX      MEM      WB
+-----     --      --      --      ---      --
+  1       LW       ?       ?       ?        ?
+  2       ADD     LW       ?       ?        ?
+  3       SW      ADD     LW       ?        ?
+  4       SW      ADD     NOP     LW        ?
+  5       ADDI    SW      ADD     NOP      LW
+  6       ADDI    SW      NOP     ADD      NOP
+  7       ADDI    SW      NOP     NOP      ADD
+  8       ADDI    SW      NOP     NOP      NOP
+  9       BEQ     ADDI    SW      NOP      NOP
+  10      NOP     BEQ     ADDI    SW       NOP
+  11      NOP     BEQ     NOP     ADDI     SW
+  12      NOP     BEQ     NOP     NOP      ADDI
+  13      NOP     BEQ     NOP     NOP      NOP
+  14      BEQ     NOP     BEQ     NOP      NOP
+  15      NOP     BEQ     NOP     BEQ      NOP
+    
+~~~~~~
+Part B
+~~~~~~
+
+1. 18 clocks / 6 instructions = 3 CPI
+2. 0.072s
+
+~~~~~~
+Part C
+~~~~~~
+
+1. 3
+2. 0
+3. 2
+
+~~~~~~
+Part D
+~~~~~~
+
+loop:           LW      $t0, 0($a0)
+
+                ADD     $t0, $a0, $t0
+
+                SW      $t0, 0($a0)
+
+                ADDI    $a0, $a0, 1
+
+                BEQ     $a1, $a0, done
+
+                BEQ     $zero, $zero, loop
+
+                LW      $t0, 0($a0)
+
+done:           HALT
+
+---------
+Problem 3
+---------
+~~~~~~
+Part A
+~~~~~~
+
+FCFS:
+                         11111111112222222222
+        time:  012345678901234567890123456789
+               ------------------------------
+     P1        RRRRR
+     P2        wwwwwRRRR
+     P3        wwwwwwwwwRRRRRR
+     P4        wwwwwwwwwwwwwwwRRR
+     P5        wwwwwwwwwwwwwwwwwwR
+
+
+SJF:
+                         11111111112222222222
+        time:  012345678901234567890123456789
+               ------------------------------
+  	 P1        wwwwwwwwRRRRR
+     P2        wwwwRRRR
+     P3        wwwwwwwwwwwwwRRRRRR
+     P4        wRRR
+     P5        R
+
+
+Nonpreemptive priority:
+                         11111111112222222222
+        time:  012345678901234567890123456789
+               ------------------------------
+     P1        RRRRR
+     P2        wwwwwwwwwwwwwwwRRRR
+     P3        wwwwwwwwwRRRRRR
+     P4        wwwwwRRR
+     P5        wwwwwwwwR
+
+RR:
+                         11111111112222222222
+        time:  012345678901234567890123456789
+               ------------------------------
+  	 P1        RwwwwRwwwRwwwRwwR
+     P2        wRwwwwRwwwRwwwR
+     P3        wwRwwwwRwwwRwwwRwRR
+     P4        wwwRwwwwRwwwR
+     P5        wwwwR
+
+
+Waiting Times:
+       | FCFS  | SJF   | Priority | RR    |
+       ------------------------------------
+    P1 |   0   |   8   |    0     |  12   |
+    P2 |   5   |   4   |   15     |  11   |
+    P3 |   9   |  13   |    9     |  13   |
+    P4 |  15   |   1   |    5     |  10   |
+    P5 |  18   |   0   |    8     |   4   |
+
+	AVG|   9.4 |  5.2  |    7.4   |  10   |
+
+Turnaround Times:
+       | FCFS  | SJF   | Priority | RR    |
+       ------------------------------------
+    P1 |    5  |   13  |    5     |  17   |
+    P2 |    9  |    8  |   19     |  15   |
+    P3 |   15  |   19  |   15     |  19   |
+    P4 |   18  |    4  |    8     |  13   |
+    P5 |   19  |    1  |    9     |   5   |
+
+
+      
+Scheduler with minimal average waiting time is ____SJF____.
+
+~~~~~~
+Part B
+~~~~~~
+
+4) SJF
+5) FCFS
+6) Shortest Job First, non-preemptive priority
+7) RR
+
+---------
+Problem 4
+---------
+
+First-Fit:
+        370 220 550 120 510
+        put 200 into 370
+        170 220 550 120 510
+		continue here!
+Best-Fit:
+
+
+Worst-Fit:
+
+
+
+Most efficient is _____________.
+
+---------
+Problem 5
+---------
+
+~~~~~~
+Part B
+~~~~~~
+If any of the EX, MEM, or WB stages sees that the RP bit is set for a register for which it
+is generating a new value then it supplies the generated value to the ID/RR stage.
+
+~~~~~~
+Part C
+~~~~~~ 
+It will stall the instruction at ID/RR until the data is sent back with the busy bit set
+back to 0. If the instruction is waiting for R1, for example, then it will use the data
+it receives instead of reading the value at R1.

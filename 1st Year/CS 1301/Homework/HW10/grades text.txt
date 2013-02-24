@@ -1,0 +1,4 @@
+Engl 1101 (3,4)
+Calculus 1 1501 (4,4)
+CS 1301 (3,3)
+Psychology 1101 (2,3)

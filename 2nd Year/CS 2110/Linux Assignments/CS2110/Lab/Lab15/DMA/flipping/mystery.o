@@ -1,0 +1,1296 @@
+ded that the following conditions are met:
+
+    * Redistributions of source code must retain the above copyright notice,this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright notice,this list of conditions and the following disclaimer in the documentation and/orother materials provided with the distribution.
+    * Neither the name of the Thai Open Source Software Center Ltd nor the namesof its contributors may be used to endorse or promote products derived from thissoftware without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" ANDANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIEDWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE AREDISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANYDIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ONANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THISSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+%% This notice is provided with respect to RELAX NG Object Model/Parser, which may be included with this software: 
+
+
+The MIT License
+
+Copyright (c)  
+
+Permission is hereby granted, free of charge, to any person obtaining a copy ofthis software and associated documentation files (the "Software"), to deal inthe Software without restriction, including without limitation the rights touse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies ofthe Software, and to permit persons to whom the Software is furnished to do so,subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in allcopies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS ORIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESSFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS ORCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHERIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR INCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+%% This notice is provided with respect to XFree86-VidMode Extension, which may be included with this software: 
+
+Version 1.1 of XFree86 ProjectLicence.
+
+    Copyright (C) 1994-2004 The XFree86 Project, Inc.    All rights reserved.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copyof this software and associated documentation files (the "Software"), to deal inthe Software without restriction, including without limitation the rights touse, copy, modify, merge, publish, distribute, sublicence, and/or sell copies ofthe Software, and to permit persons to whom the Software is furnished to do so,subject to the following conditions:
+
+       1. Redistributions of source code must retain the above copyright notice,this list of conditions, and the following disclaimer.
+       2. Redistributions in binary form must reproduce the above copyrightnotice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution, and in thesame place and form as other copyright, license and disclaimer information.       3. The end-user documentation included with the redistribution, if any,must include the following acknowledgment: "This product includes softwaredeveloped by The XFree86 Project, Inc (http://www.xfree86.org/) and itscontributors", in the same place and form as other third-party acknowledgments.Alternately, this acknowledgment may appear in the software itself, in the sameform and location as other such third-party acknowledgments.
+       4. Except as contained in this notice, the name of The XFree86 Project,Inc shall not be used in advertising or otherwise to promote the sale, use orother dealings in this Software without prior written authorization from TheXFree86 Project, Inc.
+
+    THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY ANDFITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE XFREE86PROJECT, INC OR ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; ORBUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER INCONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISINGIN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITYOF SUCH DAMAGE.
+
+%% This notice is provided with respect to XML Security, which may be included with this software: 
+
+  The Apache Software License,
+                                       Version 1.1
+
+
+                                                                                 PDF
+
+
+                                       Copyright (C) 2002 The Apache SoftwareFoundation.
+                                       All rights reserved. Redistribution anduse in
+                                       source and binary forms, with or withoutmodifica-
+                                       tion, are permitted provided that thefollowing
+                                       conditions are met: 1. Redistributions ofsource
+                                       code must retain the above copyrightnotice, this
+                                       list of conditions and the followingdisclaimer.
+                                       2. Redistributions in binary form mustreproduce
+                                       the above copyright notice, this list of                                       conditions and the following disclaimerin the
+                                       documentation and/or other materialsprovided with
+                                       the distribution. 3. The end-userdocumentation
+                                       included with the redistribution, if any,must
+                                       include the following acknowledgment:"This
+                                       product includes software developed bythe Apache
+                                       Software Foundation
+(http://www.apache.org/)."
+                                       Alternately, this acknowledgment mayappear in the
+                                       software itself, if and wherever suchthird-party
+                                       acknowledgments normally appear. 4. Thenames
+                                       "Apache Forrest" and "Apache SoftwareFoundation"
+                                       must not be used to endorse or promoteproducts
+                                       derived from this software without priorwritten
+                                       permission. For written permission,please contact
+                                       apache@apache.org. 5. Products derivedfrom this
+                                       software may not be called "Apache", normay
+                                       "Apache" appear in their name, withoutprior
+                                       written permission of the Apache Software                                       Foundation. THIS SOFTWARE IS PROVIDED``AS IS''
+                                       AND ANY EXPRESSED OR IMPLIED WARRANTIES,                                       INCLUDING, BUT NOT LIMITED TO, THEIMPLIED
+                                       WARRANTIES OF MERCHANTABILITY AND FITNESSFOR A
+                                       PARTICULAR PURPOSE ARE DISCLAIMED. IN NOEVENT
+                                       SHALL THE APACHE SOFTWARE FOUNDATION ORITS
+                                       CONTRIBUTORS BE LIABLE FOR ANY DIRECT,INDIRECT,
+                                       INCIDENTAL, SPECIAL, EXEMPLARY, ORCONSEQUENTIAL
+                                       DAMAGES (INCLU- DING, BUT NOT LIMITED TO,                                       PROCUREMENT OF SUBSTITUTE GOODS ORSERVICES; LOSS
+                                       OF USE, DATA, OR PROFITS; OR BUSINESS                                       INTERRUPTION) HOWEVER CAUSED AND ON ANYTHEORY OF
+                                       LIABILITY, WHETHER IN CONTRACT, STRICTLIABILITY,
+                                       OR TORT (INCLUDING NEGLIGENCE OROTHERWISE)
+                                       ARISING IN ANY WAY OUT OF THE USE OF THIS                                       SOFTWARE, EVEN IF ADVISED OF THEPOSSIBILITY OF
+                                       SUCH DAMAGE. This software consists ofvoluntary
+                                       contributions made by many individuals onbehalf
+                                       of the Apache Software Foundation. Formore
+                                       information on the Apache SoftwareFoundation,
+                                       please see .
+
+%% This notice is provided with respect to Independent JPEG Group's software (libjpeg), which may be included with this software: 
+
+In plain English:
+
+1. We don't promise that this software works.  (But if you find any bugs,
+   please let us know!)
+2. You can use this software for whatever you want.  You don't have to pay us.
+3. You may not pretend that you wrote this software.  If you use it in a program, you must acknowledge somewhere in your documentation that you've used the IJG code.
+
+In legalese:
+
+The authors make NO WARRANTY or representation, either express or implied, with respect to this software, its quality, accuracy, merchantability, or fitness for a particular purpose.  This software is provided "AS IS", and you, its user, assume the entire risk as to its quality and accuracy.
+
+This software is copyright (C) 1991-1998, Thomas G. Lane.
+All Rights Reserved except as specified below.
+
+Permission is hereby granted to use, copy, modify, and distribute this software (or portions thereof) for any purpose, without fee, subject to these conditions:
+
+(1) If any part of the source code for this software is distributed, then this
+README file must be included, with this copyright and no-warranty notice unaltered; and any additions, deletions, or changes to the original files must be clearly indicated in accompanying documentation.
+
+(2) If only executable code is distributed, then the accompanying documentation must state that "this software is based in part on the work of the Independent JPEG Group".
+
+(3) Permission for use of this software is granted only if the user accepts full responsibility for any undesirable consequences; the authors accept NO LIABILITY for damages of any kind.
+
+These conditions apply to any software derived from or based on the IJG code, not just to the unmodified library.  If you use our work, you ought to acknowledge us.
+
+Permission is NOT granted for the use of any IJG author's name or company name in advertising or publicity relating to this software or products derived from it.  This software may be referred to only as "the Independent JPEG Group's software".
+
+We specifically permit and encourage the use of this software as the basis of commercial products, provided that all warranty or liability claims are assumed by the product vendor.
+
+ansi2knr.c is included in this distribution by permission of L. Peter Deutsch, sole proprietor of its copyright holder, Aladdin Enterprises of Menlo Park, CA. ansi2knr.c is NOT covered by the above copyright and conditions, but instead by the usual distribution terms of the Free Software Foundation; principally, that you must include source code if you redistribute it.  (See the file ansi2knr.c for full details.)  However, since ansi2knr.c is not needed as part of any program generated from the IJG code, this does not limit you more than the foregoing paragraphs do.
+
+The Unix configuration script "configure" was produced with GNU Autoconf. It is copyright by the Free Software Foundation but is freely distributable. The same holds for its supporting scripts (config.guess, config.sub, ltconfig, ltmain.sh).  Another support script, install-sh, is copyright by M.I.T. but is also freely distributable.
+
+It appears that the arithmetic coding option of the JPEG spec is covered by patents owned by IBM, AT&T, and Mitsubishi.  Hence arithmetic coding cannot legally be used without obtaining one or more licenses.  For this reason, support for arithmetic coding has been removed from the free JPEG software. (Since arithmetic coding provides only a marginal gain over the unpatented Huffman mode, it is unlikely that very many implementations will support it.) So far as we are aware, there are no patent restrictions on the remaining code.
+
+The IJG distribution formerly included code to read and write GIF files. To avoid entanglement with the Unisys LZW patent, GIF reading support has been removed altogether, and the GIF writer has been simplified to produce "uncompressed GIFs".  This technique does not use the LZW algorithm; the resulting GIF files are larger than usual, but are readable by all standard GIF decoders.
+
+We are required to state that
+    "The Graphics Interchange Format(c) is the Copyright property of
+    CompuServe Incorporated.  GIF(sm) is a Service Mark property of
+    CompuServe Incorporated."
+
+%% This notice is provided with respect to X Resize and Rotate (Xrandr) Extension, which may be included with this software: 
+2. XFree86 License
+
+XFree86 code without an explicit copyright is covered by the following
+copyright/license:
+
+Copyright (C) 1994-2003 The XFree86 Project, Inc. All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE XFREE86
+PROJECT BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of the XFree86 Project shall not be
+used in advertising or otherwise to promote the sale, use or other dealings in
+this Software without prior written authorization from the XFree86 Project.
+
+%% This notice is provided with respect to fontconfig, which may be included with this software: 
+Id: COPYING,v 1.3 2003/04/04 20:17:40 keithp Exp $
+Copyright 2001,2003 Keith Packard
+
+Permission to use, copy, modify, distribute, and sell this software and its
+documentation for any purpose is hereby granted without fee, provided that
+the above copyright notice appear in all copies and that both that
+copyright notice and this permission notice appear in supporting
+documentation, and that the name of Keith Packard not be used in
+advertising or publicity pertaining to distribution of the software without
+specific, written prior permission.  Keith Packard makes no
+representations about the suitability of this software for any purpose.  It
+is provided "as is" without express or implied warranty.
+
+KEITH PACKARD DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
+EVENT SHALL KEITH PACKARD BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
+DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+%% This notice is provided with respect to XFree86, which may be included with this software: 
+Copyright (C) 1994-2002 The XFree86 Project, Inc. All Rights Reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated
+documentation files (the "Software"), to deal in the Software without
+restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT
+NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE XFREE86 PROJECT BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Except as contained in this notice, the name of the XFree86 Project shall not be
+used in advertising or otherwise
+to promote the sale, use or other dealings in this Software without prior
+written authorization from the XFree86
+Project.
+%% This notice is provided with respect to Fast Infoset, which may be included with this software: 
+* Fast Infoset ver. 0.1 software ("Software") 
+* 
+* Copyright, 2004-2005 Sun Microsystems, Inc. All Rights Reserved. 
+* 
+* Software is licensed under the Apache License, Version 2.0 (the "License"); 
+* you may not use this file except in compliance with the License. You may 
+* obtain a copy of the License at: 
+¬†* 
+¬†* http://www.apache.org/licenses/LICENSE-2.0 
+¬†* 
+¬†* Unless required by applicable law or agreed to in writing, software 
+* distributed under the License is distributed on an "AS IS" BASIS, WITHOUT 
+* WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the 
+* License for the specific language governing permissions and limitations. 
+* 
+* Sun supports and benefits from the global community of open source 
+* developers, and thanks the community for its important contributions and 
+* open standards-based technology, which Sun has adopted into many of its 
+* products. 
+* 
+* Please note that portions of Software may be provided with notices and 
+* open source licenses from such communities and third parties that govern the 
+* use of those portions, and any licenses granted hereunder do not alter any 
+* rights and obligations you may have under such open source licenses, 
+* however, the disclaimer of warranty and limitation of liability provisions 
+* in this License will apply to all Software in this distribution. 
+* 
+* You acknowledge that the Software is not designed, licensed or intended 
+* for use in the design, construction, operation or maintenance of any nuclear 
+* facility. 
+* 
+* Apache License 
+* Version 2.0, January 2004 
+* http://www.apache.org/licenses/ 
+* 
+*/ 
+/* 
+* ==================================================================== 
+* 
+* This code is subject to the freebxml License, Version 1.1 
+* 
+* Copyright (c) 2001 - 2005 freebxml.org. All rights reserved. 
+* 
+* $Header: /cvs/fi/FastInfoset/src/com/sun/xml/internal/fastinfoset/AbstractResourceBundle.java,v 1.2 
+*¬† ==================================================================== 
+*/ 
+%% This notice is provided with respect to Kerberos, which may be included with this software: 
+
+/* 
+ * Copyright (C) 1998 by the FundsXpress, INC. 
+ * 
+ * All rights reserved. 
+ * 
+ * Export of this software from the United States of America may require 
+ * a specific license from the United States Government.¬† It is the 
+ * responsibility of any person or organization contemplating export to 
+ * obtain such a license before exporting. 
+ * 
+ * WITHIN THAT CONSTRAINT, permission to use, copy, modify, and 
+ * distribute this software and its documentation for any purpose and 
+ * without fee is hereby granted, provided that the above copyright 
+ * notice appear in all copies and that both that copyright notice and 
+ * this permission notice appear in supporting documentation, and that 
+ * the name of FundsXpress. not be used in advertising or publicity pertaining 
+ * to distribution of the software without specific, written prior 
+ * permission. FundsXpress makes no representations about the suitability of 
+ * this software for any purpose. It is provided "as is" without express 
+ * or implied warranty. 
+ * 
+ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR 
+ * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED 
+ * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
+ */ 
+
+%% This notice is provided with respect to Unicode's CLDR data repository, which may be included with this software: 
+
+ Unicode Copyright
+
+    For the general privacy policy governing access to this site, see the 
+Unicode Privacy Policy. For trademark usage, see the the Unicode Consortium
+Trademarks and Logo Policy.
+    Notice to End User: Terms of Use
+    Carefully read the following legal agreement ("Agreement"). Use or copying
+of the software and/or codes provided with this agreement (The "Software")
+constitutes your acceptance of these terms
+
+       1. Unicode Copyright.
+             1. Copyright ¬© 1991-2005 Unicode, Inc. All rights reserved.
+             2. Certain documents and files on this website contain a legend
+indicating that "Modification is permitted." Any person is hereby authorized,
+without fee, to modify such documents and files to create derivative works
+conforming to the Unicode¬Æ Standard, subject to Terms and Conditions herein.
+             3. Any person is hereby authorized, without fee, to view, use,
+reproduce, and distribute all documents and files solely for informational
+purposes in the creation of products supporting the Unicode Standard, subject to
+the Terms and Conditions herein.
+             4. Further specifications of rights and restrictions pertaining to
+the use of the particular set of data files known as the "Unicode Character
+Database" can be found in Exhibit 1.
+             5. Further specifications of rights and restrictions pertaining to
+the use of the particular set of files that constitute the online edition of The
+Unicode Standard, Version 4.0, may be found in V4.0 online edition.
+             6. No license is granted to "mirror" the Unicode website where a
+fee is charged for access to the "mirror" site.
+             7. Modification is not permitted with respect to this document. All
+copies of this document must be verbatim.
+       2. Restricted Rights Legend. Any technical data or software which is
+licensed to the United States of America, its agencies and/or instrumentalities
+under this Agreement is commercial technical data or commercial computer
+software developed exclusively at private expense as defined in FAR 2.101, or
+DFARS 252.227-7014 (June 1995), as applicable. For technical data, use,
+duplication, or disclosure by the Government is subject to restrictions as set
+forth in DFARS 202.227-7015 Technical Data, Commercial and Items (Nov 1995) and
+this Agreement. For Software, in accordance with FAR 12-212 or DFARS 227-7202,
+as applicable, use, duplication or disclosure by the Government is subject to
+the restrictions set forth in this Agreement.
+       3. Warranties and Disclaimers.
+             1. This publication and/or website may include technical or
+typographical errors or other inaccuracies . Changes are periodically added to
+the information herein; these changes will be incorporated in new editions of
+the publication and/or website. Unicode may make improvements and/or changes in
+the product(s) and/or program(s) described in this publication and/or website at
+any time.
+             2. If this file has been purchased on magnetic or optical media
+from Unicode, Inc. the sole and exclusive remedy for any claim will be exchange
+of the defective media within ninety (90) days of original purchase.
+             3. EXCEPT AS PROVIDED IN SECTION C.2, THIS PUBLICATION AND/OR
+SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND EITHER EXPRESS,
+IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. UNICODE
+AND ITS LICENSORS ASSUME NO RESPONSIBILITY FOR ERRORS OR OMISSIONS IN THIS
+PUBLICATION AND/OR SOFTWARE OR OTHER DOCUMENTS WHICH ARE REFERENCED BY OR LINKED
+TO THIS PUBLICATION OR THE UNICODE WEBSITE.
+       4. Waiver of Damages. In no event shall Unicode or its licensors be
+liable for any special, incidental, indirect or consequential damages of any
+kind, or any damages whatsoever, whether or not Unicode was advised of the
+possibility of the damage, including, without limitation, those resulting from
+the following: loss of use, data or profits, in connection with the use,
+modification or distribution of this information or its derivatives.
+       5. Trademarks.
+             1. Unicode and the Unicode logo are registered trademarks of
+Unicode, Inc. 
+             2. This site contains product names and corporate names of other
+companies. All product names and company names and logos mentioned herein are
+the trademarks or registered trademarks of their respective owners. Other
+products and corporate names mentioned herein which are trademarks of a third
+party are used only for explanation and for the owners' benefit and with no
+intent to infringe.
+             3. Use of third party products or information referred to herein is
+at the user's risk.
+       6. Miscellaneous.
+             1. Jurisdiction and Venue. This server is operated from a location
+in the State of California, United States of America. Unicode makes no
+representation that the materials are appropriate for use in other locations. If
+you access this server from other locations, you are responsible for compliance
+with local laws. This Agreement, all use of this site and any claims and damages
+resulting from use of this site are governed solely by the laws of the State of
+California without regard to any principles which would apply the laws of a
+different jurisdiction. The user agrees that any disputes regarding this site
+shall be resolved solely in the courts located in Santa Clara County,
+California. The user agrees said courts have personal jurisdiction and agree to
+waive any right to transfer the dispute to any other forum.
+             2. Modification by Unicode Unicode shall have the right to modify
+this Agreement at any time by posting it to this site. The user may not assign
+any part of this Agreement without Unicode's prior written consent.
+             3. Taxes. The user agrees to pay any taxes arising from access to
+this website or use of the information herein, except for those based on
+Unicode's net income.
+             4. Severability.  If any provision of this Agreement is declared
+invalid or unenforceable, the remaining provisions of this Agreement shall
+remain in effect.
+             5. Entire Agreement. This Agreement constitutes the entire
+agreement between the parties. 
+
+EXHIBIT 1
+UNICODE, INC. LICENSE AGREEMENT - DATA FILES AND SOFTWARE
+
+    Unicode Data Files include all data files under the directories
+http://www.unicode.org/Public/ and http://www.unicode.org/reports/. Unicode
+Software includes any source code under the directories
+http://www.unicode.org/Public/ and http://www.unicode.org/reports/.
+
+    NOTICE TO USER: Carefully read the following legal agreement. BY
+DOWNLOADING, INSTALLING, COPYING OR OTHERWISE USING UNICODE INC.'S DATA FILES
+("DATA FILES"), AND/OR SOFTWARE ("SOFTWARE"), YOU UNEQUIVOCALLY ACCEPT, AND
+AGREE TO BE BOUND BY, ALL OF THE TERMS AND CONDITIONS OF THIS AGREEMENT. IF YOU
+DO NOT AGREE, DO NOT DOWNLOAD, INSTALL, COPY, DISTRIBUTE OR USE THE DATA FILES
+OR SOFTWARE.
+
+    COPYRIGHT AND PERMISSION NOTICE
+
+    Copyright √É?√Ç,√É,√Ç¬© 1991-2004 Unicode, Inc. All rights reserved. Distributed under
+the Terms of Use in http://www.unicode.org/copyright.html.
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+of the Unicode data files and associated documentation (the "Data Files") or
+Unicode software and associated documentation (the "Software") to deal in the
+Data Files or Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, and/or sell copies of
+the Data Files or Software, and to permit persons to whom the Data Files or
+Software are furnished to do so, provided that (a) the above copyright notice(s)
+and this permission notice appear with all copies of the Data Files or Software,
+(b) both the above copyright notice(s) and this permission notice appear in
+associated documentation, and (c) there is clear notice in each modified Data
+File or in the Software as well as in the documentation associated with the Data
+File(s) or Software that the data or software has been modified.
+
+    THE DATA FILES AND SOFTWARE ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY
+KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD
+PARTY RIGHTS. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN THIS
+NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSEQUENTIAL
+DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING
+OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THE DATA FILES OR SOFTWARE.
+
+    Except as contained in this notice, the name of a copyright holder shall not
+be used in advertising or otherwise to promote the sale, use or other dealings
+in these Data Files or Software without prior written authorization of the
+copyright holder.
+
+    Unicode and the Unicode logo are trademarks of Unicode, Inc., and may be
+registered in some jurisdictions. All other trademarks and registered trademarks
+mentioned herein are the property of their respective owners.
+%% This notice is provided with respect to RSA PKCS#11 Header Files & Specification, which may be included with this software: 
+
+/* 
+ * Copyright (C) 1998 by the FundsXpress, INC. 
+ * 
+ * All rights reserved. 
+ * 
+ * Export of this software from the United States of America may require 
+ * a specific license from the United States Government.¬† It is the 
+ * responsibility of any person or organization contemplating export to 
+ * obtain such a license before exporting. 
+ * 
+ * WITHIN THAT CONSTRAINT, permission to use, copy, modify, and 
+ * distribute this software and its documentation for any purpose and 
+ * without fee is hereby granted, provided that the above copyright 
+ * notice appear in all copies and that both that copyright notice and 
+ * this permission notice appear in supporting documentation, and that 
+ * the name of FundsXpress. not be used in advertising or publicity pertaining 
+ * to distribution of the software without specific, written prior 
+ * permission.¬† FundsXpress makes no representations about the suitability of 
+ * this software for any purpose.¬† It is provided "as is" without express 
+ * or implied warranty. 
+ * 
+ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR 
+ * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED 
+ * WARRANTIES OF MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE. 
+ */ 
+
+%% This notice is provided with respect to certain files/code which may included in the implementation of AWT within the software: 
+
+****************************************************** 
+BEGIN¬† src/solaris/native/sun/awt/HPkeysym.h 
+Copyright 1987, 1998¬† The Open Group 
+
+All Rights Reserved. 
+
+The above copyright notice and this permission notice shall be included 
+in all copies or substantial portions of the Software. 
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+IN NO EVENT SHALL THE OPEN GROUP BE LIABLE FOR ANY CLAIM, DAMAGES OR 
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR 
+OTHER DEALINGS IN THE SOFTWARE. 
+
+Except as contained in this notice, the name of The Open Group shall 
+not be used in advertising or otherwise to promote the sale, use or 
+other dealings in this Software without prior written authorization 
+from The Open Group. 
+
+Copyright 1987 by Digital Equipment Corporation, Maynard, Massachusetts, 
+
+All Rights Reserved 
+
+Permission to use, copy, modify, and distribute this software and its 
+documentation for any purpose and without fee is hereby granted, 
+provided that the above copyright notice appear in all copies and that 
+both that copyright notice and this permission notice appear in 
+supporting documentation, and that the names of Hewlett Packard 
+or Digital not be 
+used in advertising or publicity pertaining to distribution of the 
+software without specific, written prior permission. 
+
+DIGITAL DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING 
+ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL 
+DIGITAL BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR 
+ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, 
+WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, 
+ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS 
+SOFTWARE. 
+
+HEWLETT-PACKARD MAKES NO WARRANTY OF ANY KIND WITH REGARD 
+TO THIS SOFWARE, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR 
+PURPOSE.¬† Hewlett-Packard shall not be liable for errors 
+contained herein or direct, indirect, special, incidental or 
+consequential damages in connection with the furnishing, 
+performance, or use of this material. 
+
+END¬† src/solaris/native/sun/awt/HPkeysym.h 
+****************************************************** 
+BEGIN¬† src/solaris/native/sun/awt/Xinerama.c 
+/***************************************************************** 
+Copyright (c) 1991, 1997 Digital Equipment Corporation, Maynard, Massachusetts. 
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the "Software"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+copies of the Software. 
+
+The above copyright notice and this permission notice shall be included in 
+all copies or substantial portions of the Software. 
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.¬† IN NO EVENT SHALL 
+DIGITAL EQUIPMENT CORPORATION BE LIABLE FOR ANY CLAIM, DAMAGES, INCLUDING, 
+BUT NOT LIMITED TO CONSEQUENTIAL OR INCIDENTAL DAMAGES, OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+Except as contained in this notice, the name of Digital Equipment Corporation 
+shall not be used in advertising or otherwise to promote the sale, use or other 
+dealings in this Software without prior written authorization from Digital 
+Equipment Corporation. 
+******************************************************************/ 
+END¬† src/solaris/native/sun/awt/Xinerama.c 
+****************************************************** 
+BEGIN src/solaris/native/sun/awt/Xinerama.h 
+/* 
+Copyright (C) 1994-2001 The XFree86 Project, Inc. All Rights Reserved. 
+
+Permission is hereby granted, free of charge, to any person obtaining a 
+copy of this software and associated documentation files (the "Soft- 
+ware"), to deal in the Software without restriction, including without 
+limitation the rights to use, copy, modify, merge, publish, distribute, 
+and/or sell copies of the Software, and to permit persons to whom the 
+Software is furnished to do so, provided that the above copyright 
+notice(s) and this permission notice appear in all copies of the Soft- 
+ware and that both the above copyright notice(s) and this permission 
+notice appear in supporting documentation. 
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABIL- 
+ITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF THIRD PARTY 
+RIGHTS. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR HOLDERS INCLUDED IN 
+THIS NOTICE BE LIABLE FOR ANY CLAIM, OR ANY SPECIAL INDIRECT OR CONSE- 
+QUENTIAL DAMAGES, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, 
+DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER 
+TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFOR- 
+MANCE OF THIS SOFTWARE. 
+
+Except as contained in this notice, the name of a copyright holder shall 
+not be used in advertising or otherwise to promote the sale, use or 
+other dealings in this Software without prior written authorization of 
+the copyright holder. 
+*/ 
+END src/solaris/native/sun/awt/Xinerama.h 
+****************************************************** 
+BEGIN src/solaris/native/sun/awt/Xrandr.h 
+/* 
+¬†* $XFree86: xc/lib/Xrandr/Xrandr.h,v 1.9 2002/09/29 23:39:44 keithp Exp $ 
+¬†* 
+¬†* Copyright ¬© 2000 Compaq Computer Corporation, Inc. 
+¬†* Copyright ¬© 2002 Hewlett-Packard Company, Inc. 
+¬†* 
+¬†* Permission to use, copy, modify, distribute, and sell this software and its 
+¬†* documentation for any purpose is hereby granted without fee, provided that 
+¬†* the above copyright notice appear in all copies and that both that 
+¬†* copyright notice and this permission notice appear in supporting 
+¬†* documentation, and that the name of Compaq not be used in advertising or 
+¬†* publicity pertaining to distribution of the software without specific, 
+¬†* written prior permission.¬† HP makes no representations about the 
+¬†* suitability of this software for any purpose.¬† It is provided "as is" 
+¬†* without express or implied warranty. 
+¬†* 
+¬†* HP DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL 
+¬†* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL COMPAQ 
+¬†* BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES 
+¬†* WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION 
+¬†* OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+¬†* CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
+¬†* 
+¬†* Author:¬† Jim Gettys, HP Labs, HP. 
+¬†*/ 
+
+
+END src/solaris/native/sun/awt/Xrandr.h 
+****************************************************** 
+BEGIN src/solaris/native/sun/awt/extutil.h 
+/* 
+¬†* $Xorg: extutil.h,v 1.3 2000/08/18 04:05:45 coskrey Exp $ 
+¬†* 
+Copyright 1989, 1998¬† The Open Group 
+
+All Rights Reserved. 
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. 
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.¬† IN NO EVENT SHALL THE 
+OPEN GROUP BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN 
+AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+Except as contained in this notice, the name of The Open Group shall not be 
+used in advertising or otherwise to promote the sale, use or other dealings 
+in this Software without prior written authorization from The Open Group. 
+¬†* 
+¬†* Author:¬† Jim Fulton, MIT The Open Group 
+¬†* 
+¬†*¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬†¬† Xlib Extension-Writing Utilities 
+¬†* 
+¬†* This package contains utilities for writing the client API for various 
+¬†* protocol extensions.¬† THESE INTERFACES ARE NOT PART OF THE X STANDARD AND 
+¬†* ARE SUBJECT TO CHANGE! 
+¬†*/ 
+/* $XFree86: xc/include/extensions/extutil.h,v 1.5 2001/01/17 17:53:20 dawes Exp $ */ 
+
+END src/solaris/native/sun/awt/extutil.h 
+****************************************************** 
+BEGIN¬†¬† src/solaris/native/sun/awt/fontconfig.h 
+/* 
+¬†* $RCSId: xc/lib/fontconfig/fontconfig/fontconfig.h,v 1.30 2002/09/26 00:17:27 
+keithp Exp $ 
+¬†* 
+¬†* Copyright ¬© 2001 Keith Packard 
+¬†* 
+¬†* Permission to use, copy, modify, distribute, and sell this software and its 
+¬†* documentation for any purpose is hereby granted without fee, provided that 
+¬†* the above copyright notice appear in all copies and that both that 
+¬†* copyright notice and this permission notice appear in supporting 
+¬†* documentation, and that the name of Keith Packard not be used in 
+¬†* advertising or publicity pertaining to distribution of the software without 
+¬†* specific, written prior permission.¬† Keith Packard makes no 
+¬†* representations about the suitability of this software for any purpose.¬† It 
+¬†* is provided "as is" without express or implied warranty. 
+¬†* 
+¬†* KEITH PACKARD DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, 
+¬†* INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO 
+¬†* EVENT SHALL KEITH PACKARD BE LIABLE FOR ANY SPECIAL, INDIRECT OR 
+¬†* CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, 
+¬†* DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER 
+¬†* TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR 
+¬†* PERFORMANCE OF THIS SOFTWARE. 
+
+END¬†¬† src/solaris/native/sun/awt/fontconfig.h 
+****************************************************** 
+BEGIN src/solaris/native/sun/awt/list.c 
+AND¬† src/solaris/native/sun/awt/list.h 
+AND src/solaris/native/sun/awt/multiVis.c 
+AND¬† src/solaris/native/sun/awt/multiVis.h 
+AND¬† src/solaris/native/sun/awt/wsutils.h 
+
+Copyright (c) 1994 Hewlett-Packard Co. 
+Copyright (c) 1996¬† X Consortium 
+
+Permission is hereby granted, free of charge, to any person obtaining 
+a copy of this software and associated documentation files (the 
+"Software"), to deal in the Software without restriction, including 
+without limitation the rights to use, copy, modify, merge, publish, 
+distribute, sublicense, and sell copies of the Software, and to 
+permit persons to whom the Software is furnished to do so, subject to 
+the following conditions: 
+
+The above copyright notice and this permission notice shall be included 
+in all copies or substantial portions of the Software. 
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+IN NO EVENT SHALL THE X CONSORTIUM BE LIABLE FOR ANY CLAIM, DAMAGES OR 
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR 
+OTHER DEALINGS IN THE SOFTWARE. 
+
+Except as contained in this notice, the name of the X Consortium shall 
+not be used in advertising or otherwise to promote the sale, use or 
+other dealings in this Software without prior written authorization 
+from the X Consortium. 
+
+END src/solaris/native/sun/awt/list.c 
+AND¬† src/solaris/native/sun/awt/list.h 
+AND src/solaris/native/sun/awt/multiVis.c 
+AND¬† src/solaris/native/sun/awt/multiVis.h 
+AND¬† src/solaris/native/sun/awt/wsutils.h 
+
+***************************************************************** 
+BEGIN src/solaris/native/sun/awt/panoramiXext.h 
+Copyright (c) 1991, 1997 Digital Equipment Corporation, Maynard, Massachusetts. 
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the "Software"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+copies of the Software. 
+
+The above copyright notice and this permission notice shall be included in 
+all copies or substantial portions of the Software. 
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.¬† IN NO EVENT SHALL 
+DIGITAL EQUIPMENT CORPORATION BE LIABLE FOR ANY CLAIM, DAMAGES, INCLUDING, 
+BUT NOT LIMITED TO CONSEQUENTIAL OR INCIDENTAL DAMAGES, OR OTHER LIABILITY, 
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR 
+IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+Except as contained in this notice, the name of Digital Equipment Corporation 
+shall not be used in advertising or otherwise to promote the sale, use or other 
+dealings in this Software without prior written authorization from Digital 
+Equipment Corporation. 
+
+END src/solaris/native/sun/awt/panoramiXext.h 
+****************************************************** 
+
+BEGIN src/solaris/native/sun/awt/randr.h 
+
+¬†* 
+¬†* Copyright ¬© 2000, Compaq Computer Corporation, 
+¬†* Copyright ¬© 2002, Hewlett Packard, Inc. 
+¬†* 
+¬†* Permission to use, copy, modify, distribute, and sell this software and its 
+¬†* documentation for any purpose is hereby granted without fee, provided that 
+¬†* the above copyright notice appear in all copies and that both that 
+¬†* copyright notice and this permission notice appear in supporting 
+¬†* documentation, and that the name of Compaq or HP not be used in advertising 
+¬†* or publicity pertaining to distribution of the software without specific, 
+¬†* written prior permission.¬† HP makes no representations about the 
+¬†* suitability of this software for any purpose.¬† It is provided "as is" 
+¬†* without express or implied warranty. 
+¬†* 
+¬†* HP DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE, INCLUDING ALL 
+¬†* IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL HP 
+¬†* BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES 
+¬†* WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION 
+¬†* OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN 
+¬†* CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE. 
+¬†* 
+¬†* Author:¬† Jim Gettys, HP Labs, Hewlett-Packard, Inc. 
+
+END src/solaris/native/sun/awt/randr.h 
+***************************************************** 
+
+BEGIN src/solaris/native/sun/java2d/opengl/J2D_GL/glx.h 
+¬†* Mesa 3-D graphics library 
+¬†* Version:¬† 4.1 
+¬†* 
+¬†* Copyright (C) 1999-2002¬† Brian Paul¬†¬† All Rights Reserved. 
+¬†* 
+¬†* Permission is hereby granted, free of charge, to any person obtaining a 
+¬†* copy of this software and associated documentation files (the "Software"), 
+¬†* to deal in the Software without restriction, including without limitation 
+¬†* the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+¬†* and/or sell copies of the Software, and to permit persons to whom the 
+¬†* Software is furnished to do so, subject to the following conditions: 
+¬†* 
+¬†* The above copyright notice and this permission notice shall be included 
+¬†* in all copies or substantial portions of the Software. 
+¬†* 
+¬†* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+¬†* OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+¬†* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.¬† IN NO EVENT SHALL 
+¬†* BRIAN PAUL BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN 
+¬†* AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN 
+¬†* CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+
+END src/solaris/native/sun/java2d/opengl/J2D_GL/glx.h 
+
+
+                The Jscheme Language and Implementation
+
+Copyright (c) 2002 Ken R. Anderson, Timothy J. Hickey, Peter Norvig
+
+This system is licensed under the following 
+zlib/libpng open-source license.
+
+This software is provided 'as-is', without any express or
+implied warranty.
+
+In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any
+purpose, including commercial applications, and to alter it
+and redistribute it freely, subject to the following
+restrictions:
+
+1. The origin of this software must not be misrepresented; you
+   must not claim that you wrote the original software. If you
+   use this software in a product, an acknowledgment in the
+   product documentation would be appreciated but is not
+   required.
+
+2. Altered source versions must be plainly marked as such, and
+   must not be misrepresented as being the original software.
+
+3. This notice may not be removed or altered from any source
+   distribution.
+
+JScheme includes software licensed under the Apache Software License,
+Version 1.1:
+
+
+/* ====================================================================
+ * The Apache Software License, Version 1.1
+ *
+ * Copyright (c) 2000 The Apache Software Foundation.  All rights
+ * reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the
+ *    distribution.
+ *
+ * 3. The end-user documentation included with the redistribution,
+ *    if any, must include the following acknowledgment:
+ *       "This product includes software developed by the
+ *        Apache Software Foundation (http://www.apache.org/)."
+ *    Alternately, this acknowledgment may appear in the software itself,
+ *    if and wherever such third-party acknowledgments normally appear.
+ *
+ * 4. The names "Apache" and "Apache Software Foundation" must
+ *    not be used to endorse or promote products derived from this
+ *    software without prior written permission. For written
+ *    permission, please contact apache@apache.org.
+ *
+ * 5. Products derived from this software may not be called "Apache",
+ *    nor may "Apache" appear in their name, without prior written
+ *    permission of the Apache Software Foundation.
+ *
+ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+ * OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED.  IN NO EVENT SHALL THE APACHE SOFTWARE FOUNDATION OR
+ * ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF
+ * USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT
+ * OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+ * SUCH DAMAGE.
+ * ====================================================================
+ *
+ * This software consists of voluntary contributions made by many
+ * individuals on behalf of the Apache Software Foundation.  For more
+ * information on the Apache Software Foundation, please see
+ * <http://www.apache.org/>.
+ *
+ * Portions of this software are based upon public domain software
+ * originally written at the National Center for Supercomputing Applications,
+ * University of Illinois, Urbana-Champaign.
+ */
+
+
+Licenses for sources found in the IcedTea patches/checkins:
+
+NanoXML:
+
+ * This file is part of NanoXML 2 Lite.
+ * Copyright (C) 2000-2002 Marc De Scheemaecker, All Rights Reserved.
+ *
+ * This software is provided 'as-is', without any express or implied warranty.
+ * In no event will the authors be held liable for any damages arising from the
+ * use of this software.
+ *
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ *
+ *  1. The origin of this software must not be misrepresented; you must not
+ *     claim that you wrote the original software. If you use this software in
+ *     a product, an acknowledgment in the product documentation would be
+ *     appreciated but is not required.
+ *
+ *  2. Altered source versions must be plainly marked as such, and must not be
+ *     misrepresented as being the original software.
+ *
+ *  3. This notice may not be removed or altered from any source distribution.
+
+
+CACAO
+===============================================================================
+
+It was downloaded from http://www.cacaojvm.org/
+
+Copyright Holder: CACAO Project <cacao@cacaojvm.org>
+  Copyright (C) 1996-2008 Verein zur Foerderung der freien virtuellen Maschine CACAO
+  Portions Copyright (C) 1996-2005, 2006, 2007 R. Grafl, A. Krall, C. Kruegel,
+   C. Oates, R. Obermaisser, M. Platter, M. Probst, S. Ring,
+   E. Steiner, C. Thalinger, D. Thuernbeck, P. Tomsich, C. Ullrich,
+   J. Wenninger, Institut f. Computersprachen - TU Wien
+
+License:
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+
+On Debian systems a full copy of the GNU General Public License, GPL, can be
+found in the file /usr/share/common-licenses/GPL-2.
+
+
+CACAO uses code from other free software projects.  Only code licensed
+under a GPL compatible license can be merged in.  You can find the
+licenses of third party sources in their respective sources.
+
+
+* src/mm/boehm-gc
+
+Merged in the Boehm-Weiser garbage collector from
+http://www.hpl.hp.com/personal/Hans_Boehm/gc/. 
+
+Copyright (c) 1988, 1989 Hans-J. Boehm, Alan J. Demers
+Copyright (c) 1991-1996 by Xerox Corporation.  All rights reserved.
+Copyright (c) 1996-1999 by Silicon Graphics.  All rights reserved.
+Copyright (c) 1999-2003 by Hewlett-Packard Company. All rights reserved.
+Portions Copyright (c) 1999-2001 by Red Hat, Inc. All rights reserved.
+
+The file linux_threads.c is also
+Copyright (c) 1998 by Fergus Henderson.  All rights reserved.
+
+The files Makefile.am, and configure.in are
+Copyright (c) 2001 by Red Hat Inc. All rights reserved.
+
+Several files supporting GNU-style builds are copyrighted by the Free
+Software Foundation, and carry a different license from that given
+below.
+
+THIS MATERIAL IS PROVIDED AS IS, WITH ABSOLUTELY NO WARRANTY EXPRESSED
+OR IMPLIED.  ANY USE IS AT YOUR OWN RISK.
+
+Permission is hereby granted to use or copy this program
+for any purpose,  provided the above notices are retained on all copies.
+Permission to modify the code and to distribute modified code is granted,
+provided the above notices are retained, and a notice that the code was
+modified is included with the above copyright notice.
+
+A few of the files needed to use the GNU-style build procedure come with
+slightly different licenses, though they are all similar in spirit.  A few
+are GPL'ed, but with an exception that should cover all uses in the
+collector.  (If you are concerned about such things, I recommend you look
+at the notice in config.guess or ltmain.sh.)
+
+The files copyrighted by Hewlett-Packard Company have the notice:
+
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+
+* src/fdlibm
+
+fdlimb contains general algorithms useful for runtimes and compilers to
+support strict double and float mathematical operations.
+
+fdlibm files carry the following notices:
+
+  Copyright (c) 1991 by AT&T.
+
+  Permission to use, copy, modify, and distribute this software for any
+  purpose without fee is hereby granted, provided that this entire notice
+  is included in all copies of any software which is or includes a copy
+  or modification of this software and in all copies of the supporting
+  documentation for such software.
+
+  THIS SOFTWARE IS BEING PROVIDED "AS IS", WITHOUT ANY EXPRESS OR IMPLIED
+  WARRANTY.  IN PARTICULAR, NEITHER THE AUTHOR NOR AT&T MAKES ANY
+  REPRESENTATION OR WARRANTY OF ANY KIND CONCERNING THE MERCHANTABILITY
+  OF THIS SOFTWARE OR ITS FITNESS FOR ANY PARTICULAR PURPOSE.
+
+  Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+
+  Developed at SunPro, a Sun Microsystems, Inc. business.
+  Permission to use, copy, modify, and distribute this
+  software is freely granted, provided that this notice
+  is preserved.
+
+The upstream for fdlibm is libgcj (http://gcc.gnu.org/java/), they sync
+again with the 'real' upstream (http://www.netlib.org/fdlibm/readme).
+
+
+* src/threads/green/{locks.[ch],threadio.[ch],threads.[ch]}
+
+This files are taken from Kaffe.org VM available at
+http://www.kaffe.org/.  Kaffe's license.terms file is located in the
+top directory of the source code.  The current license of Kaffe is the
+same as of CACAO, GPL Version 2.
+
+
+* src/vm/jit/{i386,x86_64}/{dis-asm.h,i386-dis.c}
+
+Print i386 instructions for GDB, the GNU debugger.
+Copyright 1988, 1989, 1991, 1993, 1994, 1995, 1996, 1997, 1998, 1999,
+2001, 2002, 2003, 2004 Free Software Foundation, Inc.
+
+This file is part of GDB.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA.  */
+
+
+* src/vm/jit/{i386,x86_64}/dis-asm.h
+
+Interface between the opcode library and its callers.
+
+Copyright 2001, 2002 Free Software Foundation, Inc.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor,
+Boston, MA  02110-1301 USA
+
+Written by Cygnus Support, 1993.
+
+The opcode library (libopcodes.a) provides instruction decoders for
+a large variety of instruction sets, callable with an identical
+interface, for making instruction-processing programs more independent
+of the instruction set being processed.
+
+
+* src/vm/jit/powerpc/{ppc.h,ppc-dis.c,ppc-opc.c}
+
+Copyright 1994, 1995, 2000, 2001, 2002 Free Software Foundation, Inc.
+Written by Ian Lance Taylor, Cygnus Support
+
+This file is part of GDB, GAS, and the GNU binutils.
+
+GDB, GAS, and the GNU binutils are free software; you can redistribute
+them and/or modify them under the terms of the GNU General Public
+License as published by the Free Software Foundation; either version
+2, or (at your option) any later version.
+
+GDB, GAS, and the GNU binutils are distributed in the hope that they
+will be useful, but WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See
+the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this file; see the file COPYING.  If not, write to the Free
+Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+Boston, MA  02110-1301 USA.
+
+
+* src/lib/classes/*
+
+GNU Classpath is licensed under the terms of the GNU General Public 
+License  with the following clarification and special exception:
+
+   "Linking this library statically or dynamically with other modules 
+  is making a combined work based on this library. Thus, the terms and 
+  conditions of the GNU General Public License cover the whole 
+  combination.
+
+    As a special exception, the copyright holders of this library give 
+  you permission to link this library with independent modules to 
+  produce an executable, regardless of the license terms of these 
+  independent modules, and to copy and distribute the resulting 
+  executable under terms of your choice, provided that you also meet, 
+  for each linked independent module, the terms and conditions of the 
+  license of that module. An independent module is a module which is 
+  not derived from or based on this library. If you modify this library, 
+  you may extend this exception to your version of the library, but you 
+  are not obligated to do so. If you do not wish to do so, delete this 
+  exception statement from your version."
+
+See license.terms for the text of the GNU General Public License.
+
+More information on GNU Classpath is available from 
+http://www.gnu.org/software/classpath/classpath.html.
+
+
+* m4/{iconv.m4,lib-ld.m4,lib-link.m4,lib-prefix.m4}
+
+Copyright (C) 1996-2003 Free Software Foundation, Inc.
+This file is free software, distributed under the terms of the GNU
+General Public License.  As a special exception to the GNU General
+Public License, this file may be distributed as part of a program
+that contains a configuration script generated by Autoconf, under
+the same distribution terms as the rest of that program.
+
+
+* src/toolbox/avl.[ch]
+
+libavl - library for manipulation of binary trees.
+Copyright (C) 1998-2002 Free Software Foundation, Inc.
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+02110-1301 USA.
+
+The author may be contacted at <blp@gnu.org> on the Internet, or
+write to Ben Pfaff, Stanford University, Computer Science Dept., 353
+Serra Mall, Stanford CA 94305, USA.
+
+
+* src/vm/unzip.[ch]
+
+Copyright (C) 1998 Gilles Vollant
+
+This unzip package allow extract file from .ZIP file, compatible with PKZip 2.04g
+  WinZip, InfoZip tools and compatible.
+Encryption and multi volume ZipFile (span) are not supported.
+Old compressions used by old PKZip 1.x are not supported
+
+THIS IS AN ALPHA VERSION. AT THIS STAGE OF DEVELOPPEMENT, SOMES API OR STRUCTURE
+CAN CHANGE IN FUTURE VERSION !!
+I WAIT FEEDBACK at mail info@winimage.com
+Visit also http://www.winimage.com/zLibDll/unzip.htm for evolution
+
+Condition of use and distribution are the same than zlib :
+
+This software is provided 'as-is', without any express or implied
+warranty.  In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+3. This notice may not be removed or altered from any source distribution.
+
+
+src/mm/boehm-gc/libatomic_ops-1.2/src/atomic_ops/sysdeps/armcc
+
+ * Copyright (c) 2007 by NEC LE-IT:               All rights reserved.
+ * A transcription of ARMv6 atomic operations for the ARM Realview Toolchain.
+ * This code works with armcc from RVDS 3.1
+ * This is based on work in gcc/arm.h by
+ *   Copyright (c) 1991-1994 by Xerox Corporation.  All rights reserved.
+ *   Copyright (c) 1996-1999 by Silicon Graphics.  All rights reserved.
+ *   Copyright (c) 1999-2003 by Hewlett-Packard Company. All rights reserved.
+ *
+ *
+ *
+ * THIS MATERIAL IS PROVIDED AS IS, WITH ABSOLUTELY NO WARRANTY EXPRESSED
+ * OR IMPLIED.  ANY USE IS AT YOUR OWN RISK.
+ *
+ * Permission is hereby granted to use or copy this program
+ * for any purpose,  provided the above notices are retained on all copies.
+ * Permission to modify the code and to distribute modified code is granted,
+ * provided the above notices are retained, and a notice that the code was
+ * modified is included with the above copyright notice.
+
+src/mm/boehm-gc/include/private
+
+  Copyright (c) 2004-2005 Andrei Polushin
+
+  Permission is hereby granted, free of charge,  to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction,  including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+contrib/vmlog:
+
+/* Copyright (C) 2006 Edwin Steiner <edwin.steiner@gmx.net> */
+/*               2007 Peter Molnar <peter.molnar@wm.sk>     */
+
+/* This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+Some of the build files are
+
+# Copyright (C) 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
+# 2003, 2004, 2005  Free Software Foundation, Inc.
+
+
+JAMVM:
+
+  Copyright (C) 2003, 2004, 2005, 2006, 2007, 2009, 2010
+  Robert Lougher <rob@jamvm.org.uk>.
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2,
+  or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+On Debian systems a full copy of the GNU General Public License, GPL, can be
+found in the file /usr/share/common-licenses/GPL-2.
+                                                                                                                                                                                                                                                                    ELF              0π 4   †     4    ( % "                C C          ‘K ‘[ ‘[ Ùu  ∏Å          ,N ,^ ,^ ¯   ¯            4  4  4  $   $            ‘K ‘[ ‘[              PÂtdå~ å~ å~ "  "        QÂtd                          RÂtd‘K ‘[ ‘[ ,  ,                 GNU ÅU¥kápKN≥r ûY∑ñä’ı©  }         †4(‡  <¬Ä# P   @ äTàPwÄÄ04ÄQD @@     ¿ Ä AL à$ ™* @ 2 
+Äò8A‡  A˘ &¸  ÄDLë $5ê·K¿†ƒ DQ†∏  —Äá Db Ù    !@!°	@ÅÃ` @Jä¡DbÄ	±ƒÄå!° !@@ ®‡≤h	$ój	 0¿2ô0   ê%  ·É5ã$@  ¬A AëàÇ ÄÄ Z@ · ÄAáÄ¿@Ä`É‡	 N”¢Ä AÑ¿    Ä       ¿ Ç— ÄÜ@C@@YFFåg†1H—Ä  2	"B 0B@ÖI P † Å —†	ì†‡º§ hÄ  2ê04c  a(8Ö é`[ZY}H@Ç·“ ¨	 ¢aàP‘pîAH  ÄH ,*pÑÜ(∏ DÇC !$8AP ! `∏ÇÅ@  @Éñ "  !(   Äî "Ä ‘SB  Ä  P@  J◊  7 H  Ä °@ à‡2OhG:ºJ$—À    ê Ç      H @@P@E∞ÏòÄ¿èä*Ä†Õ»@#àíPHÄ>wç  
+âRàﬁîÑ ¿ 
+Y
+•QJƒ¡M∫ (|  ` ∆"
+!êêÇÍ úER` Ä *  ÑÄí ¡ b!” ãFÇ@ ¬CI®8@ @å$JÄL  †	 †§"Ä @2+ ¯ (H
+ƒ 48(Ë "  ≈  @ ê '
+∞(J£     Ä  »UïdC Ç}@ Ä     ÇÄ E   )H@  Å`@  @` @ Ñ	bCf√ B  ¿  ¿Ñ  
+êÄ # MTôãEÖ2H Ä  @ bHÅ∆5ÄY
+ÄD     Å˙`ƒéÄ B0âH1@ #¢@D Äâ8 ÇAB‡  D	  ÄD,Ä`Ö@R " (@( †† E* §@†ÇÄ¢NΩ=C
+ A	 L  @  H@  »• Ä     @¢ @ ¬        }          Å   É   Ñ   Ü       à           â   ã   ç   é           í               ì               î   ñ       ô   õ   ú   ù   û       ü   ¢   §   ¶   ß   ™   ´       ≠       Ø           ∞   ±   ≥   ¥   µ   ∑   π   ∫   º   Ω           æ   ø       ¡           ¬   ƒ   ∆           «       »       À   Ã       Œ   œ       –   —   “   ”   ‘   ’       ÿ   ⁄               ‹       ﬁ   ·           ‚   ‰   Â                   Ê   Á   È       Î   Ì   Ó      Û   ı   ˆ           ˜       ˙   ¸   ˝              	  
+                                                                                           !  "      #          '  (      )  *      ,  .  0      2      4              5              6  7  9  :  ;      =  >          ?      @  A  B      D  E      F      I  J  K      L  N  P  Q  R      T  X  Y          Z  \      ^  `  b                      e  g  j  m  o  p  q  r  s  u  y          z  {  |  }  ~  Å              Ç      Ñ  Ö  à      â  ä  å  ç      é  ê      ì  ï  ò  õ  ú  û  ü              †  ¢  §  •  ¶  ™  ´  ¨  ≠  Æ      ∞  ≤  ≥  ¥  ∑  ∏  π  ∫      º              æ  ø  ¡      ƒ  ≈  ∆  …             À  Ã  Õ  Œ  œ  “  ”          ’  ÷  ◊          Ÿ  €  ﬁ  ·  „      ‰      Ê  Á  Ë  Í      Î  Ï  Ô      Û      ı      ˜  ¯  ¸  ˝      ˛      ˇ                               	      
+                                                                                !  #  $      &  )  +  ,          /  1  3          5  6  7              ;  =      ?  @  B  C  D  F  H      J  L  N  O  P  Q          R  T      V  X  Y  Z  [  ]      ^      c  d          e      f  h  j  l  m  p  q  s          v  w      x      y  {      |  ~    Ä  Ç  Ñ  à          â      ä  å      é  è  ë      í  ï          ñ  ó          ô  õ  ú      û  ü  °          ¢      ¶  ©              ´  ¨              ≠              Ø  ±  ≥  µ  ∂                  ∫      ª      º                  Ω      ø  ¡  √                  ƒ  ≈  «      »      À      Ã  Õ  Œ  œ      –  “  ”  ’  ÷  Ÿ  ⁄      ‹      ›  ﬁ      ﬂ  ‡  ·  ‰      Â  Á  È  Ï          Ó  Ô        Ò  Ú  Û  Ù              ı  ˆ      ˘  ˙  ˚  ¸              ˝          ˛                                                                                                                                 "  $  %              *  +  -      .  1      2  3  6  7  :  =      œ   ©XµæoÄ	¿vWµ          ˇ   ÚXµæoÄ	 wWµ          ˇ   'XµæoÄ	@wWµ          œ   fXµæoÄ	ÄwWµ          œ   •XµæoÄ	¿wWµ          ˇ   ê≥òµæoÄ	¿µóµ          œ   ¡≥òµæoÄ	 ∂óµ          œ   =XµæoÄ	@xWµ          ˇ   yXµæoÄ	ÄxWµ          œ   æoÄ	æoÄ	              ˇ   ∆XµæoÄ	¿xWµ          œ   ıöÖµæoÄ	¿õÉµ          œ   XµæoÄ	 yWµ          œ   QXµæoÄ	@yWµ          œ   XõÖµæoÄ	 úÉµ          œ   ùXµæoÄ	ÄyWµ          ˇ   _XµæoÄ	 zWµ          œ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   #|µæoÄ	¿mzµ          œ   ˇ XµæoÄ	@{Wµ          œ   W!XµæoÄ	Ä{Wµ          œ   ∂!XµæoÄ	¿{Wµ          œ   ı"XµæoÄ	¿|Wµ          œ   #"XµæoÄ	 |Wµ          œ   t"XµæoÄ	@|Wµ          œ   ¡"XµæoÄ	Ä|Wµ          œ   >#XµæoÄ	 }Wµ          œ   ä#XµæoÄ	@}Wµ          œ   æoÄ	æoÄ	              ˇ   V$XµæoÄ	Ä}Wµ          ˇ   7%XµæoÄ	Ä~Wµ          œ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   =&XµæoÄ	@Wµ          œ   Ö&XµæoÄ	ÄWµ          ˇ   ‡&XµæoÄ	¿Wµ          œ   æoÄ	æoÄ	              ˇ   z'XµæoÄ	@ÄWµ          œ   Ú'XµæoÄ	¿ÄWµ          œ   7(XµæoÄ	 ÅWµ          ˇ   z(XµæoÄ	@ÅWµ          œ   ƒ(XµæoÄ	ÄÅWµ          œ   )XµæoÄ	¿ÅWµ          œ   C)XµæoÄ	 ÇWµ          œ   å)XµæoÄ	@ÇWµ          œ   √)XµæoÄ	ÄÇWµ          œ   æoÄ	æoÄ	              ˇ   !*XµæoÄ	¿ÇWµ          œ   √*XµæoÄ	@ÉWµ          ˇ   +XµæoÄ	ÄÉWµ          œ   Y+XµæoÄ	¿ÉWµ          œ   ¶+XµæoÄ	 ÑWµ          œ   Ë+XµæoÄ	@ÑWµ          œ   z,XµæoÄ	¿ÑWµ          œ    ,XµæoÄ	 ÖWµ          œ   -XµæoÄ	@ÖWµ          œ   I«YµæoÄ	@pYµ          œ   ôãµæoÄ	 Hãµ          œ   æoÄ	æoÄ	              ˇ   ´òãµæoÄ	¿Gãµ          œ   ·-XµæoÄ	 ÜWµ          œ   .XµæoÄ	@ÜWµ          œ   †.XµæoÄ	¿ÜWµ          ˇ   f.XµæoÄ	ÄÜWµ          œ   .XµæoÄ	 áWµ          œ   8/XµæoÄ	@áWµ          ˇ   ≈/XµæoÄ	¿áWµ          œ   70XµæoÄ	@àWµ          ˇ   o0XµæoÄ	ÄàWµ          ˇ   ÏÄXµæoÄ	¿àWµ          œ   æoÄ	æoÄ	              ˇ   @ÅXµæoÄ	 âWµ          œ   ÉÅXµæoÄ	@âWµ          Ô   ÇXµæoÄ	¿âWµ          œ   \ÇXµæoÄ	 äWµ          œ   ªÇXµæoÄ	@äWµ          œ   ÉXµæoÄ	ÄäWµ          œ   bÉXµæoÄ	¿äWµ          œ   ΩÉXµæoÄ	 ãWµ          œ   ÑXµæoÄ	@ãWµ          œ   `ÑXµæoÄ	ÄãWµ          œ   õÑXµõÑXµ¿ãWµ¿ãWµ     ˇ   ÔÑXµæoÄ	 åWµ          ˇ   æoÄ	æoÄ	              ˇ   ~ÖXµæoÄ	ÄåWµ          œ   ÕõÖµæoÄ	ÄúÉµ          œ   ‹ÖXµæoÄ	¿åWµ          œ   &ÜXµæoÄ	 çWµ          œ   õÜXµæoÄ	ÄçWµ          œ   pèXµæoÄ	 îWµ          œ   ∏ùXµæoÄ	¿õWµ          ˇ   áXµæoÄ	¿çWµ          œ   %èXµæoÄ	¿ìWµ          ˇ   ÑáXµæoÄ	 éWµ          œ   :úÖµæoÄ	¿úÉµ          œ   ”áXµæoÄ	@éWµ          œ   àXµæoÄ	ÄéWµ          œ   YàXµæoÄ	¿éWµ          œ   õàXµæoÄ	 èWµ          ˇ   ÓàXµæoÄ	@èWµ          œ   GíXµæoÄ	ÄñWµ          œ   bâXµæoÄ	ÄèWµ          œ   „>öµæoÄ	@Jôµ          œ   éäXµæoÄ	 êWµ          œ   °íXµæoÄ	¿ñWµ          ˇ   E?öµæoÄ	ÄJôµ          ˇ   DäXµæoÄ	¿èWµ          œ   ìãXµæoÄ	¿êWµ          ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   ÄåXµæoÄ	ÄëWµ          œ   çXµæoÄ	 íWµ          œ   æoÄ	æoÄ	              ˇ   úçXµæoÄ	ÄíWµ          œ   ÁçXµæoÄ	¿íWµ          ˇ   <éXµæoÄ	 ìWµ          ˇ   áéXµæoÄ	@ìWµ          ˇ   ’éXµæoÄ	ÄìWµ          œ   æoÄ	æoÄ	              ˇ   æoÄ	æoÄ	              ˇ   ‘èXµæoÄ	@îWµ          œ   êXµæoÄ	ÄîWµ          ˇ   ˆ˛öµæoÄ	@g

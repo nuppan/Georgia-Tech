@@ -1,0 +1,252 @@
+CS 2200 Summer 2012
+Homework 4
+===================
+Joon Ki Hong
+Summer 2012
+===================
+
+Problem 0
+---------
+~~~~~~
+Part A
+~~~~~~
+i. B and C
+ii. 2
+iii. 10.15ms
+iv. 0011 0011 1001 1001
+
+
+~~~~~~
+Part B
+~~~~~~
+LRU - 9
+FIFO - 6
+OPTIMAL - 6
+
+
+Problem 1
+---------
+~~~~~~
+Part A
+~~~~~~
+
+references:          1KB, 16B block, direct-mapped
+-----------          -----------------------------
+0x00000000:                   _M_           <--- mark whether it's a
+0x00000006:                   _H_                hit or miss in the cache
+0x00000100:                   _M_
+0x00000104:                   _H_
+0x00001000:                   _M_
+0x00001040:                   _M_
+
+0x00000000:                   _M_
+0x00000006:                   _H_
+0x00000100:                   _H_
+0x00000104:                   _H_
+0x00001000:                   _M_
+0x00001040:                   _H_
+
+0x00000000:                   _M_
+0x00000006:                   _H_
+0x00000100:                   _H_
+0x00000104:                   _H_
+0x00001000:                   _M_
+0x00001040:                   _H_
+
+[... repeats forever ...]
+                                    long-term hit rate:  __0.667___
+
+~~~~~~
+Part B
+~~~~~~
+
+references:          1KB, 16B block, 2-way set associative
+-----------          -------------------------------------
+0x00000000:                   _M_           <--- mark whether it's a
+0x00000006:                   _H_                hit or miss in the cache
+0x00000100:                   _M_
+0x00000104:                   _H_
+0x00001000:                   _M_
+0x00001040:                   _M_
+
+0x00000000:                   _H_
+0x00000006:                   _H_
+0x00000100:                   _H_
+0x00000104:                   _H_
+0x00001000:                   _H_
+0x00001040:                   _H_
+
+0x00000000:                   _H_
+0x00000006:                   _H_
+0x00000100:                   _H_
+0x00000104:                   _H_
+0x00001000:                   _H_
+0x00001040:                   _H_
+
+[... repeats forever ...]
+                                    long-term hit rate:  ___1___
+
+~~~~~~
+Part C
+~~~~~~
+Direct Mapped Cache
+
+0x00000000:                   _M_   
+0x00000200:                   _M_   
+0x00000600:                   _M_
+0x00000000:                   _H_
+0x00000000:                   _H_
+0x00000200:                   _M_
+
+0x00000000:                   _H_   
+0x00000200:                   _H_   
+0x00000600:                   _M_
+0x00000000:                   _H_
+0x00000000:                   _H_
+0x00000200:                   _M_
+
+0x00000000:                   _H_   
+0x00000200:                   _H_   
+0x00000600:                   _M_
+0x00000000:                   _H_
+0x00000000:                   _H_
+0x00000200:                   _M_
+									long-term hit rate:  __0.667__
+
+Set-Associative Cache
+
+0x00000000:                   _M_   
+0x00000200:                   _M_   
+0x00000600:                   _M_
+0x00000000:                   _M_
+0x00000000:                   _H_
+0x00000400:                   _M_
+
+0x00000000:                   _H_         
+0x00000200:                   _M_             
+0x00000600:                   _M_
+0x00000000:                   _M_
+0x00000000:                   _M_
+0x00000400:                   _M_
+
+0x00000000:                   _H_         
+0x00000200:                   _M_             
+0x00000600:                   _M_
+0x00000000:                   _M_
+0x00000000:                   _M_
+0x00000400:                   _M_
+									long-term hit rate:  __0.167__
+
+---------
+Problem 2
+---------
+~~~~~~
+Part A
+~~~~~~
+512 represents one line
+1MB represents the number of data lines
+16 represents the number of sets of datas
+
+1MB = 1048576 Bytes
+1048576 Bytes/512 = 2048
+2048/16 = 128
+Log2(128) = 7
+7: the index
+
+512 = 2^9
+9: offset
+
+9+7+x = 32
+x=16 (tag of the metadata)
+16(tag) + 1(dirty bit) + 1(validbit) = 18 bits (size of metadata)
+
+512*8 bits(convert to bits) + 18(metadata) = 4114
+
+(((1+1+16+512*8)*16)+4)*128 = 8425984
+
+
+Answer: 8425984
+
+---------
+Problem 3
+---------
+~~~~~~
+Part A
+~~~~~~
+EMAT = 1ns + 0.05*40ns = 3ns
+~~~~~~
+Part B
+~~~~~~
+EMAT = 2 + 0.03*40ns = 3.2ns
+
+Improvement = 3ns/3.2ns = 0.9375
+Answer: Double the cache is not a good trade-off.
+
+~~~~~~
+Part C
+~~~~~~
+a. EMATa = 1ns+0.05*60ns = 4ns
+   EMATb = 2ns+0.03*60ns = 3.8ns
+   Answer: Machine B
+   
+b. Not entirely because it doesn't account for memory stalls. If they were accounted for,
+then the effective CPI would differ between the machines.
+
+c. Effective CPIa = 6, CPIb = 4.8
+   Answer: Machine B
+~~~~~~
+Part D
+~~~~~~
+EMAT_translation = 1 + 0.05(1+ 0.01[5+ 0.1(20+ 0.2[100])]) = 1.0545
+
+EMAT_access = 1+ 0.01[5+ 0.1(20+ 0.2[100])]) = 1.09 
+
+EMAT = EMAT_translation + EMAT_access = 2.1445
+
+---------
+Problem 4 HOMEWORK 3
+---------
+
+First-Fit:
+        200 -> 370
+		320 -> 550
+		455 -> 510
+		90 -> 220
+		500 -> must wait
+Best-Fit:
+		200 -> 220
+		320 -> 370
+		455 -> 510
+		90 -> 120
+		500 -> 550
+
+Worst-Fit:
+		200 -> 550
+		320 -> 510
+		455 -> must wait
+		90 -> 370
+		500 -> must wait
+
+
+Most efficient is __Best-Fit__.
+
+---------
+Problem 4
+---------
+
+Problem 4 involves coding certain portions of hw4.c
+
+
+---------
+Problem 5
+---------
+
+A. The linux scheduler is an O(1) scheduler because it uses priority queues within the scheduler that makes scheduling decisions in a constant amount of time, independent of the number of tasks within the system
+
+B.(i) Each entry of the runqueue contains a pointer to a task at that particular priority level. Each priority level corresponds to the 140 priority levels within the scheduler
+
+(ii)
+(a) If the time quantum for the current task expires then the current task is placed within the expired array.
+(b) If the task is blocked due to I/O it is put aside and the next highest priority level is chosen to run from the priority queue
+(c) After a task completes its I/O, its placed within the active array at the correct priority level, adjusting the remaining time quantum
+(d) If there are no more tasks to schedule within the active array, the pointers to the active and expired arrays are flipped and the scheduling algorithm is resumed

@@ -1,0 +1,22 @@
+Word frequencies:
+cs1331: 4
+syllabus: 1
+spring: 1
+2010: 1
+course: 5
+objectives: 1
+•: 3
+introduction: 2
+to: 21
+object-oriented: 1
+programming: 5
+through: 2
+the: 31
+use: 3
+of: 10
+java: 2
+language: 1
+experience: 1
+with: 7
+algorithms: 1
+Longest sentence: "Lecturers monica sweat ccb 131 sweat@cc.gatech.edu and olufisayo omojokun ccb 113 omojokun@cc.gatech.edu head ta aaron clarke ccb 130 aclarke3@mail.gatech.edu other tas and office hours/lab location other tas & hours tba all cs1331 office hours & lab are held in ccb 130 required course textbook lewis & loftus, "java software solutions" 6th edition."

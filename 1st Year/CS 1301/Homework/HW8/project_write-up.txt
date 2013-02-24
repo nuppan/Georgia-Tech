@@ -1,0 +1,25 @@
+
+1)Our project is essentially a video that is similar to a compilation video one would post
+  on youtube. We zoom out to see the player in third person to make the movie have
+  a more cinematic experience rather than a plain "gameplay" video. The shots fired by the 
+  main character are shown by a special effect we have that flashes adds a fire effect on the gun, and the
+  shots fired by an opposing character are marked by the main character turning red, as in
+  many first-person shooters. Our character defeats one adversary who appears from behind a
+  couch, then swoops by the adversary's dying body, continuing on his killer path. Unfortunately, he gets
+  shot by a "camper" from behind who is using height to his advantage.Our hero
+  does not turn around and respond fast enough, and he dies. We manually flip the robot to
+  show the main character's death, and used special effects to finalize it. 
+
+  Some of the special effects we used include seeingRed(this was used for moments when our 
+  main character was getting shot at, to show damange),a filter to place a gun onto all of the 
+  videos that needed it (as in an FPS, where you continually have a gun
+  on the screen), and a extra firing gun image to show gun shots. We also used zoom (as in a game when 
+  you can increaes the accuracy of your aim by a short "zoom") and Crossfade to transition the hero scene in the beginning. 
+
+
+2.The only deviations we made were inclusions of some images we needed for some functions in our
+  editing code. Some of these images include muzzle_gun.jpg, and white_gun.jpg. The first image was
+  used to edit in the image of an m4 in each frame as if one were filming an fps in first person. 
+  The second image was used to edit in the image of the same m4 but with a muzzle flash in each
+  frame. We did not, however, deviate from the coding that was recommended. Also, we added in the movie.gif 
+  for the performanceCode.py.

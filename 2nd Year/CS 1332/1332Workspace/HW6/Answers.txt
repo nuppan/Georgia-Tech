@@ -1,0 +1,138 @@
+ANALYSIS
+1) Compare and contrast Stacks, Queues, and Max Heaps. Be sure to mention Big-O for inserting/retrieving values and potential uses for each data structure.
+Stacks use a LIFO implementation. That is, the elements that enter in first are taken out last. As the output below shows, the processes were removed from K-A and entered A-K. The down side to this application is that in order to access the element that was inserted first, the elements above it must be removed.As shown in the output, it took more cycles for the structure to reach elements that were inserted first such as A, B, or C. This means that inserting values would have an O(1) runtime because insertion into a stack is done by inserting at the end. Retrieving by removal would be O(n) because worst case runtime would be when retrieving the first element inserted, which would mean removing everything else above it. Potential uses for stacks could be for word processing and implementing undo. Undoing something would imply that the user wants to undo the last action taken and continually undoing would mean undoing through the elements in the reverse order inserted. Queues use a FIFO implementation. That is, the elements that enter in first are taken out first. As the output below shoes, the processes were removed from A-K and entered in A-K. The downside to this application is that to access the last element, the elements before it must be removed. This means that retrieval is O(n) and insertion is O(1) since elements must be pushed through the back. The output below shows this as it took more cycles to reach K as opposed to A (0 cycles). Queues can be used for processing orders on a website in which orders that were made first have greater priority.
+Min heaps are implemented so that in a binary tree representation, each parent node has two child nodes that have greater values than the parent node. Max heaps are implemented so that in a binary tree representation, each parent node has two child nodes that have lesser values than the parent node.  Heaps have O(logn) runtime for both retrieval and insertion because of its bst like implementation. Heaps can be used for applications like a calendar or schedulers where the earliest event may not necessarily be the first even to be inserted. This implementation will most likely use a min heap so that the earliest event can be accessed with O(1) runtime.
+
+
+2) Which algorithm and data structure did you use to implement MinSort? Why did you choose that one? What other potential choices could you have made?
+
+I used an heap (array list) and used the fact that the index of each child of a particular parent could be found by using (2*index) or (2*index)+1. I chose this way every time the user removes the next element from the data structure, the minimum value is returned at O(1) runtime.
+
+3) Which of the algorithms (FIFO, LIFO, Shortest Job First, and Longest Job 
+First) do you think are used for real processor scheduling? Why?
+I think all of these algorithms may be implemented depending on the how much processing power is available at any time. So if the processor is stressed and has little overhead for any more tasks, a FIFO algorithm may be best so that the tasks that is causing such heavy load may be finished first before other tasks can be processed through. If the processor has a lot of overhead, using a Shortest Job first may not be a bad implementation. The number of cores available can also be a factor in the types of implementations at certain conditions. 
+
+
+STACK
+Processor initializing Sorting Algorithm...
+-------------------------------------------
+Running Process: K for 9 cycles
+Running Process: J for 12 cycles
+Running Process: I for 37 cycles
+Running Process: H for 105 cycles
+Running Process: G for 42 cycles
+Running Process: F for 1 cycles
+Running Process: E for 19 cycles
+Running Process: D for 5 cycles
+Running Process: C for 30 cycles
+Running Process: B for 25 cycles
+Running Process: A for 10 cycles
+
+-------------------------------------------
+Number of cycles each process waited: 
+Process: A waited 285 cycles
+Process: B waited 260 cycles
+Process: C waited 230 cycles
+Process: D waited 225 cycles
+Process: E waited 206 cycles
+Process: F waited 205 cycles
+Process: G waited 163 cycles
+Process: H waited 58 cycles
+Process: I waited 21 cycles
+Process: J waited 9 cycles
+Process: K waited 0 cycles
+-------------------------------------------
+Average waiting cycles: 151.0909090909091
+
+QUEUE
+Processor initializing Sorting Algorithm...
+-------------------------------------------
+Running Process: A for 10 cycles
+Running Process: B for 25 cycles
+Running Process: C for 30 cycles
+Running Process: D for 5 cycles
+Running Process: E for 19 cycles
+Running Process: F for 1 cycles
+Running Process: G for 42 cycles
+Running Process: H for 105 cycles
+Running Process: I for 37 cycles
+Running Process: J for 12 cycles
+Running Process: K for 9 cycles
+
+-------------------------------------------
+Number of cycles each process waited: 
+Process: A waited 0 cycles
+Process: B waited 10 cycles
+Process: C waited 35 cycles
+Process: D waited 65 cycles
+Process: E waited 70 cycles
+Process: F waited 89 cycles
+Process: G waited 90 cycles
+Process: H waited 132 cycles
+Process: I waited 237 cycles
+Process: J waited 274 cycles
+Process: K waited 286 cycles
+-------------------------------------------
+Average waiting cycles: 117.0909090909091
+
+Shortest Job First
+Processor initializing Sorting Algorithm...
+-------------------------------------------
+Running Process: F for 1 cycles
+Running Process: D for 5 cycles
+Running Process: K for 9 cycles
+Running Process: A for 10 cycles
+Running Process: J for 12 cycles
+Running Process: E for 19 cycles
+Running Process: B for 25 cycles
+Running Process: C for 30 cycles
+Running Process: I for 37 cycles
+Running Process: G for 42 cycles
+Running Process: H for 105 cycles
+
+-------------------------------------------
+Number of cycles each process waited: 
+Process: A waited 15 cycles
+Process: B waited 56 cycles
+Process: C waited 81 cycles
+Process: D waited 1 cycles
+Process: E waited 37 cycles
+Process: F waited 0 cycles
+Process: G waited 148 cycles
+Process: H waited 190 cycles
+Process: I waited 111 cycles
+Process: J waited 25 cycles
+Process: K waited 6 cycles
+-------------------------------------------
+Average waiting cycles: 60.90909090909091
+
+Longest Job First
+Processor initializing Sorting Algorithm...
+-------------------------------------------
+Running Process: H for 105 cycles
+Running Process: G for 42 cycles
+Running Process: I for 37 cycles
+Running Process: C for 30 cycles
+Running Process: B for 25 cycles
+Running Process: E for 19 cycles
+Running Process: J for 12 cycles
+Running Process: A for 10 cycles
+Running Process: K for 9 cycles
+Running Process: D for 5 cycles
+Running Process: F for 1 cycles
+
+-------------------------------------------
+Number of cycles each process waited: 
+Process: A waited 270 cycles
+Process: B waited 214 cycles
+Process: C waited 184 cycles
+Process: D waited 289 cycles
+Process: E waited 239 cycles
+Process: F waited 294 cycles
+Process: G waited 105 cycles
+Process: H waited 0 cycles
+Process: I waited 147 cycles
+Process: J waited 258 cycles
+Process: K waited 280 cycles
+-------------------------------------------
+Average waiting cycles: 207.27272727272728

@@ -1,0 +1,241 @@
+==============================================================================
+==                  CS 2110 Mini Floating Point Tutorial                    ==
+==============================================================================
+
+This is divided in 5 sections.  If you attended lecture Section I should be
+unnecessary.  Some of you may have done Section II in recitation.
+
+Pay attention to section III and IV - it describes the format we expect on
+the test.
+
+--- Section I - Intro to Floating Point --------------------------------------
+
+The computer's floating point is basically a binary scientific notation.  So
+a quick review, in our ten-fingered world, this is what scientific notation
+looks like:
+
+    -17.25 =   -        1.725       *  10^1
+               ^-sign   ^- mantissa       ^- exponent
+
+The sign says if it's negative or positive.  The exponent says approximately
+how big it is.  The mantissa is the number value.  The reason it's called
+floating point is the presence of the exponent field -- the decimal point
+can float.  In theory, you could simply store the sign, the mantissa, and
+the exponent for a base-10 scientific notation in binary.  Sadly, that makes
+math difficult for a computer.  So, we shift to the where the two-fingered
+creatures live...
+
+In the binary world the number -17.25 would look like:
+
+    - 10001.01
+
+Then, we need to line up the decimal point with the first one.  We shift the
+point 4 places to the left, but since the number has been divided by 2^4 in
+the process, we must make up for it by adding the exponent.
+
+    = - 1.000101 * 2^(4)            [mantissa in binary; exponent decimal]
+
+This leads into how the computer represents the number.
+
+--- Section II - Representation ----------------------------------------------
+
+The IEEE floating point specification describes a special way we should lay
+out the bits in order to represent floating point.  The format has some
+special cases, but first let's deal with the normal case for the 32-bit
+format.
+
+If a number is represented as:
+
+    (-1)^S * 2^(E-127) * 1.M[binary]
+
+Then the number in IEEE format will have its bits laid out as such:
+
+    S EEEEEEEE MMMMMMMMMMMMMMMMMMMMMMM 
+       ^- 8 bits  ^- 23 bits
+
+Pay special attention that the mantissa always has an implied one, that is
+not actually written.  Why?  Every binary number, even floating-point, will
+have a 1 in it somewhere; the first 1 can always be put by itself to the
+left of the dot.  Another important detail to note is that the exponent has
+a "bias" of 127.  That means that S=0, E=1, M=0 would be representing
+2^-126; if E=127 but both S and M are zero, that would give you the value 1.
+
+    0 00000001 00000000000000000000000   =  2^-126
+    0 01111111 00000000000000000000000   =  2^0, our friend 1
+    0 11111110 00000000000000000000000   =  2^(254-127) = 2^127
+
+Going back to the number -17.25 or -10001.01, let's do the conversion.
+
+    start in decimal:       -17.25
+    convert to binary:      -10001.01[b]
+    convert to scientific:  -1.000101[b] * 2^4
+    put in proper form:     (-1)^1 * 2^(127+4-127) * 1.000101[b]
+    do the addition:        (-1)^1 * 2^(131-127) * 1.000101[b]
+    convert to binary:      (-1)^1 * 2^(10000011[b]-127) * 1.000101[b]
+    put in notation:        1 10000011 1.0001010000000000000000
+    remove implied 1:       1 10000011 0001010000000000000000
+
+This is the process you can use to convert binary numbers into floating
+point.  You don't need to show all the steps we did here on the test;
+however, we do expect to see that you convert to binary and to binary
+scientific notation.
+
+Next, we go over how to add and subtract in floating point.
+
+--- Section III - Addition --------------------------------------------------
+
+On the test we may ask you questions involving adding and subtracting
+floating point numbers, but we'll require that you keep them in the IEEE
+format.  By keeping them in this format, we are looking to see if you
+understand the steps the computer does to do the addition and subtraction. 
+Adding them in decimal or even binary then writing the final answer is not
+what we are looking for.  If you had to draw a circuit to do floating point
+addition, would you be able to convert into decimal in the middle?
+
+So, let's do 1+7 in floating point.
+
+      0 01111111 0000...                     [[ this is the number 1 ]]
+    + 0 10000001 1100...                     [[ the number 7 ]]
+
+It's important to realize you can't directly add the numbers in this format.
+First we need to add in the implied 1's, since they're an important part of
+the number for addition and subtraction.
+
+      0 01111111 1.00000...
+    + 0 10000001 1.11000...
+
+But we're still not ready to add!  If you're adding 1 * 10^1 and 1 * 10^0,
+doing 1+1 is not correct.  You can't just add the mantissas if they have
+different exponents; the digits on top of each other need to correspond to
+the same place value.  We must take the smaller exponent number and make it
+match the larger exponent.  So if we add 2 to the exponent of the first
+number, we must divide the mantissa by 2^2, in other words shift it right by
+2.
+
+        2^0        * 1.00            -->   2^2    * 0.01
+      0 01111111(+2) 1.00000...(>>2) --> 0 10000001 0.01000...
+
+Remember that if you shift the mantissa to the right, you are dividing, so
+that means to make up for dividing you must add to the exponent.  This rule
+is important so you don't get mixed up on the test!  But now that the
+numbers are properly aligned, it is time to add:
+
+      0  10000001  0.01000..  [1]
+    + 0  10000001  1.11000..  [7]
+    ----------------------
+      0  10000001 10.00000..  [8]  because 1 + 111 = 1000 in binary
+
+So we convert this back into regular notation by getting rid of the implied
+1.  But where is the 1?  We need to shift the mantissa to the right, and
+since that is dividing the mantissa we must add to the exponent to keep
+the same value.
+
+      0 10000001 10.00000..
+      0 10000010 1.0000...    [[shift mantissa 1 right, add 1 to exponent]]
+      0 10000010 00000000000000000000000 [[the 1 is implied; remove it]]
+
+So now we have the answer.  It's eight.  You should verify by putting it
+back in decimal and adding the numbers.  On the test you should show ALL of
+these steps, especially adding the implied 1 and the shifting.  It's not
+necessary, however, to rewrite the same exact thing over and over, since
+your answer to the test question is not going to be used as a floating point
+tutorial :)
+
+--- Section IV - Subtraction ------------------------------------------------
+
+We now know how to add two positive numbers.  How do you subtract?  It's
+simplest to start off treating subtraction by doing addition but flipping
+the second number's sign bit.  For example instead of 2 - 5 do 2 + (negative
+5).
+
+If both numbers being added are negative, then you just add and your answer
+will have a negative sign.  If one is positive and the other is negative,
+write the larger absolute value one first; it makes your life easier.  Now
+let's do the problem 2 - 5:
+
+      1 10000001 01000..  [-5 = -1.01b * 2^2; -5 is first, since 5 > 2]
+    + 0 10000000 00000..  [2 = 1.0b * 2^1]
+
+So as usual the first step is to add in implied ones and normalize.
+
+      1 10000001(+0) 1.01000...(>>0) --> 1 10000001 1.01000...
+      0 10000000(+1) 1.00000...(>>1) --> 0 10000001 0.10000...
+
+Now it's time to subtract.  You can subtract using the 2's complement
+method, or you can do binary subtraction.  Either way:
+
+        1 10000001 1.01000...
+      - 1 10000001 0.10000... (this is actually minus negative 2)
+      =======================
+        1 10000001 0.11000...
+
+We took -5 and added 2.  This is a good time to make sure you have your
+signs right.  A convenient way is to make the bottom number use the same
+sign as the top and do subtraction; thus we are doing negative 5 minus
+negative 2, same as adding 2.  The sign will be the same sign as the two
+numbers above.
+
+    1 10000001 0.1100...
+
+But now the implied 1 spot has a zero!  To overcome this problem we shift
+left, subsequently subtracting from the exponent the same number of digits
+we shift.  So now we shift one left and subtract one from the exponent:
+
+    1 10000001(-1) 0.1100...(<<1)
+    1 10000000 1.1000... which then converts to:
+    1 10000000 10000000000000000000000
+
+Now we have -1.1 * 2^(128-127).  This resolves to be the number -3.  And we
+can thus verify that 2 - 5 is indeed negative 3.
+
+--- Section V - Special Cases -----------------------------------------------
+
+The IEEE 754 specification has a few special cases for important reasons. If
+you used the notation as previous, it is impossible to specify zero, because
+of the implied one; you'd be able to specify a really small number but not
+zero.  Thus, allowing zero must be taken into account.  The designers also
+kdecided that instead of causing an error, overflow and dividing by zero
+would give a special infinity value.  Finally, a special "not a number" case
+is reserved for other invalid situations where there is no numerical
+representation.  Here is a rundown of the cases:
+
+- Exponent is zero:
+This is what is used for values that are too small, mainly to represent
+zero.  The exponent component is 2^(-126), and there is no implied 1.
+For example:
+
+    0 00000000 10000000000000000000000 is 0.1 * 2^(-126) or 2^(-127).
+    0 00000000 00100000000000000000000 is 0.001 * 2^(-126) or 2^(-129).
+    0 00000000 00000000000000000000000 is 0 * 2^(-126) or, basically, zero.
+
+This case is why IEEE uses a bias and not 2's complement for the exponent:
+if you clear a section of memory to integer value 0, and treat the memory as
+a floating point number you would also get 0.  If it were 2's complement
+instead of bias, all zeros would mean 2^0 = 1 instead.
+
+- Exponent is 255:
+This is used for invalid cases and really huge numbers.  There are two
+situations:
+   - Mantissa is zero:  Positive or negative infinity.  Infinity arises when
+   you add or multiply numbers and they become way too large, or when you
+   divide something by by zero.
+   - Mantissa is not zero:  This is not-a-number, printed often as NaN.  The
+   actual value of the mantissa is not really important.  This occurs in
+   several cases:
+      - You divide zero by zero.  It's not infinity and it's not zero, so it's
+      NaN.
+      - You divide an infinity by another infinity.  Similar as above.
+      - You take the square root or log of a negative number, or basically
+      give a math function a number outside its domain.  The function gets
+      confused and yells at you for being careless.
+      - You do any math that involves an NaN.  Garbage in, garbage out.
+
+- Exponent is 1 to 254: Just treat like a regular number as we explained
+earlier.
+
+This is summarized by the chart you may have seen on the slides:
+
+            |  E = 0    | E = 1..254  |  E = 255
+     -------+-----------------------------------------
+     M = 0  |   Zero    | Powers of 2 | +/- Infinity
+     M != 0 | Underflow | Regular #'s | Not a Number
